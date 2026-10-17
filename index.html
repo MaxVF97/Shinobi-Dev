@@ -1,0 +1,703 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shinobi Dev · por Max Vargas · Páginas web y sistemas para negocios</title>
+<meta name="description" content="Páginas web y sistemas para negocios: menús con pedidos por WhatsApp, apps para ventas en ruta y soluciones a la medida. Cotiza sin compromiso.">
+<meta name="theme-color" content="#07080B">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Manrope:wght@400;600;700;800&family=Anton&family=Barlow+Condensed:wght@600;700&family=Lilita+One&family=Nunito:wght@700;800&family=Rye&display=swap">
+<style>
+:root{
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+  --azul:#2F8CFF;--azul-o:#1858BE;--negro:#07080B;
+  --bg:#F3F5F8;--surf:#FFFFFF;--surf2:#EAEEF3;--ink:#0D1117;--sub:#4B5563;--line:#D9DEE5;
+  --wm:'Chakra Petch','Arial Narrow',sans-serif;--tx:'Manrope',system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0A0C10;--surf:#12161D;--surf2:#181D26;--ink:#E8ECF1;--sub:#9AA3AF;--line:#232A35}}
+:root[data-theme="dark"]{--bg:#0A0C10;--surf:#12161D;--surf2:#181D26;--ink:#E8ECF1;--sub:#9AA3AF;--line:#232A35}
+html{scroll-behavior:smooth;scroll-padding-top:calc(64px + env(safe-area-inset-top,0px))}
+*,*::before,*::after{box-sizing:inherit}
+html,body{overflow-x:clip}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--tx);line-height:1.6}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--azul);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--wm);line-height:1.1;margin:0}
+h2{font-size:clamp(28px,5vw,40px)}
+.kicker{display:inline-block;font-family:var(--wm);font-weight:700;color:#F3E6C8;letter-spacing:.1em;font-size:13px;margin:0 0 12px;padding:8px 20px 7px;background:url(img/ninja/tabla.webp) center/100% 100% no-repeat;text-shadow:0 1px 0 rgba(0,0,0,.6)}
+.kicker::before{color:#7FB8FF}
+.kicker::before{content:">_ "}
+.lead{color:var(--sub);max-width:620px;margin:10px 0 0;font-size:17px}
+section{padding:80px 0 0;position:relative}
+.deco-perg{position:absolute;right:20px;top:60px;width:62px;transform:rotate(12deg);filter:drop-shadow(0 6px 10px rgba(0,0,0,.35))}
+.deco-medio{position:absolute;right:20px;top:54px;width:170px;transform:rotate(-6deg);filter:drop-shadow(0 6px 10px rgba(0,0,0,.35))}
+@media (max-width:760px){.deco-perg{width:44px;top:70px}.deco-medio{width:110px;top:64px;opacity:.9}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:800;text-decoration:none;border-radius:12px;padding:14px 22px;border:0;cursor:pointer;font-family:var(--tx);font-size:16px}
+.btn.pri{background:var(--azul);color:#fff;box-shadow:0 5px 0 var(--azul-o)}
+.btn.pri:active{transform:translateY(3px);box-shadow:0 2px 0 var(--azul-o)}
+.btn.sec{background:transparent;color:inherit;border:1.5px solid currentColor;opacity:.9}
+[hidden]{display:none!important}
+
+/* nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:20;padding-top:env(safe-area-inset-top,0px);background:rgba(7,8,11,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+.nav .mini{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;font-family:var(--wm);font-weight:700;font-size:18px;letter-spacing:.03em}
+.nav .mini img{width:34px;height:34px;border-radius:50%;box-shadow:0 0 0 1.5px var(--azul)}
+.nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+.nav ul a{color:#C3CAD0;text-decoration:none;font-weight:600;font-size:15px}
+.nav ul a:hover{color:#fff}
+.nav .cta{padding:9px 14px;font-size:14px;box-shadow:0 3px 0 var(--azul-o)}
+@media (max-width:760px){.nav ul{display:none}}
+
+/* hero */
+.hero{background:radial-gradient(ellipse at 50% 35%,#0F1D33 0%,var(--negro) 62%);color:#fff;padding:calc(110px + env(safe-area-inset-top,0px)) 0 80px;text-align:center;position:relative;overflow:hidden}
+.hero .ninja{width:min(280px,64vw);margin:0 auto}
+@keyframes flota{50%{transform:translateY(-8px)}}
+.hero .logo{width:min(400px,84vw);margin:18px auto 0}
+.hero .por{color:var(--azul);font-weight:800;font-size:20px;margin:14px 0 0}
+.hero .tag{color:#C3CAD0;font-size:18px;margin:4px 0 0}
+.typer{font-family:ui-monospace,Menlo,Consolas,monospace;color:#9CC8FF;font-size:16px;margin:16px 0 0;min-height:24px}
+.typer .pr{color:var(--azul)}
+.typer .car{display:inline-block;width:9px;height:2px;background:var(--azul);margin-left:2px;vertical-align:middle;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.hero .acts{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+.hero .btn.sec{color:#E8ECF1}
+
+/* servicios */
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-top:32px}
+.serv{background:var(--surf);border:1px solid var(--line);border-radius:18px;padding:24px}
+.serv .ic-img{width:72px;height:auto;border-radius:16px;box-shadow:0 5px 0 var(--azul-o),0 8px 18px rgba(0,0,0,.25);transition:transform .4s cubic-bezier(.2,1.5,.4,1)}
+.serv:hover .ic-img{transform:translateY(-4px) rotate(-4deg)}
+.serv .ic{width:46px;height:46px;border-radius:12px;background:var(--azul);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 0 var(--azul-o)}
+.serv h3{font-size:21px;margin:18px 0 6px}
+.serv p{margin:0;color:var(--sub)}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 0;padding:0;list-style:none}
+.chips li{background:var(--surf2);border:1px solid var(--line);border-radius:99px;padding:5px 12px;font-size:13.5px;font-weight:600}
+/* misiones: pergaminos */
+.misiones{display:flex;flex-direction:column;gap:26px;margin-top:34px}
+.perg{position:relative;max-width:880px;margin:0 auto;width:100%;padding:0 30px;--dur:1.5s;--ease:cubic-bezier(.45,.05,.3,1)}
+.rod{display:block;position:relative;height:28px;margin:0 -18px;border-style:solid;border-width:0 36px;border-image:url(img/ninja/rod.webp) 0 80 fill / 0 36px stretch;filter:drop-shadow(0 5px 6px rgba(0,0,0,.4));z-index:2}
+.perg.anim .rod-b{animation:rueda var(--dur) var(--ease)}
+@keyframes rueda{from{background-position:0 0,0 0}to{background-position:-170px 0,0 0}}
+.perg-cab{all:unset;box-sizing:border-box;display:block;width:100%;cursor:pointer;position:relative}
+.perg-cab:focus-visible .cinta{outline:3px solid var(--azul);outline-offset:-3px}
+.cinta{display:flex;align-items:center;gap:8px 12px;flex-wrap:wrap;width:100%;padding:14px 62px 14px 20px;background:url(img/ninja/papel.webp) center/cover;color:#2B2016;box-shadow:inset 0 10px 12px -10px rgba(60,35,10,.5)}
+.cinta .num{font-family:var(--wm);font-weight:700;letter-spacing:.1em;font-size:12px;color:#7A5A34}
+.cinta b{font-family:var(--wm);font-size:clamp(19px,2.8vw,24px);line-height:1.1}
+.cinta .abre{margin-left:auto;font-weight:800;font-size:12px;color:#7A5A34;display:flex;align-items:center;gap:6px}
+.cinta .abre::after{content:"";width:8px;height:8px;border-right:2.5px solid currentColor;border-bottom:2.5px solid currentColor;transform:rotate(45deg) translateY(-3px);transition:transform .4s}
+.perg.abierto .cinta .abre{font-size:0;gap:0}
+.perg.abierto .cinta .abre::after{transform:rotate(-135deg) translateY(-2px)}
+.sello{position:absolute;right:12px;top:50%;width:44px;height:auto;transform:translateY(-50%) rotate(-8deg);opacity:.9;mix-blend-mode:multiply}
+@media (max-width:560px){.perg{padding:0 22px}.sello{width:36px;right:8px}.cinta{padding-right:48px}}
+.rollo{position:relative}
+.papel{height:0;overflow:hidden;transition:height var(--dur) var(--ease)}
+.papel-in{min-height:0}
+.papel{position:relative}
+.papel::after{content:"";position:absolute;left:0;right:0;bottom:0;height:46px;pointer-events:none;background:linear-gradient(to bottom,rgba(60,35,10,0),rgba(60,35,10,.28) 70%,rgba(40,22,6,.5));opacity:0;transition:opacity .35s}
+.perg.moviendo .papel::after{opacity:1}
+.rod-b{position:relative}
+.rod-b::after{content:"";position:absolute;inset:3px 0;border-radius:8px;background:repeating-linear-gradient(180deg,rgba(255,255,255,.22) 0 2px,transparent 2px 7px);opacity:0;pointer-events:none}
+.perg.moviendo .rod-b::after{opacity:1;animation:giraRod .18s linear infinite}
+@keyframes giraRod{to{background-position:0 7px}}
+.perg.asienta .rod-b{animation:asienta .45s ease-out}
+@keyframes asienta{0%{transform:translateY(0)}35%{transform:translateY(5px)}65%{transform:translateY(-2px)}100%{transform:none}}
+
+.rod-b{margin-top:-2px}
+.contenido{position:relative;display:grid;grid-template-columns:210px minmax(0,1fr);gap:26px;align-items:center;padding:20px 24px 24px;background:url(img/ninja/papel.webp) center/cover;color:#2B2016;box-shadow:inset 12px 0 16px -14px rgba(60,35,10,.5),inset -12px 0 16px -14px rgba(60,35,10,.5),inset 0 -16px 16px -14px rgba(60,35,10,.55);}
+.contenido .giro{color:#6B5233;font-size:15px}
+.contenido .reto{margin:10px 0 0;font-size:15px;line-height:1.55}
+.contenido .reto b{font-family:var(--wm)}
+.contenido .chips{margin-top:12px;gap:6px}
+.contenido .chips li{background:rgba(255,248,232,.7);border-color:#C9AE78;color:#3A2A18;font-size:12.5px;padding:4px 10px}
+.contenido .macts{margin-top:14px}
+.contenido .nota{color:#6B5233}
+.contenido h3{display:none}
+.contenido .phone{width:210px;height:410px;border-width:8px;border-radius:30px}
+@media (max-width:760px){.contenido{grid-template-columns:1fr;padding:16px 16px 20px}.contenido .phone{margin:0 auto;width:190px;height:370px}}
+
+/* teléfonos de muestra */
+.phone{width:240px;height:470px;border-radius:34px;border:9px solid #1A1F2B;background:#000;overflow:hidden;position:relative;box-shadow:0 18px 36px rgba(7,8,11,.28)}
+.scr{position:absolute;inset:0;overflow:hidden;display:flex;flex-direction:column}
+/* Colorado */
+.s-col{background:#120E0B;color:#F5ECE1;font-family:'Barlow Condensed',sans-serif}
+.s-col .port{height:150px;background-size:cover;background-position:center;position:relative}
+.s-col .port::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(18,14,11,0),#120E0B)}
+.s-col .hd{display:flex;align-items:center;gap:8px;padding:0 12px;margin-top:-26px;position:relative;z-index:1}
+.s-col .hd img{width:40px;height:40px;border-radius:50%}
+.s-col .hd b{font-family:'Anton',sans-serif;font-weight:400;font-size:20px;letter-spacing:.02em;line-height:1}
+.s-col .hd small{display:block;color:#F2711C;letter-spacing:.2em;font-size:9px;font-weight:700}
+.s-col .tabs{display:flex;gap:5px;padding:12px 12px 6px}
+.s-col .tabs span{font-size:11px;font-weight:700;padding:3px 8px;border-radius:99px;background:#1D1712;border:1px solid #3A2F26;text-transform:uppercase;letter-spacing:.06em}
+.s-col .tabs span:first-child{background:#F2711C;color:#120E0B;border-color:#F2711C}
+.s-col .it{display:flex;gap:9px;align-items:center;margin:6px 12px;background:#1D1712;border-radius:12px;padding:7px}
+.s-col .it img{width:48px;height:48px;border-radius:9px;object-fit:cover}
+.s-col .it div{flex:1;font-size:14px;font-weight:700;line-height:1.15}
+.s-col .it div small{display:block;color:#B9A999;font-weight:600;font-size:12px}
+.s-col .it i{font-style:normal;background:#F2711C;color:#120E0B;font-weight:700;border-radius:8px;padding:3px 7px;font-size:13px}
+.s-col .bar{margin:auto 10px 12px;background:#F2711C;color:#120E0B;border-radius:12px;padding:9px 12px;display:flex;justify-content:space-between;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.05em}
+/* Arreola */
+.s-arr{background:#FFF7E8;color:#2A1B10;font-family:'Nunito',sans-serif}
+.s-arr .hd{background:#D7261E;color:#fff;padding:18px 12px 14px;text-align:center}
+.s-arr .hd b{font-family:'Lilita One',sans-serif;font-weight:400;font-size:24px;display:block;line-height:1}
+.s-arr .hd small{display:inline-block;margin-top:6px;background:#FFC21A;color:#2A1B10;font-weight:800;font-size:11px;padding:2px 10px;border-radius:99px}
+.s-arr .arma{margin:12px;background:#1F4FA8;color:#fff;border-radius:14px;padding:10px 12px;font-weight:800;font-size:13px;display:flex;gap:8px;align-items:center}
+.s-arr .arma::before{content:"🐔";font-size:18px}
+.s-arr .it{display:flex;gap:9px;align-items:center;margin:6px 12px;background:#fff;border-radius:14px;padding:8px;box-shadow:0 2px 0 rgba(0,0,0,.06)}
+.s-arr .it span{width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,#FFC21A,#D7261E)}
+.s-arr .it:nth-of-type(3) span{background:linear-gradient(135deg,#8B4513,#D7261E)}
+.s-arr .it:nth-of-type(4) span{background:linear-gradient(135deg,#F59E0B,#B45309)}
+.s-arr .it div{flex:1;font-weight:800;font-size:13px;line-height:1.2}
+.s-arr .it div small{display:block;color:#8A6A4D;font-weight:700;font-size:11px}
+.s-arr .it i{font-style:normal;background:#D7261E;color:#fff;border-radius:99px;width:24px;height:24px;display:flex;align-items:center;justify-content:center;font-weight:800}
+.s-arr .bar{margin:auto 10px 12px;background:#1F4FA8;color:#fff;border-radius:14px;padding:10px 12px;display:flex;justify-content:space-between;font-weight:800;font-size:13px}
+/* Don Beto */
+.s-bet{background:#F2E6CC;color:#2B2016;font-family:'Nunito',sans-serif}
+.s-bet .hd{margin:14px 12px 6px;background:#1F5F3A;color:#FFF6DF;border:3px solid #2B2016;border-radius:10px;padding:10px;text-align:center;box-shadow:3px 3px 0 #2B2016}
+.s-bet .hd b{font-family:'Rye',serif;font-weight:400;font-size:19px;display:block;line-height:1.05}
+.s-bet .hd small{font-weight:800;font-size:10px;letter-spacing:.14em;color:#F6C84C}
+.s-bet .tabs{display:flex;gap:5px;padding:8px 12px}
+.s-bet .tabs span{font-size:11px;font-weight:800;padding:3px 9px;border-radius:6px;background:#FFF8E8;border:2px solid #2B2016}
+.s-bet .tabs span:first-child{background:#C8352B;color:#fff}
+.s-bet .row{display:flex;justify-content:space-between;align-items:center;margin:4px 12px;padding:8px 10px;background:#FFF8E8;border-radius:8px;border:2px solid #2B2016;font-weight:800;font-size:13px}
+.s-bet .row small{display:block;font-weight:700;color:#7A6346;font-size:11px}
+.s-bet .row i{font-style:normal;font-weight:800;background:#C8352B;color:#fff;border-radius:6px;width:24px;height:24px;display:flex;align-items:center;justify-content:center}
+.s-bet .row:nth-of-type(4) i{width:auto;padding:0 8px;background:#1F5F3A}
+.s-bet .bar{margin:auto 10px 12px;background:#C8352B;color:#fff;border:2px solid #2B2016;border-radius:10px;padding:9px 12px;display:flex;justify-content:space-between;font-weight:800;font-size:13px;box-shadow:3px 3px 0 #2B2016}
+
+/* pasos */
+.pasos{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:32px;counter-reset:p}
+.paso{position:relative;background:var(--surf);border:1px solid var(--line);border-radius:18px;padding:24px 22px 22px}
+.paso::before{counter-increment:p;content:"0" counter(p);font-family:var(--wm);font-weight:700;font-size:40px;color:var(--azul);line-height:1;display:block}
+.paso h3{font-size:20px;margin:12px 0 6px}
+.paso .pic{position:absolute;right:18px;top:18px;width:56px;border-radius:12px;box-shadow:0 4px 0 var(--azul-o)}
+.paso p{margin:0;color:var(--sub)}
+
+/* quien */
+.quien{display:grid;grid-template-columns:200px minmax(0,1fr);gap:34px;align-items:center;background:var(--surf);border:1px solid var(--line);border-radius:22px;padding:30px;margin-top:32px}
+.quien .av-q{width:200px;height:200px;border-radius:50%;box-shadow:0 0 0 3px var(--azul),0 0 30px rgba(47,140,255,.35);position:relative;z-index:2;animation:aroFuego 2.6s ease-in-out infinite}
+@keyframes aroFuego{0%,100%{box-shadow:0 0 0 3px var(--azul),0 0 26px rgba(47,140,255,.35)}30%{box-shadow:0 0 0 3px #5AA6FF,0 0 40px rgba(47,140,255,.6)}60%{box-shadow:0 0 0 3px var(--azul),0 0 30px rgba(47,140,255,.4)}80%{box-shadow:0 0 0 3px #7DBBFF,0 0 46px rgba(90,166,255,.65)}}
+.quien p{margin:12px 0 0;color:var(--sub)}
+.quien .cred{display:inline-flex;align-items:center;gap:8px;margin:0 0 12px;padding:6px 14px;border-radius:99px;background:rgba(47,140,255,.12);border:1px solid rgba(47,140,255,.45);color:var(--ink);font-weight:800;font-size:14px}
+.quien .cred+p{margin-top:0;color:var(--ink);font-size:18px}
+.quien .chips{margin-top:18px}
+@media (max-width:760px){.quien{grid-template-columns:1fr;text-align:center}.quien .fuego{margin:0 auto}.quien .av-q{width:160px;height:160px}.quien .chips{justify-content:center}}
+
+/* contacto */
+.contacto{position:relative;overflow:hidden;margin:80px 0 0;background:radial-gradient(ellipse at 30% 0%,#10233F 0%,var(--negro) 65%);color:#fff;padding:70px 0 40px}
+.contacto .wrap{display:grid;grid-template-columns:minmax(0,1fr) 180px;gap:40px;align-items:center}
+.contacto h2{font-size:clamp(30px,5vw,44px)}
+.contacto .lead{color:#C3CAD0}
+.contacto .acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.contacto .btn.sec{color:#E8ECF1}
+.contacto::before{content:"";position:absolute;inset:0;background:url(img/ninja/patron.webp) center/560px auto repeat;mix-blend-mode:screen;opacity:.3;pointer-events:none}
+.luna-c{position:absolute;right:-60px;top:-30px;width:380px;mix-blend-mode:screen;opacity:.7;pointer-events:none}
+.contacto .wrap{position:relative;z-index:1}
+.tel{margin:10px 0 0;color:#C3CAD0}
+.tel b{color:#fff;font-family:var(--wm);letter-spacing:.04em}
+.qr{position:relative;width:180px;justify-self:center;text-align:center;transform-origin:50% 0;animation:mece 5s ease-in-out infinite}
+@keyframes mece{0%,100%{transform:rotate(-2.5deg)}50%{transform:rotate(2.5deg)}}
+.qr .qcol{width:100%;filter:drop-shadow(0 8px 14px rgba(0,0,0,.45))}
+.qr .qcode{position:absolute;left:50%;top:52%;width:46%;height:auto;transform:translate(-50%,-50%);border-radius:4px;mix-blend-mode:multiply}
+.qr span{display:block;margin-top:6px;color:#C3CAD0;font-size:12px;font-weight:700}
+@media (max-width:760px){.contacto .wrap{grid-template-columns:1fr}.qr{justify-self:start;width:150px}}
+footer{position:relative;background:var(--negro);color:#7C8592;font-size:14px;padding:22px 0 30px;border-top:1px solid #161B23}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center}
+footer b{color:#C3CAD0;font-family:var(--wm)}
+.term-btn{background:none;border:1px solid #273042;color:#7C8592;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px;border-radius:8px;padding:6px 10px;cursor:pointer}
+.term-btn:hover{color:var(--azul);border-color:var(--azul)}
+
+/* terminal */
+.term{position:fixed;left:0;right:0;top:0;height:100vh;height:100dvh;z-index:50;background:rgba(3,5,8,.82);display:flex;align-items:center;justify-content:center;padding:max(14px,env(safe-area-inset-top)) 12px 14px;overscroll-behavior:contain;touch-action:none}
+.term .win{width:min(680px,100%);height:min(460px,100%);touch-action:auto;background:#05070A;border:1px solid #1E2733;border-radius:14px;box-shadow:0 0 0 1px rgba(47,140,255,.2),0 30px 60px rgba(0,0,0,.6);display:flex;flex-direction:column;overflow:hidden}
+.term .bar{display:flex;align-items:center;gap:7px;padding:10px 12px;background:#0C1118;border-bottom:1px solid #1E2733;color:#7C8592;font:13px ui-monospace,Menlo,Consolas,monospace}
+.term .bar i{width:11px;height:11px;border-radius:50%;background:#2A3442;display:inline-block}
+.term .bar span{flex:1;text-align:center}
+.term .bar button{background:none;border:0;color:#9AA3AF;font-size:18px;cursor:pointer;line-height:1}
+.term .out{flex:1;overflow:auto;padding:14px 16px;font:14px/1.6 ui-monospace,Menlo,Consolas,monospace;color:#C9D4E1;white-space:pre-wrap}
+.term .out .c{color:var(--azul)}
+.term .out .ok{color:#4ADE80}
+.term .out a{color:#7FB8FF}
+.term form{display:flex;gap:8px;align-items:center;padding:10px 16px 14px;border-top:1px solid #121922;font:14px ui-monospace,Menlo,Consolas,monospace;color:var(--azul)}
+.term input{flex:1;min-width:0;background:none;border:0;outline:none;color:#E8ECF1;font:16px ui-monospace,Menlo,Consolas,monospace;caret-color:var(--azul)}
+.term .out{overscroll-behavior:contain}
+html.bloq,html.bloq body{overflow:hidden}
+
+
+
+/* botón flotante */
+.flota{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;display:flex;align-items:center;gap:8px;background:var(--azul);color:#fff;text-decoration:none;font-weight:800;padding:12px 16px 12px 13px;border-radius:999px;box-shadow:0 5px 0 var(--azul-o),0 10px 24px rgba(0,0,0,.35);opacity:0;transform:translateY(20px);transition:opacity .3s,transform .3s;pointer-events:none}
+.flota.ver{opacity:1;transform:none;pointer-events:auto}
+/* capa de animaciones */
+.fx{position:fixed;inset:0;z-index:70;pointer-events:none;overflow:hidden}
+.fx .msg{position:absolute;left:50%;top:60%;transform:translate(-50%,0);font-family:var(--wm);font-weight:700;font-size:clamp(18px,4vw,26px);color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.6);white-space:nowrap;opacity:0;animation:msg var(--fxd,1.3s) ease forwards}
+@keyframes msg{15%,80%{opacity:1}100%{opacity:0}}
+.fx .velo{position:absolute;inset:0;background:rgba(5,8,13,.6);animation:velo var(--fxd,1.3s) ease forwards}
+@keyframes velo{0%{opacity:0}15%,80%{opacity:1}100%{opacity:0}}
+.fx .humo{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(230,236,245,.95),rgba(150,170,200,.55) 55%,rgba(47,140,255,0) 72%);transform:translate(-50%,-50%) scale(.1);animation:humo var(--hd,1.2s) ease-out forwards}
+@keyframes humo{60%{opacity:1}100%{transform:translate(-50%,-50%) scale(1);opacity:0}}
+.fx .ninjafx{position:absolute;left:50%;top:42%;width:120px;height:120px;border-radius:50%;transform:translate(-50%,-50%);box-shadow:0 0 0 3px var(--azul),0 0 30px rgba(47,140,255,.6);animation:esfuma var(--nd,1.1s) ease forwards}
+@keyframes esfuma{0%{opacity:0;transform:translate(-50%,-50%) scale(.6)}30%{opacity:1;transform:translate(-50%,-50%) scale(1)}55%{opacity:1}100%{opacity:0;transform:translate(-50%,-50%) scale(1.3);filter:blur(6px)}}
+.fx .kunaifx{position:absolute;top:44%;left:0;width:150px;height:30px;fill:#D6DCE3;color:#D6DCE3;--kunai-wrap:#1B2230;filter:drop-shadow(0 0 8px rgba(47,140,255,.6))}
+.fx .carta{position:absolute;top:calc(44% + 18px);left:0;width:46px;height:22px;border-radius:4px;background:linear-gradient(180deg,#EAD9B0,#D8BE85);box-shadow:inset 0 0 0 2px #B98E4E}
+.fx .carta::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:12px;border-radius:50%;background:#B3261E;transform:translate(-50%,-50%)}
+.vuela{position:fixed;top:0;left:0;z-index:80;pointer-events:none;height:auto;filter:drop-shadow(0 0 10px rgba(47,140,255,.6))}
+.fx .bombafx{position:absolute;left:0;top:0;width:80px}
+.fx .humofx{position:absolute;max-width:none;filter:drop-shadow(0 0 18px rgba(47,140,255,.35))}
+.fx .kmsg{position:absolute;left:0;top:0;width:260px;filter:drop-shadow(0 0 12px rgba(47,140,255,.6))}
+
+/* ===== Aura de fuego ===== */
+.fuego{position:relative;display:inline-block;isolation:isolate}
+.fuego.grande{display:block;width:min(280px,64vw);margin:0 auto}
+.fuego.grande .ninja{position:relative;z-index:2;width:100%}
+.fuego .fl{position:absolute;z-index:1;bottom:22%;width:34%;height:62%;border-radius:50% 50% 45% 45%/62% 62% 38% 38%;background:radial-gradient(ellipse at 50% 80%,rgba(120,190,255,.9),rgba(47,140,255,.55) 45%,rgba(47,140,255,0) 72%);filter:blur(10px);transform-origin:50% 100%;animation:llama 1.8s ease-in-out infinite;mix-blend-mode:screen;pointer-events:none}
+.fuego .f1{left:-2%;animation-delay:-.2s;height:55%}
+.fuego .f2{left:16%;height:72%;animation-delay:-.9s;animation-duration:2.1s}
+.fuego .f3{left:33%;height:80%;animation-delay:-.5s;animation-duration:1.6s}
+.fuego .f4{right:16%;height:70%;animation-delay:-1.3s;animation-duration:2s}
+.fuego .f5{right:-2%;height:56%;animation-delay:-.7s}
+@keyframes llama{0%,100%{transform:scale(1,1) translateY(0);opacity:.75}25%{transform:scale(1.08,1.18) translateY(-6%) skewX(3deg);opacity:1}50%{transform:scale(.94,1.05) translateY(-2%) skewX(-4deg);opacity:.8}75%{transform:scale(1.04,1.26) translateY(-9%) skewX(2deg);opacity:.95}}
+.fuego.chico{width:200px;height:200px}
+.fuego.chico .fl{bottom:30%;filter:blur(12px)}
+.fuego::after{content:"";position:absolute;inset:8% 10% 0;z-index:1;border-radius:50%;background:radial-gradient(circle,rgba(47,140,255,.28),rgba(47,140,255,0) 65%);animation:pulso 2.4s ease-in-out infinite;pointer-events:none}
+@keyframes pulso{50%{transform:scale(1.08);opacity:.7}}
+.hero .ninja{animation:flota 6s ease-in-out infinite,brillo 2.2s ease-in-out infinite}
+@keyframes brillo{0%,100%{filter:drop-shadow(0 0 22px rgba(47,140,255,.3))}40%{filter:drop-shadow(0 0 34px rgba(90,166,255,.55))}70%{filter:drop-shadow(0 0 26px rgba(47,140,255,.38))}}
+
+/* ===== Lista de habilidades con entrada ninja ===== */
+.quien .chips li{display:inline-flex;align-items:center;gap:7px;opacity:0;transform:translateX(60px) rotate(8deg);transition:opacity .45s ease,transform .55s cubic-bezier(.2,1.4,.4,1),border-color .2s,background .2s}
+.quien .chips li::before{content:"";width:12px;height:12px;flex-shrink:0;background:var(--azul);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-50 -50 100 100'%3E%3Cg%3E%3Cpath d='M0-47C7-33 13-20 15-5L4 4-6-5Z'/%3E%3Cpath d='M0-47C7-33 13-20 15-5L4 4-6-5Z' transform='rotate(90)'/%3E%3Cpath d='M0-47C7-33 13-20 15-5L4 4-6-5Z' transform='rotate(180)'/%3E%3Cpath d='M0-47C7-33 13-20 15-5L4 4-6-5Z' transform='rotate(270)'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-50 -50 100 100'%3E%3Cg%3E%3Cpath d='M0-47C7-33 13-20 15-5L4 4-6-5Z'/%3E%3Cpath d='M0-47C7-33 13-20 15-5L4 4-6-5Z' transform='rotate(90)'/%3E%3Cpath d='M0-47C7-33 13-20 15-5L4 4-6-5Z' transform='rotate(180)'/%3E%3Cpath d='M0-47C7-33 13-20 15-5L4 4-6-5Z' transform='rotate(270)'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat;transition:transform .6s ease}
+.quien.ver .chips li{opacity:1;transform:none}
+.quien.ver .chips li::before{animation:giraUna .6s ease-out both}
+.quien .chips li:nth-child(1){transition-delay:.05s}.quien .chips li:nth-child(1)::before{animation-delay:.05s}
+.quien .chips li:nth-child(2){transition-delay:.17s}.quien .chips li:nth-child(2)::before{animation-delay:.17s}
+.quien .chips li:nth-child(3){transition-delay:.29s}.quien .chips li:nth-child(3)::before{animation-delay:.29s}
+.quien .chips li:nth-child(4){transition-delay:.41s}.quien .chips li:nth-child(4)::before{animation-delay:.41s}
+.quien .chips li:nth-child(5){transition-delay:.53s}.quien .chips li:nth-child(5)::before{animation-delay:.53s}
+.quien .chips li:nth-child(6){transition-delay:.65s}.quien .chips li:nth-child(6)::before{animation-delay:.65s}
+@keyframes giraUna{from{transform:rotate(-540deg) scale(.4)}to{transform:none}}
+.quien .chips li:hover{border-color:var(--azul);background:rgba(47,140,255,.12)}
+.quien .chips li:hover::before{transform:rotate(360deg)}
+@media (prefers-reduced-motion:reduce){.fuego .fl,.fuego::after,.quien .av-q,.hero .ninja{animation:none!important}.quien .chips li{opacity:1;transform:none;transition:none}}
+
+/* ===== Easter egg: stickers que se asoman ===== */
+.asomos{position:fixed;inset:0;pointer-events:none;z-index:25;overflow:hidden}
+.asoma{position:absolute;width:min(150px,34vw);height:auto;pointer-events:auto;cursor:pointer;filter:drop-shadow(0 6px 14px rgba(0,0,0,.45));will-change:transform}
+
+/* ===== Escenografía ninja (portada) ===== */
+.hero{background:radial-gradient(ellipse at 50% 30%,#0F1D33 0%,var(--negro) 64%)}
+.hero::before{content:"";position:absolute;inset:0;background:url(img/ninja/patron.webp) center/560px auto repeat;mix-blend-mode:screen;opacity:.35;pointer-events:none}
+.estrellas{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.estrellas img{position:absolute;max-width:none}
+.luna{left:50%;top:6%;width:min(760px,150vw);transform:translateX(-50%);mix-blend-mode:screen;opacity:.85}
+.nube{width:min(340px,60vw);mix-blend-mode:screen;opacity:.5;animation:deriva 26s ease-in-out infinite alternate}
+.nube.n1{left:-4%;top:14%}
+.nube.n2{right:-6%;top:52%;width:min(280px,50vw);opacity:.38;animation-duration:32s;animation-direction:alternate-reverse}
+@keyframes deriva{from{transform:translateX(-30px)}to{transform:translateX(40px)}}
+.sk{opacity:.75;filter:drop-shadow(0 4px 8px rgba(0,0,0,.5))}
+.sk.s1{width:58px;top:24%;left:8%;animation:gira 12s linear infinite}
+.sk.s2{width:40px;top:66%;left:15%;opacity:.55;animation:gira 9s linear infinite reverse}
+.sk.s3{width:62px;top:30%;right:9%;opacity:.85;animation:gira 10s linear infinite reverse}
+.sk.s4{width:34px;top:72%;right:17%;opacity:.5;animation:gira 8s linear infinite}
+.kn{width:150px;opacity:.7;filter:drop-shadow(0 4px 8px rgba(0,0,0,.5))}
+.kn.k1{top:48%;left:3%;transform:rotate(-26deg)}
+.kn.k2{top:13%;right:3%;transform:rotate(154deg)}
+.bambu{position:absolute;left:0;right:0;bottom:0;height:110px;background:url(img/ninja/bambu.webp) left bottom/auto 110px repeat-x;opacity:.95;pointer-events:none}
+.hero .wrap{position:relative;z-index:1}
+@media (max-width:760px){.kn{display:none}.sk.s1{left:-10px}.sk.s3{right:-12px}.bambu{height:80px;background-size:auto 80px}}
+@keyframes gira{to{transform:rotate(360deg)}}
+/* ===== Detalles ninja ===== */
+.estrellas{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+@keyframes gira{to{transform:rotate(360deg)}}
+.divk{display:block;width:120px;height:auto;margin-top:12px;filter:drop-shadow(0 3px 6px rgba(0,0,0,.35))}
+.paso{overflow:hidden}
+.psk{position:absolute;right:-22px;top:-22px;width:110px;opacity:.12;transition:transform .9s ease}
+.paso:hover .psk{position:absolute;right:-22px;top:-22px;width:110px;opacity:.12;transition:transform .9s ease}
+.btn.pri .bsk{width:16px;height:16px;fill:currentColor;--hole:var(--azul);transition:transform .5s ease}
+.btn.pri:hover .bsk{transform:rotate(180deg)}
+@media (prefers-reduced-motion:reduce){.sk,.psk{position:absolute;right:-22px;top:-22px;width:110px;opacity:.12;transition:transform .9s ease}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero .ninja{animation:none}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="shuriken" viewBox="-50 -50 100 100"><path d="M0-47C7-33 13-20 15-5L4 4-6-5Z" transform="rotate(0)"/><path d="M0-47C7-33 13-20 15-5L4 4-6-5Z" transform="rotate(90)"/><path d="M0-47C7-33 13-20 15-5L4 4-6-5Z" transform="rotate(180)"/><path d="M0-47C7-33 13-20 15-5L4 4-6-5Z" transform="rotate(270)"/><circle r="7" style="fill:var(--hole,#0A0C10)"/></symbol>
+  <symbol id="kunai" viewBox="0 0 120 24"><circle cx="9" cy="12" r="6.5" fill="none" stroke="currentColor" stroke-width="3"/><rect x="15" y="9" width="34" height="6" rx="1.5"/><path d="M20 8.5l3 7M27 8.5l3 7M34 8.5l3 7M41 8.5l3 7" style="stroke:var(--kunai-wrap,#0A0C10)" stroke-width="1.6" fill="none"/><path d="M49 12 62 4 118 12 62 20Z"/><path d="M62 4 118 12 62 12Z" fill="#fff" opacity=".18"/></symbol>
+</svg>
+<nav class="nav" aria-label="Principal">
+  <div class="wrap">
+    <a class="mini" href="#inicio"><img src="img/avatar.webp" alt="" width="34" height="34">Shinobi Dev</a>
+    <ul>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#misiones">Misiones</a></li>
+      <li><a href="#como">Cómo trabajo</a></li>
+      <li><a href="#quien">Quién soy</a></li>
+    </ul>
+    <a class="btn pri cta" href="#contacto">Cotiza</a>
+  </div>
+</nav>
+
+<header class="hero" id="inicio">
+  <div class="estrellas" aria-hidden="true">
+    <img class="luna" src="img/ninja/luna.webp" alt="">
+    <img class="nube n1" src="img/ninja/nube.webp" alt=""><img class="nube n2" src="img/ninja/nube.webp" alt="">
+    <img class="sk s1" src="img/ninja/sk4.webp" alt=""><img class="sk s2" src="img/ninja/sk6.webp" alt=""><img class="sk s3" src="img/ninja/sk-azul.webp" alt=""><img class="sk s4" src="img/ninja/sk8.webp" alt="">
+    <img class="kn k1" src="img/ninja/kunai.webp" alt=""><img class="kn k2" src="img/ninja/kunai-tag.webp" alt="">
+  </div>
+  <div class="bambu" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="fuego grande"><span class="fl f1"></span><span class="fl f2"></span><span class="fl f3"></span><span class="fl f4"></span><span class="fl f5"></span><img class="ninja" src="img/ninja.webp" width="280" height="280" alt="Logo de Shinobi Dev: ninja encapuchado con aura azul"></div>
+    <h1><img class="logo" src="img/logotipo.svg" alt="Shinobi Dev"></h1>
+    <p class="por">por Max Vargas</p>
+    <p class="tag">Incrementa el nivel de tu negocio</p>
+    <p class="typer" aria-hidden="true"><span class="pr">&gt;_</span> <span id="typ"></span><span class="car"></span></p>
+    <div class="acts">
+      <a class="btn pri" href="#contacto"><svg class="bsk" aria-hidden="true"><use href="#shuriken"/></svg>Cotiza sin compromiso</a>
+      <a class="btn sec" href="#misiones">Ver mis proyectos</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="servicios" class="wrap" aria-labelledby="t-serv">
+  <p class="kicker">SERVICIOS</p>
+  <h2 id="t-serv">Tecnología a la medida de tu negocio</h2>
+  <img class="divk" src="img/ninja/kunai.webp" alt="" aria-hidden="true">
+  <p class="lead">Herramientas sencillas que tus clientes y tu equipo usan desde el celular, sin instalar nada.</p>
+  <div class="grid3">
+    <article class="serv">
+      <img class="ic-img" src="img/ninja/ic-menu.webp" alt="" aria-hidden="true" width="72" height="74">
+      <h3>Menús con pedidos por WhatsApp</h3>
+      <p>Tu menú en línea con carrito, horarios y productos agotados. El pedido te llega completo y ordenado a tu WhatsApp.</p>
+    </article>
+    <article class="serv">
+      <img class="ic-img" src="img/ninja/ic-caja.webp" alt="" aria-hidden="true" width="72" height="74">
+      <h3>Apps para vender y cobrar</h3>
+      <p>Caja para tu mostrador, ventas en ruta, tickets impresos, clientes de crédito y registro de ventas. Funcionan aunque falle el internet.</p>
+    </article>
+    <article class="serv">
+      <img class="ic-img" src="img/ninja/ic-laptop.webp" alt="" aria-hidden="true" width="72" height="74">
+      <h3>Soluciones a la medida</h3>
+      <p>Automatiza lo que hoy haces a mano: reportes, control desde Google Sheets, catálogos con QR y lo que tu negocio necesite.</p>
+    </article>
+  </div>
+</section>
+
+<section id="misiones" class="wrap" aria-labelledby="t-mis">
+  <p class="kicker">MISIONES</p>
+  <h2 id="t-mis">Proyectos realizados</h2>
+  <img class="deco-perg" src="img/ninja/perg-vertical.webp" alt="" aria-hidden="true">
+  <img class="divk" src="img/ninja/kunai.webp" alt="" aria-hidden="true">
+  <p class="lead">Cada negocio es una misión distinta. Abre los pergaminos para ver cómo resolví cada una.</p>
+  <div class="misiones">
+    <article class="perg" id="mis01">
+      <button class="perg-cab" aria-expanded="false" aria-controls="papel01">
+        <span class="rod" aria-hidden="true"></span>
+        <span class="cinta"><span class="num">MISIÓN 01</span><b>Pollos Colorado</b><span class="badge b-uso">En uso</span><span class="abre" aria-hidden="true">Abrir</span></span>
+        <img class="sello" src="img/ninja/sello1.webp" alt="" aria-hidden="true">
+      </button>
+      <div class="rollo"><div class="papel" id="papel01"><div class="papel-in"><div class="contenido">
+      <div class="phone" aria-hidden="true"><div class="scr s-col">
+        <div class="port" style="background-image:url(img/col-portada.webp)"></div>
+        <div class="hd"><img src="img/col-logo.webp" alt=""><div><b>POLLOS COLORADO</b><small>AL CARBÓN</small></div></div>
+        <div class="tabs"><span>Pollos</span><span>Costillas</span><span>Extras</span></div>
+        <div class="it"><img src="img/col-entero.webp" alt=""><div>Pollo entero<small>Con tortillas y salsa</small></div><i>+</i></div>
+        <div class="it"><img src="img/col-costillas.webp" alt=""><div>Costillas<small>Orden completa</small></div><i>+</i></div>
+        <div class="it"><img src="img/col-papas.webp" alt=""><div>Papas<small>Extra</small></div><i>+</i></div>
+        <div class="bar"><span>Ver pedido · 2</span><span>Enviar</span></div>
+      </div></div>
+      <div>
+        <h3>Pollos Colorado</h3>
+        <p class="giro">Pollería al carbón · Colima</p>
+        <p class="reto"><b>El reto:</b> los pedidos llegaban desordenados por WhatsApp y había que preguntar todo: qué quería, a qué hora y si era para recoger o a domicilio.</p>
+        <p class="reto"><b>La solución:</b> un menú en línea donde el cliente arma su pedido y lo envía completo a WhatsApp, más una caja para la tablet del mostrador.</p>
+        <ul class="chips">
+          <li>Pedidos por WhatsApp</li><li>Horarios de entrega</li><li>Agotados desde Google Sheets</li><li>Caja en tablet</li><li>Aviso de cierre por clima</li><li>QR y material impreso</li>
+        </ul>
+        <div class="macts"><a class="btn pri" href="https://polloscolorado.pages.dev" target="_blank" rel="noopener">Ver en vivo</a></div>
+      </div>
+    </div></div></div><span class="rod rod-b" aria-hidden="true"></span></div>
+    </article>
+    <article class="perg" id="mis02">
+      <button class="perg-cab" aria-expanded="false" aria-controls="papel02">
+        <span class="rod" aria-hidden="true"></span>
+        <span class="cinta"><span class="num">MISIÓN 02</span><b>Arreola 1</b><span class="badge b-demo">Demo</span><span class="abre" aria-hidden="true">Abrir</span></span>
+        <img class="sello" src="img/ninja/sello2.webp" alt="" aria-hidden="true">
+      </button>
+      <div class="rollo"><div class="papel" id="papel02"><div class="papel-in"><div class="contenido">
+      <div class="phone" aria-hidden="true"><div class="scr s-arr">
+        <div class="hd"><b>Arreola 1</b><small>Somos los #1</small></div>
+        <div class="arma">Arma tu comida: ¿cuántos son?</div>
+        <div class="it"><span></span><div>Pollo grande<small>Arroz, salsa y tortillas</small></div><i>+</i></div>
+        <div class="it"><span></span><div>Carne asada<small>Res, cerdo o mixta</small></div><i>+</i></div>
+        <div class="it"><span></span><div>Combo Arreola<small>Con papas adobadas</small></div><i>+</i></div>
+        <div class="bar"><span>Tu pedido · 3</span><span>Listo en 25 min</span></div>
+      </div></div>
+      <div>
+        <h3>Pollos y Carnes Asadas Arreola 1</h3>
+        <p class="giro">Pollos y carnes asadas · Colima</p>
+        <p class="reto"><b>La propuesta:</b> un menú con personalidad que ayuda a decidir. El cliente dice cuántos son y la página le recomienda qué pedir.</p>
+        <ul class="chips">
+          <li>"Arma tu comida"</li><li>Tiempo estimado de entrega</li><li>Sugerencias de antojo</li><li>Animaciones</li><li>Pedidos por WhatsApp</li>
+        </ul>
+        <div class="macts"><span class="nota">Demo disponible: pídemela y te la enseño.</span></div>
+      </div>
+    </div></div></div><span class="rod rod-b" aria-hidden="true"></span></div>
+    </article>
+    <article class="perg" id="mis03">
+      <button class="perg-cab" aria-expanded="false" aria-controls="papel03">
+        <span class="rod" aria-hidden="true"></span>
+        <span class="cinta"><span class="num">MISIÓN 03</span><b>Cremería Don Beto</b><span class="badge b-dev">En desarrollo</span><span class="abre" aria-hidden="true">Abrir</span></span>
+        <img class="sello" src="img/ninja/sello3.webp" alt="" aria-hidden="true">
+      </button>
+      <div class="rollo"><div class="papel" id="papel03"><div class="papel-in"><div class="contenido">
+      <div class="phone" aria-hidden="true"><div class="scr s-bet">
+        <div class="hd"><b>Cremería Don Beto</b><small>VENTA EN RUTA</small></div>
+        <div class="tabs"><span>Vender</span><span>Clientes</span><span>Ventas</span></div>
+        <div class="row"><div>Queso panela<small>1 kg</small></div><i>+</i></div>
+        <div class="row"><div>Crema<small>½ kg</small></div><i>+</i></div>
+        <div class="row"><div>Jamón de pierna<small>1 kg</small></div><i>+</i></div>
+        <div class="row"><div>Tienda La Esquina<small>Crédito</small></div><i>Saldo</i></div>
+        <div class="bar"><span>Imprimir ticket</span><span>🖨️</span></div>
+      </div></div>
+      <div>
+        <h3>Cremería Don Beto</h3>
+        <p class="giro">Venta de cremería en ruta</p>
+        <p class="reto"><b>El reto:</b> notas de remisión a mano, sin folio ni control de ventas, y clientes de crédito difíciles de seguir.</p>
+        <p class="reto"><b>La solución:</b> una app en el celular del vendedor para levantar pedidos tienda por tienda e imprimir el ticket al momento.</p>
+        <ul class="chips">
+          <li>Ticket impreso</li><li>Precios de mayoreo</li><li>Clientes de crédito y saldos</li><li>Más vendidos</li><li>Funciona sin internet</li>
+        </ul>
+      </div>
+    </div></div></div><span class="rod rod-b" aria-hidden="true"></span></div>
+    </article>
+  </div>
+</section>
+
+<section id="como" class="wrap" aria-labelledby="t-como">
+  <p class="kicker">CÓMO TRABAJO</p>
+  <h2 id="t-como">Simple, de principio a fin</h2>
+  <img class="deco-medio" src="img/ninja/perg-medio.webp" alt="" aria-hidden="true">
+  <img class="divk" src="img/ninja/kunai.webp" alt="" aria-hidden="true">
+  <div class="pasos">
+    <div class="paso"><img class="psk" src="img/ninja/sk4.webp" alt="" aria-hidden="true"><img class="pic" src="img/ninja/ic-chat.webp" alt="" aria-hidden="true"><h3>Platicamos tu negocio</h3><p>Me cuentas cómo trabajas hoy y qué te quita tiempo. Sin tecnicismos.</p></div>
+    <div class="paso"><img class="psk" src="img/ninja/sk4.webp" alt="" aria-hidden="true"><img class="pic" src="img/ninja/ic-prototipo.webp" alt="" aria-hidden="true"><h3>Te enseño un prototipo</h3><p>Ves cómo quedaría en tu celular antes de decidir, y lo ajustamos juntos.</p></div>
+    <div class="paso"><img class="psk" src="img/ninja/sk4.webp" alt="" aria-hidden="true"><img class="pic" src="img/ninja/ic-chart.webp" alt="" aria-hidden="true"><h3>Lo publicamos y te capacito</h3><p>Lo dejo funcionando, te enseño a usarlo y te acompaño después.</p></div>
+  </div>
+</section>
+
+<section id="quien" class="wrap" aria-labelledby="t-quien">
+  <p class="kicker">QUIÉN SOY</p>
+  <h2 id="t-quien">El ninja detrás del código</h2>
+  <img class="divk" src="img/ninja/kunai.webp" alt="" aria-hidden="true">
+  <div class="quien">
+    <div class="fuego chico"><span class="fl f1"></span><span class="fl f2"></span><span class="fl f3"></span><span class="fl f4"></span><span class="fl f5"></span><img class="av-q" src="img/avatar.webp" width="200" height="200" alt="Avatar de Shinobi Dev"></div>
+    <div>
+      <p class="cred">Ingeniero en Informática · Cédula profesional</p>
+      <p>Soy <b>Max Vargas</b>, <b>Ingeniero en Informática</b> con cédula profesional y desarrollador web.</p>
+      <p>Mi trayectoria como ingeniero de campo en soporte de cajeros automáticos e infraestructura bancaria me enseñó a trabajar con sistemas que no pueden fallar. Hoy uno esa formación y esa disciplina para crear páginas y apps que ayudan a los negocios locales a vender más: que funcionen, que sean fáciles de usar y que den resultados.</p>
+      <ul class="chips"><li>Desarrollo web</li><li>HTML, CSS y JavaScript</li><li>Python y SQL</li><li>Google Sheets y automatización</li><li>Redes e infraestructura</li><li>Soporte técnico</li></ul>
+    </div>
+  </div>
+</section>
+</main>
+
+<section class="contacto" id="contacto" aria-labelledby="t-con">
+  <img class="luna-c" src="img/ninja/luna2.webp" alt="" aria-hidden="true">
+  <div class="wrap">
+    <div>
+      <p class="kicker">CONTACTO</p>
+      <h2 id="t-con">¿Tu negocio es la próxima misión?</h2>
+      <p class="lead">Cuéntame qué necesitas. Cotiza sin compromiso.</p>
+      <p class="tel" id="telTxt" hidden>WhatsApp: <b>312 326 6510</b></p>
+      <div class="acts">
+        <a class="btn pri js-wa" id="wa" href="#" hidden>Escríbeme por WhatsApp</a>
+        <a class="btn sec js-mail" href="mailto:shinobi.devmx@gmail.com?subject=Cotiza%20sin%20compromiso&amp;body=Hola%20Max%2C%20vi%20tu%20p%C3%A1gina%20de%20Shinobi%20Dev%20y%20quiero%20cotizar%20sin%20compromiso%20un%20proyecto%20para%20mi%20negocio.">shinobi.devmx@gmail.com</a>
+      </div>
+    </div>
+    <div class="qr"><img class="qcol" src="img/ninja/perg-colgante.webp" alt="" aria-hidden="true"><img class="qcode" src="img/qr.webp" width="110" height="110" alt="Código QR de Shinobi Dev"><span>Escanea y compárteme</span></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="anio">2026</span> <b>Shinobi Dev</b> · por Max Vargas</span>
+    <button class="term-btn" id="termBtn" aria-haspopup="dialog">&gt;_ modo terminal</button>
+  </div>
+</footer>
+
+<a class="flota js-wa" id="waFlota" href="#" hidden aria-label="Cotiza sin compromiso por WhatsApp"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg><span>Cotiza</span></a>
+
+<div class="fx" id="fx" hidden aria-hidden="true"></div>
+
+<div class="term" id="term" hidden role="dialog" aria-modal="true" aria-label="Modo terminal">
+  <div class="win">
+    <div class="bar"><i></i><i></i><i></i><span>shinobi@dev: ~</span><button id="termX" aria-label="Cerrar terminal">×</button></div>
+    <div class="out" id="out" aria-live="polite"></div>
+    <form id="tf" autocomplete="off"><label for="tin">&gt;_</label><input id="tin" spellcheck="false" autocapitalize="off" aria-label="Escribe un comando"></form>
+  </div>
+</div>
+
+<script>
+// Tu número de WhatsApp (10 dígitos, solo números). Al ponerlo aparece el botón.
+const WHATSAPP='3123266510';
+const WA_TXT='Hola Max, vi tu página de Shinobi Dev y quiero cotizar sin compromiso un proyecto para mi negocio.';
+const WA_URL=WHATSAPP?'https://wa.me/52'+WHATSAPP+'?text='+encodeURIComponent(WA_TXT):'';
+if(WHATSAPP){document.querySelectorAll('.js-wa').forEach(a=>{a.href=WA_URL;a.hidden=false});document.getElementById('telTxt').hidden=false}
+document.getElementById('anio').textContent=new Date().getFullYear();
+
+// ===== Modo terminal (easter egg) =====
+const term=document.getElementById('term'),out=document.getElementById('out'),tin=document.getElementById('tin');
+const MIS={
+  colorado:'<span class="ok">[EN USO]</span> Pollos Colorado — pollería al carbón, Colima\n  Menú con pedidos por WhatsApp, horarios, agotados desde Google Sheets y caja en tablet.\n  <a href="https://polloscolorado.pages.dev" target="_blank" rel="noopener">polloscolorado.pages.dev</a>',
+  arreola:'<span class="c">[DEMO]</span> Arreola 1 — pollos y carnes asadas\n  "Arma tu comida", tiempos de entrega y sugerencias de antojo.',
+  beto:'<span class="c">[EN DESARROLLO]</span> Cremería Don Beto — venta en ruta\n  Pedidos por tienda, ticket impreso, crédito y saldos, funciona sin internet.'
+};
+const CMD={
+  help:()=>'Comandos: <span class="c">whoami</span>, <span class="c">lanzar</span>, <span class="c">ls misiones</span>, <span class="c">cat colorado</span> | <span class="c">arreola</span> | <span class="c">beto</span>, <span class="c">servicios</span>, <span class="c">contacto</span>, <span class="c">clear</span>, <span class="c">exit</span>',
+  whoami:()=>'Max Vargas — Ingeniero en Informática (cédula profesional) y desarrollador web.\nExperiencia en infraestructura bancaria y soporte de cajeros automáticos.\nShinobi Dev: incrementa el nivel de tu negocio.',
+  'ls misiones':()=>'01  colorado   <span class="ok">en uso</span>\n02  arreola    demo\n03  beto       en desarrollo\n\nUsa <span class="c">cat nombre</span> para ver detalles.',
+  ls:()=>CMD['ls misiones'](),
+  servicios:()=>'- Menús con pedidos por WhatsApp\n- Apps para vender y cobrar\n- Soluciones a la medida',
+  contacto:()=>'Correo: <a href="mailto:shinobi.devmx@gmail.com">shinobi.devmx@gmail.com</a>'+(WHATSAPP?'\nWhatsApp: <a href="'+WA_URL+'" target="_blank" rel="noopener">312 326 6510</a>':''),
+  lanzar:()=>{setTimeout(lanzar,50);return '¡Shuriken lanzado! 🌀'},
+  sudo:()=>'Buen intento. Un shinobi no necesita permisos de administrador. 🥷',
+  '619':()=>'👀 Easter egg encontrado. Saludos, ninja.'
+};
+function esc(s){return s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+function print(html){out.insertAdjacentHTML('beforeend',html+'\n');out.scrollTop=out.scrollHeight}
+function run(raw){
+  const c=raw.trim().toLowerCase().replace(/\s+/g,' ');
+  print('<span class="c">&gt;_</span> '+esc(raw));
+  if(!c)return;
+  if(c==='clear'){out.innerHTML='';return}
+  if(c==='exit'){cerrarTerm();return}
+  if(c.startsWith('cat ')){const k=c.slice(4);print(MIS[k]||'No existe la misión "'+esc(k)+'". Prueba con colorado, arreola o beto.');return}
+  print(CMD[c]?CMD[c]():'Comando no encontrado: '+esc(c)+'. Escribe <span class="c">help</span>.');
+}
+let ultimo=null;
+function ajusta(){const v=window.visualViewport;if(!v||term.hidden)return;term.style.top=v.offsetTop+'px';term.style.height=v.height+'px'}
+if(window.visualViewport){visualViewport.addEventListener('resize',ajusta);visualViewport.addEventListener('scroll',ajusta)}
+function abrirTerm(){ultimo=document.activeElement;term.hidden=false;document.documentElement.classList.add('bloq');ajusta();if(!out.innerHTML)print('Shinobi Dev OS v1.0 — escribe <span class="c">help</span> para empezar.');tin.focus({preventScroll:true})}
+function cerrarTerm(){term.hidden=true;document.documentElement.classList.remove('bloq');term.style.top='';term.style.height='';if(ultimo)ultimo.focus({preventScroll:true})}
+function proyectil(tipo,y,delay,dir){
+  const k=tipo==='kunai';const im=new Image();im.className='vuela';im.alt='';
+  im.src=k?'img/ninja/kunai.webp':['img/ninja/sk4.webp','img/ninja/sk6.webp','img/ninja/sk8.webp','img/ninja/sk-azul.webp'][Math.floor(Math.random()*4)];
+  const W=k?170:70;im.style.width=W+'px';document.body.appendChild(im);
+  const w=window.innerWidth,h=window.innerHeight,x0=dir>0?-W-20:w+20,x1=dir>0?w+20:-W-20,y0=h*y,y1=y0-h*.12*dir;
+  const r0=k?(dir>0?-6:186):0,r1=k?(dir>0?6:174):1440*dir;
+  im.animate([{transform:`translate(${x0}px,${y0}px) rotate(${r0}deg)`},{transform:`translate(${x1}px,${y1}px) rotate(${r1}deg)`}],{duration:k?800:1200,delay,easing:'cubic-bezier(.25,.1,.25,1)',fill:'backwards'}).onfinish=()=>im.remove();
+}
+
+function lanzar(){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  proyectil('shuriken',.25,0,1);proyectil('kunai',.45,180,-1);proyectil('shuriken',.62,320,1);proyectil('shuriken',.8,460,-1);proyectil('kunai',.15,560,1);
+}
+
+document.getElementById('termBtn').onclick=abrirTerm;
+document.getElementById('termX').onclick=cerrarTerm;
+term.addEventListener('click',e=>{if(e.target===term)cerrarTerm()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!term.hidden)cerrarTerm()});
+document.getElementById('tf').addEventListener('submit',e=>{e.preventDefault();run(tin.value);tin.value=''});
+
+// ===== Texto que se escribe en la portada =====
+(function(){const el=document.getElementById('typ');if(!el)return;const frases=['menús con pedidos por WhatsApp','apps para vender en ruta','cajas para tu mostrador','sistemas a la medida'];
+if(matchMedia('(prefers-reduced-motion: reduce)').matches){el.textContent=frases[0];return}
+let i=0,j=0,borra=false;(function paso(){const f=frases[i];el.textContent=f.slice(0,j);if(!borra&&j<f.length){j++;setTimeout(paso,55)}else if(!borra){borra=true;setTimeout(paso,1600)}else if(j>0){j--;setTimeout(paso,25)}else{borra=false;i=(i+1)%frases.length;setTimeout(paso,300)}})();})();
+
+// ===== Pergaminos =====
+const reducido=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function abrirPerg(pg,abrir){
+  const b=pg.querySelector('.perg-cab'),pa=pg.querySelector('.papel');
+  if(pg.classList.contains('abierto')===abrir)return;
+  b.setAttribute('aria-expanded',abrir);
+  if(reducido){pg.classList.toggle('abierto',abrir);pa.style.height=abrir?'auto':'0px';return}
+  clearTimeout(pg._t);pg.classList.remove('asienta');pg.classList.add('moviendo');
+  const dur=parseFloat(getComputedStyle(pg).getPropertyValue('--dur'))*1000||1100;
+  if(abrir){pa.style.height='0px';pg.classList.add('abierto');requestAnimationFrame(()=>{pa.style.height=pa.scrollHeight+'px'})}
+  else{pa.style.height=pa.scrollHeight+'px';requestAnimationFrame(()=>{requestAnimationFrame(()=>{pg.classList.remove('abierto');pa.style.height='0px'})})}
+  pg._t=setTimeout(()=>{pg.classList.remove('moviendo');if(pg.classList.contains('abierto')){pa.style.height='auto';pg.classList.add('asienta')}},dur+30);
+}
+document.querySelectorAll('.perg').forEach(pg=>{
+  const pa=pg.querySelector('.papel');
+  pg.querySelector('.perg-cab').addEventListener('click',()=>abrirPerg(pg,!pg.classList.contains('abierto')));
+});
+if('IntersectionObserver' in window&&!reducido){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){abrirPerg(e.target,true);io.unobserve(e.target)}}),{threshold:.9,rootMargin:'0px 0px -12% 0px'});document.querySelectorAll('.perg').forEach(pg=>io.observe(pg))}
+else document.querySelectorAll('.perg').forEach(pg=>abrirPerg(pg,true));
+
+// ===== Habilidades: entrada ninja al verlas =====
+(function(){const q=document.querySelector('.quien');if(!q)return;if(!('IntersectionObserver' in window)||reducido){q.classList.add('ver');return}
+const io=new IntersectionObserver(e=>{if(e[0].isIntersecting){q.classList.add('ver');io.disconnect()}},{threshold:.35});io.observe(q)})();
+
+
+// ===== Easter egg: los stickers se asoman de vez en cuando =====
+(function(){
+  if(reducido)return;
+  const capa=document.getElementById('asomos');const fotos=['img/stk1.webp','img/stk2.webp','img/stk3.webp','img/stk4.webp','img/stk5.webp'];
+  let vistos=0,ocupado=false,ultimo=-1;
+  function asomar(){
+    const sy=window.scrollY||document.documentElement.scrollTop||document.body.scrollTop||0;
+    if(ocupado||document.hidden||!term.hidden||sy<120||vistos>=10)return programar();
+    ocupado=true;vistos++;
+    let i;do{i=Math.floor(Math.random()*fotos.length)}while(i===ultimo&&fotos.length>1);ultimo=i;
+    const im=new Image();im.className='asoma';im.alt='';im.src=fotos[i];
+    const lado=['izq','der','abajo'][Math.floor(Math.random()*3)],w=Math.min(130,window.innerWidth*.3);
+    let fuera,dentro;
+    if(lado==='izq'){im.style.left='0';im.style.top=(22+Math.random()*45)+'%';fuera='translateX(-110%) rotate(-18deg)';dentro='translateX(-38%) rotate(14deg)'}
+    else if(lado==='der'){im.style.right='0';im.style.top=(22+Math.random()*45)+'%';fuera='translateX(110%) rotate(18deg)';dentro='translateX(38%) rotate(-14deg)'}
+    else{im.style.left=(12+Math.random()*60)+'%';im.style.bottom='0';fuera='translateY(110%) rotate(0deg)';dentro='translateY(42%) rotate('+(Math.random()*16-8)+'deg)'}
+    im.style.transform=fuera;capa.appendChild(im);
+    (im.decode?im.decode():Promise.resolve()).catch(()=>{}).then(()=>{
+      const a=im.animate([{transform:fuera},{transform:dentro,offset:.15},{transform:dentro,offset:.82},{transform:fuera}],{duration:5200,easing:'cubic-bezier(.4,0,.2,1)'});
+      im.onclick=()=>{a.cancel();im.animate([{transform:dentro},{transform:fuera.replace(/rotate\([^)]*\)/,'rotate(540deg)')}],{duration:500,easing:'ease-in'}).onfinish=()=>{im.remove();ocupado=false;programar()}};
+      a.onfinish=()=>{im.remove();ocupado=false;programar()};
+    });
+  }
+  function programar(){setTimeout(asomar,8000+Math.random()*6000)}
+  setTimeout(asomar,3500);
+})();
+
+// ===== Botón flotante (aparece al pasar la portada) =====
+(function(){const f=document.getElementById('waFlota'),hero=document.getElementById('inicio'),con=document.getElementById('contacto');if(!f||f.hidden||!('IntersectionObserver' in window))return;let enHero=true,enCon=false;const upd=()=>f.classList.toggle('ver',!enHero&&!enCon);
+new IntersectionObserver(e=>{enHero=e[0].isIntersecting;upd()}).observe(hero);new IntersectionObserver(e=>{enCon=e[0].isIntersecting;upd()}).observe(con);})();
+
+// ===== Animaciones de contacto =====
+const fx=document.getElementById('fx');
+function limpiaFx(){fx.innerHTML='';fx.hidden=true}
+function bombaHumo(destino){
+  fx.hidden=false;fx.style.setProperty('--fxd','3.3s');fx.style.setProperty('--nd','2.6s');fx.innerHTML='<div class="velo"></div>';
+  const cx=window.innerWidth/2,cy=window.innerHeight*.42;
+  const b=new Image();b.src='img/ninja/bomba.webp';b.className='bombafx';fx.appendChild(b);
+  b.animate([{transform:`translate(${cx-40}px,-120px) rotate(-40deg)`},{transform:`translate(${cx-40}px,${cy-40}px) rotate(20deg)`}],{duration:450,easing:'cubic-bezier(.5,0,.9,.5)',fill:'forwards'}).onfinish=()=>{
+    b.animate([{transform:`translate(${cx-40}px,${cy-40}px) scale(1)`,opacity:1},{transform:`translate(${cx-40}px,${cy-40}px) scale(1.6)`,opacity:0}],{duration:200,fill:'forwards'});
+    for(let n=0;n<14;n++){const h=new Image();h.src='img/ninja/humo.webp';h.className='humofx';const sz=180+Math.random()*220;h.style.width=sz+'px';
+      const x=cx-sz/2+(Math.random()-.5)*260,y=cy-sz/2+(Math.random()-.5)*170,r=Math.random()*60-30,fl=Math.random()<.5?-1:1;
+      h.style.left=x+'px';h.style.top=y+'px';fx.appendChild(h);
+      h.animate([{transform:`scale(.15) rotate(${r}deg) scaleX(${fl})`,opacity:0},{transform:`scale(1) rotate(${r+15}deg) scaleX(${fl})`,opacity:.95,offset:.3},{transform:`scale(1.25) rotate(${r+25}deg) scaleX(${fl})`,opacity:.9,offset:.75},{transform:`scale(1.45) rotate(${r+35}deg) scaleX(${fl})`,opacity:0}],{duration:2400,delay:n*90,easing:'ease-out',fill:'both'})}
+    const im=document.createElement('img');im.className='ninjafx';im.src=document.querySelector('.nav .mini img').src;im.alt='';fx.appendChild(im);
+    const m=document.createElement('div');m.className='msg';m.textContent='¡Técnica de transporte: WhatsApp!';fx.appendChild(m);
+  };
+  setTimeout(()=>{window.location.href=destino},2900);setTimeout(()=>{limpiaFx();fx.style.cssText=''},3500);
+}
+function mensajero(destino){
+  fx.hidden=false;fx.style.setProperty('--fxd','1.5s');fx.innerHTML='<div class="velo"></div>';
+  const k=new Image();k.src='img/ninja/kunai-msg.webp';k.className='kmsg';fx.appendChild(k);
+  const m=document.createElement('div');m.className='msg';m.textContent='Enviando mensajero ninja…';fx.appendChild(m);
+  const w=window.innerWidth,h=window.innerHeight;
+  k.animate([{transform:`translate(-300px,${h*.4}px) rotate(-12deg)`},{transform:`translate(${w/2-130}px,${h*.4}px) rotate(0deg)`,offset:.55},{transform:`translate(${w/2-120}px,${h*.4-6}px) rotate(3deg)`}],{duration:800,easing:'cubic-bezier(.2,.8,.3,1)',fill:'forwards'});
+  setTimeout(()=>{window.location.href=destino},1200);setTimeout(()=>{limpiaFx();fx.style.cssText=''},1700);
+}
+
+document.querySelectorAll('.js-wa').forEach(a=>a.addEventListener('click',e=>{if(!WA_URL||reducido)return;e.preventDefault();bombaHumo(WA_URL)}));
+document.querySelectorAll('.js-mail').forEach(a=>a.addEventListener('click',e=>{if(reducido)return;e.preventDefault();mensajero(a.href)}));
+</script>
+<div class="asomos" id="asomos" aria-hidden="true"></div>
+</body>
+</html>
