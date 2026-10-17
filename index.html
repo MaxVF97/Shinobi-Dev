@@ -29,7 +29,7 @@ a{color:inherit}
 .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
 h1,h2,h3{font-family:var(--wm);line-height:1.1;margin:0}
 h2{font-size:clamp(28px,5vw,40px)}
-.kicker{display:inline-block;font-family:var(--wm);font-weight:700;color:#F3E6C8;letter-spacing:.1em;font-size:13px;margin:0 0 12px;padding:8px 20px 7px;background:url(img/ninja/tabla.webp) center/100% 100% no-repeat;text-shadow:0 1px 0 rgba(0,0,0,.6)}
+.kicker{display:inline-block;font-family:var(--wm);font-weight:700;color:#F3E6C8;letter-spacing:.1em;font-size:13px;margin:0 0 12px;padding:8px 20px 7px;background:url(tabla.webp) center/100% 100% no-repeat;text-shadow:0 1px 0 rgba(0,0,0,.6)}
 .kicker::before{color:#7FB8FF}
 .kicker::before{content:">_ "}
 .lead{color:var(--sub);max-width:620px;margin:10px 0 0;font-size:17px}
@@ -82,12 +82,12 @@ section{padding:80px 0 0;position:relative}
 /* misiones: pergaminos */
 .misiones{display:flex;flex-direction:column;gap:26px;margin-top:34px}
 .perg{position:relative;max-width:880px;margin:0 auto;width:100%;padding:0 30px;--dur:1.5s;--ease:cubic-bezier(.45,.05,.3,1)}
-.rod{display:block;position:relative;height:28px;margin:0 -18px;border-style:solid;border-width:0 36px;border-image:url(img/ninja/rod.webp) 0 80 fill / 0 36px stretch;filter:drop-shadow(0 5px 6px rgba(0,0,0,.4));z-index:2}
+.rod{display:block;position:relative;height:28px;margin:0 -18px;border-style:solid;border-width:0 36px;border-image:url(rod.webp) 0 80 fill / 0 36px stretch;filter:drop-shadow(0 5px 6px rgba(0,0,0,.4));z-index:2}
 .perg.anim .rod-b{animation:rueda var(--dur) var(--ease)}
 @keyframes rueda{from{background-position:0 0,0 0}to{background-position:-170px 0,0 0}}
 .perg-cab{all:unset;box-sizing:border-box;display:block;width:100%;cursor:pointer;position:relative}
 .perg-cab:focus-visible .cinta{outline:3px solid var(--azul);outline-offset:-3px}
-.cinta{display:flex;align-items:center;gap:8px 12px;flex-wrap:wrap;width:100%;padding:14px 62px 14px 20px;background:url(img/ninja/papel.webp) center/cover;color:#2B2016;box-shadow:inset 0 10px 12px -10px rgba(60,35,10,.5)}
+.cinta{display:flex;align-items:center;gap:8px 12px;flex-wrap:wrap;width:100%;padding:14px 62px 14px 20px;background:url(papel.webp) center/cover;color:#2B2016;box-shadow:inset 0 10px 12px -10px rgba(60,35,10,.5)}
 .cinta .num{font-family:var(--wm);font-weight:700;letter-spacing:.1em;font-size:12px;color:#7A5A34}
 .cinta b{font-family:var(--wm);font-size:clamp(19px,2.8vw,24px);line-height:1.1}
 .cinta .abre{margin-left:auto;font-weight:800;font-size:12px;color:#7A5A34;display:flex;align-items:center;gap:6px}
@@ -110,7 +110,7 @@ section{padding:80px 0 0;position:relative}
 @keyframes asienta{0%{transform:translateY(0)}35%{transform:translateY(5px)}65%{transform:translateY(-2px)}100%{transform:none}}
 
 .rod-b{margin-top:-2px}
-.contenido{position:relative;display:grid;grid-template-columns:210px minmax(0,1fr);gap:26px;align-items:center;padding:20px 24px 24px;background:url(img/ninja/papel.webp) center/cover;color:#2B2016;box-shadow:inset 12px 0 16px -14px rgba(60,35,10,.5),inset -12px 0 16px -14px rgba(60,35,10,.5),inset 0 -16px 16px -14px rgba(60,35,10,.55);}
+.contenido{position:relative;display:grid;grid-template-columns:210px minmax(0,1fr);gap:26px;align-items:center;padding:20px 24px 24px;background:url(papel.webp) center/cover;color:#2B2016;box-shadow:inset 12px 0 16px -14px rgba(60,35,10,.5),inset -12px 0 16px -14px rgba(60,35,10,.5),inset 0 -16px 16px -14px rgba(60,35,10,.55);}
 .contenido .giro{color:#6B5233;font-size:15px}
 .contenido .reto{margin:10px 0 0;font-size:15px;line-height:1.55}
 .contenido .reto b{font-family:var(--wm)}
@@ -196,7 +196,7 @@ section{padding:80px 0 0;position:relative}
 .contacto .lead{color:#C3CAD0}
 .contacto .acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
 .contacto .btn.sec{color:#E8ECF1}
-.contacto::before{content:"";position:absolute;inset:0;background:url(img/ninja/patron.webp) center/560px auto repeat;mix-blend-mode:screen;opacity:.3;pointer-events:none}
+.contacto::before{content:"";position:absolute;inset:0;background:url(patron.webp) center/560px auto repeat;mix-blend-mode:screen;opacity:.3;pointer-events:none}
 .luna-c{position:absolute;right:-60px;top:-30px;width:380px;mix-blend-mode:screen;opacity:.7;pointer-events:none}
 .contacto .wrap{position:relative;z-index:1}
 .tel{margin:10px 0 0;color:#C3CAD0}
@@ -292,7 +292,7 @@ html.bloq,html.bloq body{overflow:hidden}
 
 /* ===== Escenografía ninja (portada) ===== */
 .hero{background:radial-gradient(ellipse at 50% 30%,#0F1D33 0%,var(--negro) 64%)}
-.hero::before{content:"";position:absolute;inset:0;background:url(img/ninja/patron.webp) center/560px auto repeat;mix-blend-mode:screen;opacity:.35;pointer-events:none}
+.hero::before{content:"";position:absolute;inset:0;background:url(patron.webp) center/560px auto repeat;mix-blend-mode:screen;opacity:.35;pointer-events:none}
 .estrellas{position:absolute;inset:0;pointer-events:none;overflow:hidden}
 .estrellas img{position:absolute;max-width:none}
 .luna{left:50%;top:6%;width:min(760px,150vw);transform:translateX(-50%);mix-blend-mode:screen;opacity:.85}
@@ -308,7 +308,7 @@ html.bloq,html.bloq body{overflow:hidden}
 .kn{width:150px;opacity:.7;filter:drop-shadow(0 4px 8px rgba(0,0,0,.5))}
 .kn.k1{top:48%;left:3%;transform:rotate(-26deg)}
 .kn.k2{top:13%;right:3%;transform:rotate(154deg)}
-.bambu{position:absolute;left:0;right:0;bottom:0;height:110px;background:url(img/ninja/bambu.webp) left bottom/auto 110px repeat-x;opacity:.95;pointer-events:none}
+.bambu{position:absolute;left:0;right:0;bottom:0;height:110px;background:url(bambu.webp) left bottom/auto 110px repeat-x;opacity:.95;pointer-events:none}
 .hero .wrap{position:relative;z-index:1}
 @media (max-width:760px){.kn{display:none}.sk.s1{left:-10px}.sk.s3{right:-12px}.bambu{height:80px;background-size:auto 80px}}
 @keyframes gira{to{transform:rotate(360deg)}}
@@ -333,7 +333,7 @@ html.bloq,html.bloq body{overflow:hidden}
 </svg>
 <nav class="nav" aria-label="Principal">
   <div class="wrap">
-    <a class="mini" href="#inicio"><img src="img/avatar.webp" alt="" width="34" height="34">Shinobi Dev</a>
+    <a class="mini" href="#inicio"><img src="avatar.webp" alt="" width="34" height="34">Shinobi Dev</a>
     <ul>
       <li><a href="#servicios">Servicios</a></li>
       <li><a href="#misiones">Misiones</a></li>
@@ -346,15 +346,15 @@ html.bloq,html.bloq body{overflow:hidden}
 
 <header class="hero" id="inicio">
   <div class="estrellas" aria-hidden="true">
-    <img class="luna" src="img/ninja/luna.webp" alt="">
-    <img class="nube n1" src="img/ninja/nube.webp" alt=""><img class="nube n2" src="img/ninja/nube.webp" alt="">
-    <img class="sk s1" src="img/ninja/sk4.webp" alt=""><img class="sk s2" src="img/ninja/sk6.webp" alt=""><img class="sk s3" src="img/ninja/sk-azul.webp" alt=""><img class="sk s4" src="img/ninja/sk8.webp" alt="">
-    <img class="kn k1" src="img/ninja/kunai.webp" alt=""><img class="kn k2" src="img/ninja/kunai-tag.webp" alt="">
+    <img class="luna" src="luna.webp" alt="">
+    <img class="nube n1" src="nube.webp" alt=""><img class="nube n2" src="nube.webp" alt="">
+    <img class="sk s1" src="sk4.webp" alt=""><img class="sk s2" src="sk6.webp" alt=""><img class="sk s3" src="sk-azul.webp" alt=""><img class="sk s4" src="sk8.webp" alt="">
+    <img class="kn k1" src="kunai.webp" alt=""><img class="kn k2" src="kunai-tag.webp" alt="">
   </div>
   <div class="bambu" aria-hidden="true"></div>
   <div class="wrap">
-    <div class="fuego grande"><span class="fl f1"></span><span class="fl f2"></span><span class="fl f3"></span><span class="fl f4"></span><span class="fl f5"></span><img class="ninja" src="img/ninja.webp" width="280" height="280" alt="Logo de Shinobi Dev: ninja encapuchado con aura azul"></div>
-    <h1><img class="logo" src="img/logotipo.svg" alt="Shinobi Dev"></h1>
+    <div class="fuego grande"><span class="fl f1"></span><span class="fl f2"></span><span class="fl f3"></span><span class="fl f4"></span><span class="fl f5"></span><img class="ninja" src="ninja.webp" width="280" height="280" alt="Logo de Shinobi Dev: ninja encapuchado con aura azul"></div>
+    <h1><img class="logo" src="logotipo.svg" alt="Shinobi Dev"></h1>
     <p class="por">por Max Vargas</p>
     <p class="tag">Incrementa el nivel de tu negocio</p>
     <p class="typer" aria-hidden="true"><span class="pr">&gt;_</span> <span id="typ"></span><span class="car"></span></p>
@@ -369,21 +369,21 @@ html.bloq,html.bloq body{overflow:hidden}
 <section id="servicios" class="wrap" aria-labelledby="t-serv">
   <p class="kicker">SERVICIOS</p>
   <h2 id="t-serv">Tecnología a la medida de tu negocio</h2>
-  <img class="divk" src="img/ninja/kunai.webp" alt="" aria-hidden="true">
+  <img class="divk" src="kunai.webp" alt="" aria-hidden="true">
   <p class="lead">Herramientas sencillas que tus clientes y tu equipo usan desde el celular, sin instalar nada.</p>
   <div class="grid3">
     <article class="serv">
-      <img class="ic-img" src="img/ninja/ic-menu.webp" alt="" aria-hidden="true" width="72" height="74">
+      <img class="ic-img" src="ic-menu.webp" alt="" aria-hidden="true" width="72" height="74">
       <h3>Menús con pedidos por WhatsApp</h3>
       <p>Tu menú en línea con carrito, horarios y productos agotados. El pedido te llega completo y ordenado a tu WhatsApp.</p>
     </article>
     <article class="serv">
-      <img class="ic-img" src="img/ninja/ic-caja.webp" alt="" aria-hidden="true" width="72" height="74">
+      <img class="ic-img" src="ic-caja.webp" alt="" aria-hidden="true" width="72" height="74">
       <h3>Apps para vender y cobrar</h3>
       <p>Caja para tu mostrador, ventas en ruta, tickets impresos, clientes de crédito y registro de ventas. Funcionan aunque falle el internet.</p>
     </article>
     <article class="serv">
-      <img class="ic-img" src="img/ninja/ic-laptop.webp" alt="" aria-hidden="true" width="72" height="74">
+      <img class="ic-img" src="ic-laptop.webp" alt="" aria-hidden="true" width="72" height="74">
       <h3>Soluciones a la medida</h3>
       <p>Automatiza lo que hoy haces a mano: reportes, control desde Google Sheets, catálogos con QR y lo que tu negocio necesite.</p>
     </article>
@@ -393,24 +393,24 @@ html.bloq,html.bloq body{overflow:hidden}
 <section id="misiones" class="wrap" aria-labelledby="t-mis">
   <p class="kicker">MISIONES</p>
   <h2 id="t-mis">Proyectos realizados</h2>
-  <img class="deco-perg" src="img/ninja/perg-vertical.webp" alt="" aria-hidden="true">
-  <img class="divk" src="img/ninja/kunai.webp" alt="" aria-hidden="true">
+  <img class="deco-perg" src="perg-vertical.webp" alt="" aria-hidden="true">
+  <img class="divk" src="kunai.webp" alt="" aria-hidden="true">
   <p class="lead">Cada negocio es una misión distinta. Abre los pergaminos para ver cómo resolví cada una.</p>
   <div class="misiones">
     <article class="perg" id="mis01">
       <button class="perg-cab" aria-expanded="false" aria-controls="papel01">
         <span class="rod" aria-hidden="true"></span>
         <span class="cinta"><span class="num">MISIÓN 01</span><b>Pollos Colorado</b><span class="badge b-uso">En uso</span><span class="abre" aria-hidden="true">Abrir</span></span>
-        <img class="sello" src="img/ninja/sello1.webp" alt="" aria-hidden="true">
+        <img class="sello" src="sello1.webp" alt="" aria-hidden="true">
       </button>
       <div class="rollo"><div class="papel" id="papel01"><div class="papel-in"><div class="contenido">
       <div class="phone" aria-hidden="true"><div class="scr s-col">
-        <div class="port" style="background-image:url(img/col-portada.webp)"></div>
-        <div class="hd"><img src="img/col-logo.webp" alt=""><div><b>POLLOS COLORADO</b><small>AL CARBÓN</small></div></div>
+        <div class="port" style="background-image:url(col-portada.webp)"></div>
+        <div class="hd"><img src="col-logo.webp" alt=""><div><b>POLLOS COLORADO</b><small>AL CARBÓN</small></div></div>
         <div class="tabs"><span>Pollos</span><span>Costillas</span><span>Extras</span></div>
-        <div class="it"><img src="img/col-entero.webp" alt=""><div>Pollo entero<small>Con tortillas y salsa</small></div><i>+</i></div>
-        <div class="it"><img src="img/col-costillas.webp" alt=""><div>Costillas<small>Orden completa</small></div><i>+</i></div>
-        <div class="it"><img src="img/col-papas.webp" alt=""><div>Papas<small>Extra</small></div><i>+</i></div>
+        <div class="it"><img src="col-entero.webp" alt=""><div>Pollo entero<small>Con tortillas y salsa</small></div><i>+</i></div>
+        <div class="it"><img src="col-costillas.webp" alt=""><div>Costillas<small>Orden completa</small></div><i>+</i></div>
+        <div class="it"><img src="col-papas.webp" alt=""><div>Papas<small>Extra</small></div><i>+</i></div>
         <div class="bar"><span>Ver pedido · 2</span><span>Enviar</span></div>
       </div></div>
       <div>
@@ -429,7 +429,7 @@ html.bloq,html.bloq body{overflow:hidden}
       <button class="perg-cab" aria-expanded="false" aria-controls="papel02">
         <span class="rod" aria-hidden="true"></span>
         <span class="cinta"><span class="num">MISIÓN 02</span><b>Arreola 1</b><span class="badge b-demo">Demo</span><span class="abre" aria-hidden="true">Abrir</span></span>
-        <img class="sello" src="img/ninja/sello2.webp" alt="" aria-hidden="true">
+        <img class="sello" src="sello2.webp" alt="" aria-hidden="true">
       </button>
       <div class="rollo"><div class="papel" id="papel02"><div class="papel-in"><div class="contenido">
       <div class="phone" aria-hidden="true"><div class="scr s-arr">
@@ -455,7 +455,7 @@ html.bloq,html.bloq body{overflow:hidden}
       <button class="perg-cab" aria-expanded="false" aria-controls="papel03">
         <span class="rod" aria-hidden="true"></span>
         <span class="cinta"><span class="num">MISIÓN 03</span><b>Cremería Don Beto</b><span class="badge b-dev">En desarrollo</span><span class="abre" aria-hidden="true">Abrir</span></span>
-        <img class="sello" src="img/ninja/sello3.webp" alt="" aria-hidden="true">
+        <img class="sello" src="sello3.webp" alt="" aria-hidden="true">
       </button>
       <div class="rollo"><div class="papel" id="papel03"><div class="papel-in"><div class="contenido">
       <div class="phone" aria-hidden="true"><div class="scr s-bet">
@@ -484,21 +484,21 @@ html.bloq,html.bloq body{overflow:hidden}
 <section id="como" class="wrap" aria-labelledby="t-como">
   <p class="kicker">CÓMO TRABAJO</p>
   <h2 id="t-como">Simple, de principio a fin</h2>
-  <img class="deco-medio" src="img/ninja/perg-medio.webp" alt="" aria-hidden="true">
-  <img class="divk" src="img/ninja/kunai.webp" alt="" aria-hidden="true">
+  <img class="deco-medio" src="perg-medio.webp" alt="" aria-hidden="true">
+  <img class="divk" src="kunai.webp" alt="" aria-hidden="true">
   <div class="pasos">
-    <div class="paso"><img class="psk" src="img/ninja/sk4.webp" alt="" aria-hidden="true"><img class="pic" src="img/ninja/ic-chat.webp" alt="" aria-hidden="true"><h3>Platicamos tu negocio</h3><p>Me cuentas cómo trabajas hoy y qué te quita tiempo. Sin tecnicismos.</p></div>
-    <div class="paso"><img class="psk" src="img/ninja/sk4.webp" alt="" aria-hidden="true"><img class="pic" src="img/ninja/ic-prototipo.webp" alt="" aria-hidden="true"><h3>Te enseño un prototipo</h3><p>Ves cómo quedaría en tu celular antes de decidir, y lo ajustamos juntos.</p></div>
-    <div class="paso"><img class="psk" src="img/ninja/sk4.webp" alt="" aria-hidden="true"><img class="pic" src="img/ninja/ic-chart.webp" alt="" aria-hidden="true"><h3>Lo publicamos y te capacito</h3><p>Lo dejo funcionando, te enseño a usarlo y te acompaño después.</p></div>
+    <div class="paso"><img class="psk" src="sk4.webp" alt="" aria-hidden="true"><img class="pic" src="ic-chat.webp" alt="" aria-hidden="true"><h3>Platicamos tu negocio</h3><p>Me cuentas cómo trabajas hoy y qué te quita tiempo. Sin tecnicismos.</p></div>
+    <div class="paso"><img class="psk" src="sk4.webp" alt="" aria-hidden="true"><img class="pic" src="ic-prototipo.webp" alt="" aria-hidden="true"><h3>Te enseño un prototipo</h3><p>Ves cómo quedaría en tu celular antes de decidir, y lo ajustamos juntos.</p></div>
+    <div class="paso"><img class="psk" src="sk4.webp" alt="" aria-hidden="true"><img class="pic" src="ic-chart.webp" alt="" aria-hidden="true"><h3>Lo publicamos y te capacito</h3><p>Lo dejo funcionando, te enseño a usarlo y te acompaño después.</p></div>
   </div>
 </section>
 
 <section id="quien" class="wrap" aria-labelledby="t-quien">
   <p class="kicker">QUIÉN SOY</p>
   <h2 id="t-quien">El ninja detrás del código</h2>
-  <img class="divk" src="img/ninja/kunai.webp" alt="" aria-hidden="true">
+  <img class="divk" src="kunai.webp" alt="" aria-hidden="true">
   <div class="quien">
-    <div class="fuego chico"><span class="fl f1"></span><span class="fl f2"></span><span class="fl f3"></span><span class="fl f4"></span><span class="fl f5"></span><img class="av-q" src="img/avatar.webp" width="200" height="200" alt="Avatar de Shinobi Dev"></div>
+    <div class="fuego chico"><span class="fl f1"></span><span class="fl f2"></span><span class="fl f3"></span><span class="fl f4"></span><span class="fl f5"></span><img class="av-q" src="avatar.webp" width="200" height="200" alt="Avatar de Shinobi Dev"></div>
     <div>
       <p class="cred">Ingeniero en Informática · Cédula profesional</p>
       <p>Soy <b>Max Vargas</b>, <b>Ingeniero en Informática</b> con cédula profesional y desarrollador web.</p>
@@ -510,7 +510,7 @@ html.bloq,html.bloq body{overflow:hidden}
 </main>
 
 <section class="contacto" id="contacto" aria-labelledby="t-con">
-  <img class="luna-c" src="img/ninja/luna2.webp" alt="" aria-hidden="true">
+  <img class="luna-c" src="luna2.webp" alt="" aria-hidden="true">
   <div class="wrap">
     <div>
       <p class="kicker">CONTACTO</p>
@@ -522,7 +522,7 @@ html.bloq,html.bloq body{overflow:hidden}
         <a class="btn sec js-mail" href="mailto:shinobi.devmx@gmail.com?subject=Cotiza%20sin%20compromiso&amp;body=Hola%20Max%2C%20vi%20tu%20p%C3%A1gina%20de%20Shinobi%20Dev%20y%20quiero%20cotizar%20sin%20compromiso%20un%20proyecto%20para%20mi%20negocio.">shinobi.devmx@gmail.com</a>
       </div>
     </div>
-    <div class="qr"><img class="qcol" src="img/ninja/perg-colgante.webp" alt="" aria-hidden="true"><img class="qcode" src="img/qr.webp" width="110" height="110" alt="Código QR de Shinobi Dev"><span>Escanea y compárteme</span></div>
+    <div class="qr"><img class="qcol" src="perg-colgante.webp" alt="" aria-hidden="true"><img class="qcode" src="qr.webp" width="110" height="110" alt="Código QR de Shinobi Dev"><span>Escanea y compárteme</span></div>
   </div>
 </section>
 
@@ -589,7 +589,7 @@ function abrirTerm(){ultimo=document.activeElement;term.hidden=false;document.do
 function cerrarTerm(){term.hidden=true;document.documentElement.classList.remove('bloq');term.style.top='';term.style.height='';if(ultimo)ultimo.focus({preventScroll:true})}
 function proyectil(tipo,y,delay,dir){
   const k=tipo==='kunai';const im=new Image();im.className='vuela';im.alt='';
-  im.src=k?'img/ninja/kunai.webp':['img/ninja/sk4.webp','img/ninja/sk6.webp','img/ninja/sk8.webp','img/ninja/sk-azul.webp'][Math.floor(Math.random()*4)];
+  im.src=k?'kunai.webp':['sk4.webp','sk6.webp','sk8.webp','sk-azul.webp'][Math.floor(Math.random()*4)];
   const W=k?170:70;im.style.width=W+'px';document.body.appendChild(im);
   const w=window.innerWidth,h=window.innerHeight,x0=dir>0?-W-20:w+20,x1=dir>0?w+20:-W-20,y0=h*y,y1=y0-h*.12*dir;
   const r0=k?(dir>0?-6:186):0,r1=k?(dir>0?6:174):1440*dir;
@@ -640,7 +640,7 @@ const io=new IntersectionObserver(e=>{if(e[0].isIntersecting){q.classList.add('v
 // ===== Easter egg: los stickers se asoman de vez en cuando =====
 (function(){
   if(reducido)return;
-  const capa=document.getElementById('asomos');const fotos=['img/stk1.webp','img/stk2.webp','img/stk3.webp','img/stk4.webp','img/stk5.webp'];
+  const capa=document.getElementById('asomos');const fotos=['stk1.webp','stk2.webp','stk3.webp','stk4.webp','stk5.webp'];
   let vistos=0,ocupado=false,ultimo=-1;
   function asomar(){
     const sy=window.scrollY||document.documentElement.scrollTop||document.body.scrollTop||0;
@@ -674,10 +674,10 @@ function limpiaFx(){fx.innerHTML='';fx.hidden=true}
 function bombaHumo(destino){
   fx.hidden=false;fx.style.setProperty('--fxd','3.3s');fx.style.setProperty('--nd','2.6s');fx.innerHTML='<div class="velo"></div>';
   const cx=window.innerWidth/2,cy=window.innerHeight*.42;
-  const b=new Image();b.src='img/ninja/bomba.webp';b.className='bombafx';fx.appendChild(b);
+  const b=new Image();b.src='bomba.webp';b.className='bombafx';fx.appendChild(b);
   b.animate([{transform:`translate(${cx-40}px,-120px) rotate(-40deg)`},{transform:`translate(${cx-40}px,${cy-40}px) rotate(20deg)`}],{duration:450,easing:'cubic-bezier(.5,0,.9,.5)',fill:'forwards'}).onfinish=()=>{
     b.animate([{transform:`translate(${cx-40}px,${cy-40}px) scale(1)`,opacity:1},{transform:`translate(${cx-40}px,${cy-40}px) scale(1.6)`,opacity:0}],{duration:200,fill:'forwards'});
-    for(let n=0;n<14;n++){const h=new Image();h.src='img/ninja/humo.webp';h.className='humofx';const sz=180+Math.random()*220;h.style.width=sz+'px';
+    for(let n=0;n<14;n++){const h=new Image();h.src='humo.webp';h.className='humofx';const sz=180+Math.random()*220;h.style.width=sz+'px';
       const x=cx-sz/2+(Math.random()-.5)*260,y=cy-sz/2+(Math.random()-.5)*170,r=Math.random()*60-30,fl=Math.random()<.5?-1:1;
       h.style.left=x+'px';h.style.top=y+'px';fx.appendChild(h);
       h.animate([{transform:`scale(.15) rotate(${r}deg) scaleX(${fl})`,opacity:0},{transform:`scale(1) rotate(${r+15}deg) scaleX(${fl})`,opacity:.95,offset:.3},{transform:`scale(1.25) rotate(${r+25}deg) scaleX(${fl})`,opacity:.9,offset:.75},{transform:`scale(1.45) rotate(${r+35}deg) scaleX(${fl})`,opacity:0}],{duration:2400,delay:n*90,easing:'ease-out',fill:'both'})}
@@ -688,7 +688,7 @@ function bombaHumo(destino){
 }
 function mensajero(destino){
   fx.hidden=false;fx.style.setProperty('--fxd','1.5s');fx.innerHTML='<div class="velo"></div>';
-  const k=new Image();k.src='img/ninja/kunai-msg.webp';k.className='kmsg';fx.appendChild(k);
+  const k=new Image();k.src='kunai-msg.webp';k.className='kmsg';fx.appendChild(k);
   const m=document.createElement('div');m.className='msg';m.textContent='Enviando mensajero ninja…';fx.appendChild(m);
   const w=window.innerWidth,h=window.innerHeight;
   k.animate([{transform:`translate(-300px,${h*.4}px) rotate(-12deg)`},{transform:`translate(${w/2-130}px,${h*.4}px) rotate(0deg)`,offset:.55},{transform:`translate(${w/2-120}px,${h*.4-6}px) rotate(3deg)`}],{duration:800,easing:'cubic-bezier(.2,.8,.3,1)',fill:'forwards'});
