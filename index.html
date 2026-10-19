@@ -312,6 +312,27 @@ html.bloq,html.bloq body{overflow:hidden}
 .hero .wrap{position:relative;z-index:1}
 @media (max-width:760px){.kn{display:none}.sk.s1{left:-10px}.sk.s3{right:-12px}.bambu{height:80px;background-size:auto 80px}}
 @keyframes gira{to{transform:rotate(360deg)}}
+
+/* ===== Capturas reales en las misiones ===== */
+.phone.real{all:unset;box-sizing:border-box;display:block;position:relative;cursor:zoom-in;width:220px;height:430px;border-radius:32px;border:8px solid #1A1F2B;background:#000;overflow:hidden;box-shadow:0 18px 36px rgba(7,8,11,.3)}
+.phone.real:focus-visible{outline:3px solid var(--azul);outline-offset:3px}
+.shots{position:absolute;inset:0;display:block}
+.shots img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;opacity:0;transition:opacity .9s ease}
+.shots img.on{opacity:1}
+.phone.real .dots{position:absolute;left:0;right:0;bottom:8px;display:flex;justify-content:center;gap:5px;z-index:2}
+.phone.real .dots i{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.5);box-shadow:0 0 0 1px rgba(0,0,0,.25)}
+.phone.real .dots i.on{background:#fff;width:14px;border-radius:3px}
+@media (max-width:760px){.contenido .phone.real{margin:0 auto;width:210px;height:410px}}
+.cinta .logo-neg{width:34px;height:34px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px rgba(43,32,22,.35);background:#fff}
+.captura{all:unset;box-sizing:border-box;display:block;cursor:zoom-in;margin-top:16px;border-radius:12px;overflow:hidden;border:2px solid #C9AE78;background:#FFF8EC;max-width:520px}
+.captura img{display:block;width:100%;height:auto}
+.captura span{display:block;padding:8px 12px;font-size:13px;font-weight:700;color:#6B5233}
+.captura:focus-visible{outline:3px solid var(--azul);outline-offset:3px}
+.visor{position:fixed;inset:0;z-index:90;background:rgba(3,5,8,.9);display:flex;align-items:center;justify-content:center;padding:max(16px,env(safe-area-inset-top)) 16px max(16px,env(safe-area-inset-bottom));cursor:zoom-out}
+.visor img{max-width:100%;max-height:100%;border-radius:12px;box-shadow:0 20px 50px rgba(0,0,0,.6)}
+.visor button{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:16px;background:rgba(255,255,255,.12);border:0;color:#fff;font-size:24px;width:44px;height:44px;border-radius:50%;cursor:pointer}
+.visor .nav{top:50%;transform:translateY(-50%);font-size:28px}
+.visor .prev{left:14px;right:auto}.visor .next{right:14px}
 /* ===== Detalles ninja ===== */
 .estrellas{position:absolute;inset:0;pointer-events:none;overflow:hidden}
 @keyframes gira{to{transform:rotate(360deg)}}
@@ -400,19 +421,11 @@ html.bloq,html.bloq body{overflow:hidden}
     <article class="perg" id="mis01">
       <button class="perg-cab" aria-expanded="false" aria-controls="papel01">
         <span class="rod" aria-hidden="true"></span>
-        <span class="cinta"><span class="num">MISIÓN 01</span><b>Pollos Colorado</b><span class="badge b-uso">En uso</span><span class="abre" aria-hidden="true">Abrir</span></span>
+        <span class="cinta"><span class="num">MISIÓN 01</span><img class="logo-neg" src="logo-colorado.webp" alt="" aria-hidden="true"><b>Pollos Colorado</b><span class="badge b-uso">En uso</span><span class="abre" aria-hidden="true">Abrir</span></span>
         <img class="sello" src="sello1.webp" alt="" aria-hidden="true">
       </button>
       <div class="rollo"><div class="papel" id="papel01"><div class="papel-in"><div class="contenido">
-      <div class="phone" aria-hidden="true"><div class="scr s-col">
-        <div class="port" style="background-image:url(col-portada.webp)"></div>
-        <div class="hd"><img src="col-logo.webp" alt=""><div><b>POLLOS COLORADO</b><small>AL CARBÓN</small></div></div>
-        <div class="tabs"><span>Pollos</span><span>Costillas</span><span>Extras</span></div>
-        <div class="it"><img src="col-entero.webp" alt=""><div>Pollo entero<small>Con tortillas y salsa</small></div><i>+</i></div>
-        <div class="it"><img src="col-costillas.webp" alt=""><div>Costillas<small>Orden completa</small></div><i>+</i></div>
-        <div class="it"><img src="col-papas.webp" alt=""><div>Papas<small>Extra</small></div><i>+</i></div>
-        <div class="bar"><span>Ver pedido · 2</span><span>Enviar</span></div>
-      </div></div>
+      <button class="phone real" type="button" aria-label="Ver capturas de Pollos Colorado en grande"><span class="scr shots"><img src="col-shot1.webp" alt="Captura de Pollos Colorado" class="on" loading="lazy"><img src="col-shot2.webp" alt="Captura de Pollos Colorado" loading="lazy"><img src="col-shot3.webp" alt="Captura de Pollos Colorado" loading="lazy"><img src="col-shot4.webp" alt="Captura de Pollos Colorado" loading="lazy"></span><span class="dots"><i></i><i></i><i></i><i></i></span></button>
       <div>
         <h3>Pollos Colorado</h3>
         <p class="giro">Pollería al carbón · Colima</p>
@@ -454,27 +467,20 @@ html.bloq,html.bloq body{overflow:hidden}
     <article class="perg" id="mis03">
       <button class="perg-cab" aria-expanded="false" aria-controls="papel03">
         <span class="rod" aria-hidden="true"></span>
-        <span class="cinta"><span class="num">MISIÓN 03</span><b>Cremería Don Beto</b><span class="badge b-dev">En desarrollo</span><span class="abre" aria-hidden="true">Abrir</span></span>
+        <span class="cinta"><span class="num">MISIÓN 03</span><img class="logo-neg" src="logo-beto.webp" alt="" aria-hidden="true"><b>Cremería Don Beto</b><span class="badge b-uso">En uso</span><span class="abre" aria-hidden="true">Abrir</span></span>
         <img class="sello" src="sello3.webp" alt="" aria-hidden="true">
       </button>
       <div class="rollo"><div class="papel" id="papel03"><div class="papel-in"><div class="contenido">
-      <div class="phone" aria-hidden="true"><div class="scr s-bet">
-        <div class="hd"><b>Cremería Don Beto</b><small>VENTA EN RUTA</small></div>
-        <div class="tabs"><span>Vender</span><span>Clientes</span><span>Ventas</span></div>
-        <div class="row"><div>Queso panela<small>1 kg</small></div><i>+</i></div>
-        <div class="row"><div>Crema<small>½ kg</small></div><i>+</i></div>
-        <div class="row"><div>Jamón de pierna<small>1 kg</small></div><i>+</i></div>
-        <div class="row"><div>Tienda La Esquina<small>Crédito</small></div><i>Saldo</i></div>
-        <div class="bar"><span>Imprimir ticket</span><span>🖨️</span></div>
-      </div></div>
+      <button class="phone real" type="button" aria-label="Ver capturas de Cremería Don Beto en grande"><span class="scr shots"><img src="beto-shot1.webp" alt="Captura de Cremería Don Beto" class="on" loading="lazy"><img src="beto-shot2.webp" alt="Captura de Cremería Don Beto" loading="lazy"></span><span class="dots"><i></i><i></i></span></button>
       <div>
         <h3>Cremería Don Beto</h3>
         <p class="giro">Venta de cremería en ruta</p>
         <p class="reto"><b>El reto:</b> notas de remisión a mano, sin folio ni control de ventas, y clientes de crédito difíciles de seguir.</p>
-        <p class="reto"><b>La solución:</b> una app en el celular del vendedor para levantar pedidos tienda por tienda e imprimir el ticket al momento.</p>
+        <p class="reto"><b>La solución:</b> una app en el celular del vendedor, ya en uso en su ruta diaria: levanta pedidos tienda por tienda e imprime el ticket al momento.</p>
         <ul class="chips">
           <li>Ticket impreso</li><li>Precios de mayoreo</li><li>Clientes de crédito y saldos</li><li>Más vendidos</li><li>Funciona sin internet</li>
         </ul>
+        <button class="captura" type="button" aria-label="Ver reporte en grande"><img src="beto-reportes.webp" alt="Reporte de la app: lo más vendido del día" loading="lazy"><span>Reportes del día: lo más vendido y mejores clientes</span></button>
       </div>
     </div></div></div><span class="rod rod-b" aria-hidden="true"></span></div>
     </article>
@@ -536,6 +542,7 @@ html.bloq,html.bloq body{overflow:hidden}
 <a class="flota js-wa" id="waFlota" href="#" hidden aria-label="Cotiza sin compromiso por WhatsApp"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg><span>Cotiza</span></a>
 
 <div class="fx" id="fx" hidden aria-hidden="true"></div>
+<div class="asomos" id="asomos" aria-hidden="true"></div>
 
 <div class="term" id="term" hidden role="dialog" aria-modal="true" aria-label="Modo terminal">
   <div class="win">
@@ -558,12 +565,12 @@ const term=document.getElementById('term'),out=document.getElementById('out'),ti
 const MIS={
   colorado:'<span class="ok">[EN USO]</span> Pollos Colorado — pollería al carbón, Colima\n  Menú con pedidos por WhatsApp, horarios, agotados desde Google Sheets y caja en tablet.\n  <a href="https://polloscolorado.pages.dev" target="_blank" rel="noopener">polloscolorado.pages.dev</a>',
   arreola:'<span class="c">[DEMO]</span> Arreola 1 — pollos y carnes asadas\n  "Arma tu comida", tiempos de entrega y sugerencias de antojo.',
-  beto:'<span class="c">[EN DESARROLLO]</span> Cremería Don Beto — venta en ruta\n  Pedidos por tienda, ticket impreso, crédito y saldos, funciona sin internet.'
+  beto:'<span class="ok">[EN USO]</span> Cremería Don Beto — venta en ruta\n  Pedidos por tienda, ticket impreso, crédito y saldos, funciona sin internet.'
 };
 const CMD={
   help:()=>'Comandos: <span class="c">whoami</span>, <span class="c">lanzar</span>, <span class="c">ls misiones</span>, <span class="c">cat colorado</span> | <span class="c">arreola</span> | <span class="c">beto</span>, <span class="c">servicios</span>, <span class="c">contacto</span>, <span class="c">clear</span>, <span class="c">exit</span>',
   whoami:()=>'Max Vargas — Ingeniero en Informática (cédula profesional) y desarrollador web.\nExperiencia en infraestructura bancaria y soporte de cajeros automáticos.\nShinobi Dev: incrementa el nivel de tu negocio.',
-  'ls misiones':()=>'01  colorado   <span class="ok">en uso</span>\n02  arreola    demo\n03  beto       en desarrollo\n\nUsa <span class="c">cat nombre</span> para ver detalles.',
+  'ls misiones':()=>'01  colorado   <span class="ok">en uso</span>\n02  arreola    demo\n03  beto       <span class="ok">en uso</span>\n\nUsa <span class="c">cat nombre</span> para ver detalles.',
   ls:()=>CMD['ls misiones'](),
   servicios:()=>'- Menús con pedidos por WhatsApp\n- Apps para vender y cobrar\n- Soluciones a la medida',
   contacto:()=>'Correo: <a href="mailto:shinobi.devmx@gmail.com">shinobi.devmx@gmail.com</a>'+(WHATSAPP?'\nWhatsApp: <a href="'+WA_URL+'" target="_blank" rel="noopener">312 326 6510</a>':''),
@@ -664,6 +671,28 @@ const io=new IntersectionObserver(e=>{if(e[0].isIntersecting){q.classList.add('v
   setTimeout(asomar,3500);
 })();
 
+
+// ===== Capturas: carrusel automático y visor =====
+(function(){
+  const visor=document.createElement('div');visor.className='visor';visor.hidden=true;visor.setAttribute('role','dialog');visor.setAttribute('aria-modal','true');visor.setAttribute('aria-label','Captura en grande');
+  visor.innerHTML='<img alt=""><button class="cerrarv" aria-label="Cerrar">×</button><button class="nav prev" aria-label="Anterior">‹</button><button class="nav next" aria-label="Siguiente">›</button>';
+  document.body.appendChild(visor);
+  const vimg=visor.querySelector('img');let lista=[],idx=0,origen=null;
+  function ver(i){idx=(i+lista.length)%lista.length;vimg.src=lista[idx].src;vimg.alt=lista[idx].alt;const n=lista.length>1;visor.querySelector('.prev').hidden=!n;visor.querySelector('.next').hidden=!n}
+  function abrir(imgs,i,el){lista=imgs;origen=el;ver(i);visor.hidden=false;document.documentElement.classList.add('bloq');visor.querySelector('.cerrarv').focus()}
+  function cerrar(){visor.hidden=true;document.documentElement.classList.remove('bloq');if(origen)origen.focus()}
+  visor.addEventListener('click',e=>{if(e.target.classList.contains('prev')){ver(idx-1)}else if(e.target.classList.contains('next')){ver(idx+1)}else cerrar()});
+  document.addEventListener('keydown',e=>{if(visor.hidden)return;if(e.key==='Escape')cerrar();if(e.key==='ArrowRight')ver(idx+1);if(e.key==='ArrowLeft')ver(idx-1)});
+  document.querySelectorAll('.phone.real').forEach(ph=>{
+    const imgs=[...ph.querySelectorAll('.shots img')],dots=[...ph.querySelectorAll('.dots i')];let k=0;
+    const pon=n=>{imgs[k].classList.remove('on');dots[k]&&dots[k].classList.remove('on');k=n;imgs[k].classList.add('on');dots[k]&&dots[k].classList.add('on')};
+    dots[0]&&dots[0].classList.add('on');
+    if(imgs.length>1&&!reducido)setInterval(()=>{if(!document.hidden&&visor.hidden)pon((k+1)%imgs.length)},3200);
+    ph.addEventListener('click',()=>abrir(imgs,k,ph));
+  });
+  document.querySelectorAll('.captura').forEach(c=>c.addEventListener('click',()=>abrir([c.querySelector('img')],0,c)));
+})();
+
 // ===== Botón flotante (aparece al pasar la portada) =====
 (function(){const f=document.getElementById('waFlota'),hero=document.getElementById('inicio'),con=document.getElementById('contacto');if(!f||f.hidden||!('IntersectionObserver' in window))return;let enHero=true,enCon=false;const upd=()=>f.classList.toggle('ver',!enHero&&!enCon);
 new IntersectionObserver(e=>{enHero=e[0].isIntersecting;upd()}).observe(hero);new IntersectionObserver(e=>{enCon=e[0].isIntersecting;upd()}).observe(con);})();
@@ -698,6 +727,5 @@ function mensajero(destino){
 document.querySelectorAll('.js-wa').forEach(a=>a.addEventListener('click',e=>{if(!WA_URL||reducido)return;e.preventDefault();bombaHumo(WA_URL)}));
 document.querySelectorAll('.js-mail').forEach(a=>a.addEventListener('click',e=>{if(reducido)return;e.preventDefault();mensajero(a.href)}));
 </script>
-<div class="asomos" id="asomos" aria-hidden="true"></div>
 </body>
 </html>
