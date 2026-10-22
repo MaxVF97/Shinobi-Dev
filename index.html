@@ -6,6 +6,11 @@
 <title>Shinobi Dev · por Max Vargas · Páginas web y sistemas para negocios</title>
 <meta name="description" content="Páginas web y sistemas para negocios: menús con pedidos por WhatsApp, apps para ventas en ruta y soluciones a la medida. Cotiza sin compromiso.">
 <meta name="theme-color" content="#07080B">
+<link rel="canonical" href="https://shinobi-dev.com/">
+<meta property="og:url" content="https://shinobi-dev.com/">
+<meta property="og:title" content="Shinobi Dev · por Max Vargas">
+<meta property="og:description" content="Páginas web y sistemas para negocios. Cotiza sin compromiso.">
+<meta property="og:image" content="https://shinobi-dev.com/ninja.webp">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -267,7 +272,10 @@ html.bloq,html.bloq body{overflow:hidden}
 .fuego.chico .fl{bottom:30%;filter:blur(12px)}
 .fuego::after{content:"";position:absolute;inset:8% 10% 0;z-index:1;border-radius:50%;background:radial-gradient(circle,rgba(47,140,255,.28),rgba(47,140,255,0) 65%);animation:pulso 2.4s ease-in-out infinite;pointer-events:none}
 @keyframes pulso{50%{transform:scale(1.08);opacity:.7}}
-.hero .ninja{animation:flota 6s ease-in-out infinite,brillo 2.2s ease-in-out infinite}
+.hero .ninja-mov{position:relative;z-index:2;animation:flota 6s ease-in-out infinite}
+.hero .ninja{animation:brillo 2.2s ease-in-out infinite}
+.hero .ninja-fl{position:absolute;inset:0;width:100%;height:auto;filter:url(#llamaFx) drop-shadow(0 0 6px rgba(47,140,255,.6));transform-origin:50% 100%;animation:titila 1.6s ease-in-out infinite}
+@keyframes titila{0%,100%{opacity:.9;transform:translateY(0) scaleY(1)}35%{opacity:1;transform:translateY(-2px) scaleY(1.02)}70%{opacity:.75;transform:translateY(-1px) scaleY(.99)}}
 @keyframes brillo{0%,100%{filter:drop-shadow(0 0 22px rgba(47,140,255,.3))}40%{filter:drop-shadow(0 0 34px rgba(90,166,255,.55))}70%{filter:drop-shadow(0 0 26px rgba(47,140,255,.38))}}
 
 /* ===== Lista de habilidades con entrada ninja ===== */
@@ -284,7 +292,7 @@ html.bloq,html.bloq body{overflow:hidden}
 @keyframes giraUna{from{transform:rotate(-540deg) scale(.4)}to{transform:none}}
 .quien .chips li:hover{border-color:var(--azul);background:rgba(47,140,255,.12)}
 .quien .chips li:hover::before{transform:rotate(360deg)}
-@media (prefers-reduced-motion:reduce){.fuego .fl,.fuego::after,.quien .av-q,.hero .ninja{animation:none!important}.quien .chips li{opacity:1;transform:none;transition:none}}
+@media (prefers-reduced-motion:reduce){.hero .ninja-mov,.hero .ninja-fl{animation:none!important;filter:none!important}.fuego .fl,.fuego::after,.quien .av-q,.hero .ninja{animation:none!important}.quien .chips li{opacity:1;transform:none;transition:none}}
 
 /* ===== Easter egg: stickers que se asoman ===== */
 .asomos{position:fixed;inset:0;pointer-events:none;z-index:25;overflow:hidden}
@@ -374,7 +382,8 @@ html.bloq,html.bloq body{overflow:hidden}
   </div>
   <div class="bambu" aria-hidden="true"></div>
   <div class="wrap">
-    <div class="fuego grande"><span class="fl f1"></span><span class="fl f2"></span><span class="fl f3"></span><span class="fl f4"></span><span class="fl f5"></span><img class="ninja" src="ninja.webp" width="280" height="280" alt="Logo de Shinobi Dev: ninja encapuchado con aura azul"></div>
+    <div class="fuego grande"><span class="fl f1"></span><span class="fl f2"></span><span class="fl f3"></span><span class="fl f4"></span><span class="fl f5"></span><div class="ninja-mov"><img class="ninja" src="ninja-base.webp" width="280" height="280" alt="Logo de Shinobi Dev: ninja encapuchado con aura azul"><img class="ninja-fl" src="ninja-flamas.webp" width="280" height="280" alt="" aria-hidden="true"></div></div>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="llamaFx" x="-15%" y="-15%" width="130%" height="130%"><feTurbulence type="fractalNoise" baseFrequency="0.012 0.05" numOctaves="2" seed="4" result="n"><animate attributeName="baseFrequency" dur="2.6s" values="0.012 0.05;0.016 0.075;0.011 0.06;0.012 0.05" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" in2="n" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></svg>
     <h1><img class="logo" src="logotipo.svg" alt="Shinobi Dev"></h1>
     <p class="por">por Max Vargas</p>
     <p class="tag">Incrementa el nivel de tu negocio</p>
@@ -649,7 +658,7 @@ const io=new IntersectionObserver(e=>{if(e[0].isIntersecting){q.classList.add('v
 // ===== Easter egg: los stickers se asoman de vez en cuando =====
 (function(){
   if(reducido)return;
-  const capa=document.getElementById('asomos');const fotos=['stk1.webp','stk2.webp','stk3.webp','stk4.webp','stk5.webp'];
+  const capa=document.getElementById('asomos');const fotos=['stk1.webp','stk2.webp','stk3.webp','stk4.webp','stk5.webp','stk6.webp','stk7.webp'];
   let vistos=0,ocupado=false,ultimo=-1;
   function asomar(){
     const sy=window.scrollY||document.documentElement.scrollTop||document.body.scrollTop||0;
@@ -659,12 +668,12 @@ const io=new IntersectionObserver(e=>{if(e[0].isIntersecting){q.classList.add('v
     const im=new Image();im.className='asoma';im.alt='';im.src=fotos[i];
     const lado=['izq','der','abajo'][Math.floor(Math.random()*3)],w=Math.min(130,window.innerWidth*.3);
     let fuera,dentro;
-    if(lado==='izq'){im.style.left='0';im.style.top=(22+Math.random()*45)+'%';fuera='translateX(-110%) rotate(-18deg)';dentro='translateX(-38%) rotate(14deg)'}
-    else if(lado==='der'){im.style.right='0';im.style.top=(22+Math.random()*45)+'%';fuera='translateX(110%) rotate(18deg)';dentro='translateX(38%) rotate(-14deg)'}
-    else{im.style.left=(12+Math.random()*60)+'%';im.style.bottom='0';fuera='translateY(110%) rotate(0deg)';dentro='translateY(42%) rotate('+(Math.random()*16-8)+'deg)'}
+    if(lado==='izq'){im.style.left='0';im.style.top=(16+Math.random()*44)+'%';fuera='translateX(-120%) rotate(-18deg)';dentro='translateX(14px) rotate(6deg)'}
+    else if(lado==='der'){im.style.right='0';im.style.top=(16+Math.random()*44)+'%';fuera='translateX(120%) rotate(18deg)';dentro='translateX(-14px) rotate(-6deg)'}
+    else{im.style.left='calc('+(8+Math.random()*58)+'% )';im.style.bottom='calc(90px + env(safe-area-inset-bottom,0px))';fuera='translateY(calc(100% + 120px)) rotate(0deg)';dentro='translateY(0) rotate('+(Math.random()*10-5)+'deg)'}
     im.style.transform=fuera;capa.appendChild(im);
     (im.decode?im.decode():Promise.resolve()).catch(()=>{}).then(()=>{
-      const a=im.animate([{transform:fuera},{transform:dentro,offset:.15},{transform:dentro,offset:.82},{transform:fuera}],{duration:5200,easing:'cubic-bezier(.4,0,.2,1)'});
+      const a=im.animate([{transform:fuera},{transform:dentro,offset:.12},{transform:dentro,offset:.86},{transform:fuera}],{duration:6200,easing:'cubic-bezier(.4,0,.2,1)'});
       im.onclick=()=>{a.cancel();im.animate([{transform:dentro},{transform:fuera.replace(/rotate\([^)]*\)/,'rotate(540deg)')}],{duration:500,easing:'ease-in'}).onfinish=()=>{im.remove();ocupado=false;programar()}};
       a.onfinish=()=>{im.remove();ocupado=false;programar()};
     });
