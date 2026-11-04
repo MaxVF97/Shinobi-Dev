@@ -360,6 +360,31 @@ html.bloq,html.bloq body{overflow:hidden}
 .mas-mf summary:focus-visible{outline:3px solid var(--azul);outline-offset:3px;border-radius:4px}
 .contenido .estado-mf{margin-top:12px;font-weight:700}
 .contenido .btn.sec{color:#2B2016}
+.lista-mf{margin:8px 0 0;padding-left:20px;font-size:14.5px;line-height:1.5;color:#3A2A18}.lista-mf li{margin:4px 0}
+
+/* ===== Cinta de misiones alineada ===== */
+.perg .cinta{display:grid;grid-template-columns:84px 34px minmax(0,1fr) 116px 64px;grid-template-areas:"num logo name badge abre";align-items:center;column-gap:12px;row-gap:4px}
+.cinta .num{grid-area:num;white-space:nowrap}
+.cinta .logo-neg,.cinta .logo-ini{grid-area:logo}
+.cinta b{grid-area:name;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cinta .badge{grid-area:badge;justify-self:stretch;box-sizing:border-box;text-align:center;white-space:nowrap;font:800 11.5px/1 var(--tx,Manrope),sans-serif;letter-spacing:.02em;padding:6px 8px;border-radius:999px;color:#fff;box-shadow:inset 0 -2px 0 rgba(0,0,0,.18)}
+.cinta .b-uso{background:#2E7D32;--g:46,190,80}.cinta .b-demo{background:#1858BE;--g:47,140,255}.cinta .b-dev{background:#B26A00;--g:255,170,40}.cinta .b-desa{background:#6B4FA3;--g:170,120,255}
+.cinta .badge{position:relative;overflow:hidden;box-shadow:inset 0 -2px 0 rgba(0,0,0,.18),0 0 8px rgba(var(--g),.55)}
+.cinta .badge::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);opacity:0}
+@media (prefers-reduced-motion:no-preference){
+  .cinta .badge{animation:brillaB 2.6s ease-in-out infinite}
+  .cinta .badge::after{animation:destelloB 4.2s ease-in-out infinite}
+  #mis02 .badge,#mis02 .badge::after{animation-delay:.4s}#mis03 .badge,#mis03 .badge::after{animation-delay:.8s}#mis04 .badge,#mis04 .badge::after{animation-delay:1.2s}#mis05 .badge,#mis05 .badge::after{animation-delay:1.6s}#mis06 .badge,#mis06 .badge::after{animation-delay:2s}#mis07 .badge,#mis07 .badge::after{animation-delay:2.4s}
+}
+@keyframes brillaB{0%,100%{box-shadow:inset 0 -2px 0 rgba(0,0,0,.18),0 0 6px rgba(var(--g),.4)}50%{box-shadow:inset 0 -2px 0 rgba(0,0,0,.18),0 0 16px 2px rgba(var(--g),.85);filter:brightness(1.12)}}
+@keyframes destelloB{0%,60%{left:-60%;opacity:0}65%{opacity:1}85%,100%{left:130%;opacity:0}}
+.cinta .abre{grid-area:abre;margin-left:0;justify-self:end;white-space:nowrap}
+.cinta .logo-ini{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font:700 12px/1 var(--wm);letter-spacing:.02em;color:#fff;box-shadow:0 0 0 2px rgba(43,32,22,.35)}
+@media (max-width:560px){
+  .perg .cinta{grid-template-columns:34px minmax(0,1fr) auto;grid-template-areas:"logo num badge" "logo name abre";column-gap:10px}
+  .cinta .badge{justify-self:end;padding:5px 9px;font-size:10.5px}
+  .cinta b{white-space:normal;overflow:visible;text-overflow:clip;font-size:clamp(17px,5vw,20px)}
+}
 /* ===== Animaciones de pergaminos y kunais ===== */
 @media (prefers-reduced-motion:no-preference){
   .deco-perg{animation:respira 5.5s ease-in-out infinite;transform-origin:50% 60%}
@@ -487,7 +512,7 @@ html.bloq,html.bloq body{overflow:hidden}
     <article class="perg" id="mis02">
       <button class="perg-cab" aria-expanded="false" aria-controls="papel02">
         <span class="rod" aria-hidden="true"></span>
-        <span class="cinta"><span class="num">MISIÓN 02</span><b>Arreola 1</b><span class="badge b-demo">Demo</span><span class="abre" aria-hidden="true">Abrir</span></span>
+        <span class="cinta"><span class="num">MISIÓN 02</span><span class="logo-ini" style="background:#D7261E" aria-hidden="true">A1</span><b>Arreola 1</b><span class="badge b-demo">Demo</span><span class="abre" aria-hidden="true">Abrir</span></span>
         <img class="sello" src="sello2.webp" alt="" aria-hidden="true">
       </button>
       <div class="rollo"><div class="papel" id="papel02"><div class="papel-in"><div class="contenido ancha">
@@ -526,7 +551,7 @@ html.bloq,html.bloq body{overflow:hidden}
     <article class="perg" id="mis04">
       <button class="perg-cab" aria-expanded="false" aria-controls="papel04">
         <span class="rod" aria-hidden="true"></span>
-        <span class="cinta"><span class="num">MISIÓN 04</span><b>MarkaForense</b><span class="badge b-dev">En pruebas</span><span class="abre" aria-hidden="true">Abrir</span></span>
+        <span class="cinta"><span class="num">MISIÓN 04</span><span class="logo-ini" style="background:#1858BE" aria-hidden="true">MF</span><b>MarkaForense</b><span class="badge b-dev">En pruebas</span><span class="abre" aria-hidden="true">Abrir</span></span>
         <img class="sello" src="sello1.webp" alt="" aria-hidden="true">
       </button>
       <div class="rollo"><div class="papel" id="papel04"><div class="papel-in"><div class="contenido ancha">
@@ -555,6 +580,116 @@ html.bloq,html.bloq body{overflow:hidden}
         
       </div>
       </div></div></div><span class="rod rod-b" aria-hidden="true"></span></div>
+    </article>
+    <article class="perg" id="mis05">
+      <button class="perg-cab" aria-expanded="false" aria-controls="papel05">
+        <span class="rod" aria-hidden="true"></span>
+        <span class="cinta"><span class="num">MISIÓN 05</span><img class="logo-neg" src="logo-carmelita.webp?v=1" alt="" aria-hidden="true"><b>Tacos Carmelita</b><span class="badge b-demo">Demo</span><span class="abre" aria-hidden="true">Abrir</span></span>
+        <img class="sello" src="sello3.webp" alt="" aria-hidden="true">
+      </button>
+      <div class="rollo"><div class="papel" id="papel05"><div class="papel-in"><div class="contenido">
+      <button class="phone real" type="button" style="--ar:.745;--bgshot:#F7F3EE;width:270px" aria-label="Ver capturas de Tacos Carmelita en grande"><span class="scr shots"><img src="carm-1.webp?v=1" alt="Tacos Carmelita: nueva orden para elegir el tipo de pedido y las mesas libres u ocupadas" class="on" loading="lazy"><img src="carm-2.webp?v=1" alt="Tacos Carmelita: órdenes abiertas con indicador de color por estado" loading="lazy"><img src="carm-3.webp?v=1" alt="Tacos Carmelita: vista de cocina con comandas por imprimir y en preparación" loading="lazy"><img src="carm-4.webp?v=1" alt="Tacos Carmelita: cobro con cálculo de cambio y billetes rápidos" loading="lazy"><img src="carm-5.webp?v=1" alt="Tacos Carmelita: reportes de ventas, ventas por hora y por método de pago" loading="lazy"><img src="carm-6.webp?v=1" alt="Tacos Carmelita: catálogo editable con precios, agotados y visibilidad" loading="lazy"><img src="carm-7.webp?v=1" alt="Tacos Carmelita: la misma pantalla de nueva orden en modo oscuro" loading="lazy"><img src="carm-8.webp?v=1" alt="Tacos Carmelita: creación del PIN y del código de papel para recuperar el acceso" loading="lazy"></span><span class="dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></button>
+      <div>
+        <h3>Tortillas a mano y Tacos Carmelita</h3>
+        <p class="giro">Taquería y tortillería · Colima</p>
+        <p class="reto"><b>El reto:</b> una taquería y tortillería donde las órdenes se llevaban en papel: no se sabía qué mesa estaba libre, qué pedido seguía pendiente ni cuánto se vendió al final del día.</p>
+        <p class="reto"><b>La solución:</b> un punto de venta hecho a la medida, con la imagen y los productos de Carmelita. Funciona en tablet, celular o computadora, sin instalar nada y sin depender de internet para vender.</p>
+        <ul class="chips">
+          <li>Mesas, para llevar y a domicilio</li><li>Estado de cada orden por color</li><li>Comanda para cocina 58/80 mm</li><li>Cobro mixto, propinas y cuenta dividida</li><li>Ticket con logotipo</li><li>Reportes y caja</li><li>Menú editable y agotados</li><li>Modo claro u oscuro</li><li>PIN y código de papel</li><li>Respaldo de información</li>
+        </ul>
+        <details class="mas-mf">
+          <summary>Ver más detalles</summary>
+          <ul class="lista-mf">
+            <li>Pedidos para comer aquí (mesas y barra), para llevar (con hora de recogida) y a domicilio, con dirección por campos y envío por WhatsApp a repartidores.</li>
+            <li>Indicador de color por orden: rojo abierta, azul en preparación, verde lista; aviso de que ya solo falta cobrar.</li>
+            <li>Comanda para cocina en papel de 58 u 80 mm; si se agrega algo después, imprime solo lo adicional.</li>
+            <li>Cobro flexible: efectivo con cambio, tarjeta, transferencia y pago mixto; propinas y dividir la cuenta por persona.</li>
+            <li>Ticket con vista previa, total en letra y logotipo.</li>
+            <li>Reportes de ventas, gastos, propinas, ventas por hora y lo más vendido, y caja opcional (apertura y cierre).</li>
+            <li>Menú editable: secciones, extras con costo, agotados y comentarios rápidos (con todo, sin cebolla…).</li>
+            <li>Modo claro, oscuro o automático, cuatro tamaños de letra y color principal a elegir.</li>
+            <li>Reportes y configuración protegidos con PIN y recuperación con código de papel; reset asistido por Shinobi Dev.</li>
+            <li>Respaldo y restauración de la información.</li>
+          </ul>
+          <p class="reto"><b>Detalles técnicos:</b></p>
+          <ul class="chips"><li>HTML, CSS y JavaScript sin librerías</li><li>App de un solo archivo</li><li>Datos en el dispositivo con respaldo</li><li>PIN con SHA-256 y sal</li><li>Recuperación con firma digital</li><li>Impresión de tickets 58/80 mm</li></ul>
+          <p class="nota">Las cifras y nombres de las imágenes son datos de ejemplo.</p>
+        </details>
+        <div class="macts"><span class="nota">Demo, aún no en uso. ¿Quieres verla funcionar en vivo? Contáctame y te la enseño.</span></div>
+      </div>
+    </div></div></div><span class="rod rod-b" aria-hidden="true"></span></div>
+    </article>
+    <article class="perg" id="mis06">
+      <button class="perg-cab" aria-expanded="false" aria-controls="papel06">
+        <span class="rod" aria-hidden="true"></span>
+        <span class="cinta"><span class="num">MISIÓN 06</span><img class="logo-neg" src="logo-conceptos.webp?v=1" alt="" aria-hidden="true"><b>Conceptos Gráficos</b><span class="badge b-desa">En desarrollo</span><span class="abre" aria-hidden="true">Abrir</span></span>
+        <img class="sello" src="sello1.webp" alt="" aria-hidden="true">
+      </button>
+      <div class="rollo"><div class="papel" id="papel06"><div class="papel-in"><div class="contenido ancha">
+      <button class="phone real pantalla" type="button" style="--ar:1.6;--bgshot:#F7F4EA" aria-label="Ver capturas de Conceptos Gráficos en grande"><span class="scr shots"><img src="cg-1.webp?v=1" alt="Conceptos Gráficos: portada con el lema, botón de WhatsApp y productos que cambian solos" class="on" loading="lazy"><img src="cg-2.webp?v=1" alt="Conceptos Gráficos: catálogo por categorías con filtros" loading="lazy"><img src="cg-3.webp?v=1" alt="Conceptos Gráficos: simulador con grabado láser metálico en un termo" loading="lazy"><img src="cg-4.webp?v=1" alt="Conceptos Gráficos: simulador con una taza y tipografía manuscrita" loading="lazy"><img src="cg-5.webp?v=1" alt="Conceptos Gráficos: simulador con una playera personalizada" loading="lazy"><img src="cg-6.webp?v=1" alt="Conceptos Gráficos: galería de trabajos realizados" loading="lazy"><img src="cg-7.webp?v=1" alt="Conceptos Gráficos: reproductor flotante de videos de trabajos" loading="lazy"><img src="cg-8.webp?v=1" alt="Conceptos Gráficos: portada vista en celular" loading="lazy"></span><span class="dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></button>
+      <div>
+        <h3>Imprenta Conceptos Gráficos</h3>
+        <p class="giro">Imprenta y personalizados · Colima</p>
+        <p class="reto"><b>El reto:</b> una imprenta con más de 15 años en Colima, con vinil, lonas, sublimación, grabado láser, DTF y papelería, que no tenía un lugar en internet donde mostrar lo que hace ni una forma ordenada de recibir cotizaciones. Los clientes preguntaban por mensaje sin saber qué se podía personalizar ni qué datos dar.</p>
+        <p class="reto"><b>La solución:</b> un sitio web de una sola página, rápido y pensado para el celular, cuyo objetivo es que el visitante escriba por WhatsApp. Muestra el catálogo por categoría, un simulador para ver su nombre grabado en la pieza antes de pedirla y una galería de trabajos reales. Al cotizar arma el mensaje con los datos que el negocio necesita: producto, cantidad, medida y técnica.</p>
+        <ul class="chips">
+          <li>Catálogo por categorías</li><li>Cotizador por WhatsApp</li><li>Simulador de personalización</li><li>Giro de 360°</li><li>Biblioteca de videos</li><li>Galería de trabajos</li><li>Promociones y opiniones</li><li>Accesible y ligero</li>
+        </ul>
+        <details class="mas-mf">
+          <summary>Ver más detalles</summary>
+          <ul class="lista-mf">
+            <li>Catálogo por categorías (vinil, impresión digital, sublimación, grabado láser, DTF y serigrafía, papelería y reconocimientos) con filtros; sin precios publicados, todo se cotiza.</li>
+            <li>Cotizador que genera un mensaje de WhatsApp estructurado con nombre, teléfono, producto, cantidad, medida y técnica, y tiene un respaldo para copiar el mensaje.</li>
+            <li>Simulador de personalización con fotos reales de termo, termo con asa, taza, gorra y playera: texto, 4 tipografías, color de la pieza y del grabado, grabado láser metálico, orientación, posición, tamaño y giro de 360° alrededor de la pieza (se puede arrastrar el texto).</li>
+            <li>Portada con productos reales que cambian solos y un lema animado.</li>
+            <li>Biblioteca de videos de trabajos reales con filtros por tipo, "ver más" y reproductor flotante con anterior y siguiente; pensada para crecer a decenas de videos.</li>
+            <li>Galería de trabajos realizados con ampliación, sección de promociones y de opiniones de clientes reales.</li>
+            <li>Datos reales del negocio (dirección, teléfono, horario y mapa) y botón flotante de WhatsApp.</li>
+            <li>Accesible y ligero: navegación por teclado, respeta la opción de reducir movimiento y funciona en celular, tablet y computadora.</li>
+          </ul>
+          <p class="reto"><b>Detalles técnicos:</b></p>
+          <ul class="chips"><li>HTML, CSS y JavaScript sin librerías</li><li>Sitio de un solo archivo</li><li>Simulador con canvas</li><li>Recoloreado de piezas en el navegador</li><li>Cotizaciones por WhatsApp</li><li>Registro opcional en hoja de cálculo</li><li>Cloudflare</li></ul>
+        </details>
+        <div class="macts"><span class="nota">En desarrollo. Demo disponible: pídemela y te la enseño.</span></div>
+      </div>
+    </div></div></div><span class="rod rod-b" aria-hidden="true"></span></div>
+    </article>
+    <article class="perg" id="mis07">
+      <button class="perg-cab" aria-expanded="false" aria-controls="papel07">
+        <span class="rod" aria-hidden="true"></span>
+        <span class="cinta"><span class="num">MISIÓN 07</span><img class="logo-neg" src="logo-sdshop.webp?v=1" alt="" aria-hidden="true"><b>SD Shop POS</b><span class="badge b-dev">En pruebas</span><span class="abre" aria-hidden="true">Abrir</span></span>
+        <img class="sello" src="sello2.webp" alt="" aria-hidden="true">
+      </button>
+      <div class="rollo"><div class="papel" id="papel07"><div class="papel-in"><div class="contenido ancha">
+      <button class="phone real pantalla" type="button" style="--ar:1.7;--bgshot:#08090D" aria-label="Ver capturas de SD Shop POS en grande"><span class="scr shots"><img src="sds-1.webp?v=1" alt="SD Shop POS: caja con productos, carrito y botón de cobro" class="on" loading="lazy"><img src="sds-2.webp?v=1" alt="SD Shop POS: inventario con existencias por talla, precios y margen" loading="lazy"><img src="sds-3.webp?v=1" alt="SD Shop POS: corte del día con apertura de caja y cortes anteriores" loading="lazy"><img src="sds-4.webp?v=1" alt="SD Shop POS: reportes con venta neta, ganancia y ventas por día" loading="lazy"><img src="sds-5.webp?v=1" alt="SD Shop POS: menú virtual de productos por categoría con el estilo de la marca" loading="lazy"><img src="sds-6.webp?v=1" alt="SD Shop POS: la caja vista en celular" loading="lazy"></span><span class="dots"><i></i><i></i><i></i><i></i><i></i><i></i></span></button>
+      <div>
+        <h3>SD Shop POS</h3>
+        <p class="giro">Punto de venta e inventario para boutique de ropa y tenis · Villa Izcalli Caxitlán, Colima</p>
+        <p class="reto"><b>El reto:</b> una boutique de streetwear que vende ropa y tenis por talla llevaba el inventario y el cobro sin un sistema pensado para ella. La dueña quiere ver sus números con claridad más que atender el mostrador, y los productos llegan con etiqueta de fábrica o sin ninguna.</p>
+        <p class="reto"><b>La solución:</b> un punto de venta que funciona en la laptop de la tienda, aun sin internet, con lector de código de barras: se escanea la prenda y se cobra sin buscarla en pantalla. Si el producto no trae etiqueta, el sistema genera un código propio, lo guarda y permite imprimir la etiqueta. Incluye el estilo de la marca (negro, dorado y azul neón) y una base para un menú virtual con los productos.</p>
+        <ul class="chips">
+          <li>Cobro con lector de código de barras</li><li>Inventario por talla</li><li>Códigos propios y etiquetas</li><li>Ticket, devoluciones y corte X/Z</li><li>Usuarios con roles</li><li>Funciona sin internet</li><li>Menú virtual</li>
+        </ul>
+        <details class="mas-mf">
+          <summary>Ver más detalles</summary>
+          <ul class="lista-mf">
+            <li>Cobro con lector de código de barras (también se puede escanear al dar de alta el producto).</li>
+            <li>Inventario por talla, con códigos de fábrica o códigos propios generados por el sistema.</li>
+            <li>Impresión de etiquetas con código de barras (50×25 mm o en hoja carta).</li>
+            <li>Ticket de 72 mm, devoluciones, corte de caja X y Z.</li>
+            <li>Usuarios con roles y permisos (dueña, encargado, cajero) y bloqueo por inactividad.</li>
+            <li>App instalable (PWA) que opera sin conexión.</li>
+            <li>Menú virtual de productos en vista previa.</li>
+          </ul>
+          <p class="reto"><b>En camino (versión 2, pedida por la dueña):</b> apartados, crédito a clientes con pagos semanales, quincenales o mensuales, promociones, lista de productos por surtir, sus números en tiempo real desde el celular, sincronización entre dos equipos y cobro con terminal Mercado Pago.</p>
+          <p class="reto"><b>Detalles técnicos:</b></p>
+          <ul class="chips"><li>HTML, CSS y JavaScript sin framework</li><li>PWA con service worker</li><li>Datos locales en el navegador</li><li>Códigos Code 128 propios</li><li>Impresión desde el navegador</li></ul>
+          <p class="reto"><b>El negocio:</b> S.D. SHOP · Instagram <a href="https://www.instagram.com/s.dshop.88" target="_blank" rel="noopener">@s.dshop.88</a> · WhatsApp 312 106 8493 · Akautlan #193 A, Villa Izcalli, Caxitlán, Colima.</p>
+          <p class="nota">Las cifras y productos de las imágenes son datos de demostración.</p>
+        </details>
+        <div class="macts"><span class="nota">En pruebas. Demo a solicitud: pídemela y te la enseño.</span></div>
+      </div>
+    </div></div></div><span class="rod rod-b" aria-hidden="true"></span></div>
     </article>
   </div>
 </section>
@@ -640,12 +775,15 @@ const MIS={
   colorado:'<span class="ok">[EN USO]</span> Pollos Colorado — pollería al carbón, Colima\n  Menú con pedidos por WhatsApp, horarios, agotados desde Google Sheets y caja en tablet.\n  <a href="https://polloscolorado.pages.dev" target="_blank" rel="noopener">polloscolorado.pages.dev</a>',
   arreola:'<span class="c">[DEMO]</span> Arreola 1 — pollos y carnes asadas\n  "Arma tu comida", tiempos de entrega y sugerencias de antojo.',
   beto:'<span class="ok">[EN USO]</span> Cremería Don Beto — venta en ruta\n  Pedidos por tienda, ticket impreso, crédito y saldos, funciona sin internet.',
+  sdshop:'[EN PRUEBAS] SD Shop POS — punto de venta para boutique de ropa y tenis\n  Lector de código de barras, inventario por talla, etiquetas y corte de caja.',
+  conceptos:'[EN DESARROLLO] Conceptos Gráficos — sitio para imprenta y personalizados\n  Catálogo, cotizador por WhatsApp, simulador de personalización y videos.',
+  carmelita:'[DEMO] Tacos Carmelita — punto de venta para taquería y tortillería\n  Mesas, para llevar y domicilio; comandas, cobro, ticket y reportes.',
   markaforense:'<span class="c">[EN PRUEBAS]</span> MarkaForense — cotejo de firmas para peritos grafoscópicos\n  Marcar, medir y comparar firmas; anexo en PDF y dictamen en Word.'
 };
 const CMD={
-  help:()=>'Comandos: <span class="c">whoami</span>, <span class="c">lanzar</span>, <span class="c">ls misiones</span>, <span class="c">cat colorado</span> | <span class="c">arreola</span> | <span class="c">beto</span> | <span class="c">markaforense</span>, <span class="c">servicios</span>, <span class="c">contacto</span>, <span class="c">clear</span>, <span class="c">exit</span>',
+  help:()=>'Comandos: <span class="c">whoami</span>, <span class="c">lanzar</span>, <span class="c">ls misiones</span>, <span class="c">cat colorado</span> | <span class="c">arreola</span> | <span class="c">beto</span> | <span class="c">markaforense</span> | <span class="c">carmelita</span> | <span class="c">conceptos</span> | <span class="c">sdshop</span>, <span class="c">servicios</span>, <span class="c">contacto</span>, <span class="c">clear</span>, <span class="c">exit</span>',
   whoami:()=>'Max Vargas — Ingeniero en Informática (cédula profesional) y desarrollador web.\nExperiencia en infraestructura bancaria y soporte de cajeros automáticos.\nShinobi Dev: incrementa el nivel de tu negocio.',
-  'ls misiones':()=>'01  colorado   <span class="ok">en uso</span>\n02  arreola    demo\n03  beto       <span class="ok">en uso</span>\n04  markaforense  en pruebas\n\nUsa <span class="c">cat nombre</span> para ver detalles.',
+  'ls misiones':()=>'01  colorado   <span class="ok">en uso</span>\n02  arreola    demo\n03  beto       <span class="ok">en uso</span>\n04  markaforense  en pruebas\n05  carmelita  demo\n06  conceptos  en desarrollo\n07  sdshop     en pruebas\n\nUsa <span class="c">cat nombre</span> para ver detalles.',
   ls:()=>CMD['ls misiones'](),
   servicios:()=>'- Menús con pedidos por WhatsApp\n- Apps para vender y cobrar\n- Soluciones a la medida',
   contacto:()=>'Correo: <a href="mailto:shinobi.devmx@gmail.com">shinobi.devmx@gmail.com</a>'+(WHATSAPP?'\nWhatsApp: <a href="'+WA_URL+'" target="_blank" rel="noopener">312 326 6510</a>':''),
@@ -661,7 +799,7 @@ function run(raw){
   if(!c)return;
   if(c==='clear'){out.innerHTML='';return}
   if(c==='exit'){cerrarTerm();return}
-  if(c.startsWith('cat ')){const k=c.slice(4);print(MIS[k]||'No existe la misión "'+esc(k)+'". Prueba con colorado, arreola, beto o markaforense.');return}
+  if(c.startsWith('cat ')){const k=c.slice(4);print(MIS[k]||'No existe la misión "'+esc(k)+'". Prueba con colorado, arreola, beto, markaforense, carmelita, conceptos o sdshop.');return}
   print(CMD[c]?CMD[c]():'Comando no encontrado: '+esc(c)+'. Escribe <span class="c">help</span>.');
 }
 let ultimo=null;
