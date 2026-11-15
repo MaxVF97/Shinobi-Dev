@@ -559,6 +559,39 @@ body.dm .dm-switch .pista{background:var(--rosa)}body.dm .dm-switch .pista::afte
 }
 
 
+
+/* ---- Ajustes v3 ---- */
+body:not(.dm) .dm-only{display:none!important}
+body.dm .hero{-webkit-user-select:none;user-select:none}
+body.dm .hero .fuego .fl,body.dm .hero .fuego::after{display:none}
+body.dm .hero .ninja-dm{filter:none}
+body.dm .hero-v2 .kn.k1{left:auto;right:5%;top:auto;bottom:150px}
+body.dm .hero-v2 .sk.s2{left:3%;top:20%}
+body.dm .hero-v2 .sk.s1{right:22%;top:auto;bottom:160px}
+.picado-sec{margin-top:40px!important}
+.calacas-neg{margin:44px 0 0;padding:22px 18px 18px;border-radius:18px;background:linear-gradient(135deg,rgba(124,58,237,.16),rgba(228,0,124,.12));border:1px dashed rgba(245,158,11,.55);text-align:center}
+.cn-tit{margin:0;font:800 20px/1.2 var(--wm,sans-serif);color:#F59E0B}
+.cn-sub{margin:4px 0 14px;font-size:14px;opacity:.75}
+.cn-fila{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 14px}
+.cn{all:unset;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;gap:6px;width:96px;cursor:pointer;border-radius:12px;padding:6px 2px}
+.cn .cn-img img{display:block;width:70px;height:auto;transition:transform .25s;filter:drop-shadow(0 6px 10px rgba(0,0,0,.35))}
+.cn:hover .cn-img img{transform:rotate(-8deg) scale(1.1)}
+.cn-n{font:700 12px/1.2 var(--tx,system-ui),sans-serif;text-align:center}
+.cn:focus-visible,.calaca-colg:focus-visible{outline:3px solid #F59E0B;outline-offset:3px}
+.calaca-colg{all:unset;box-sizing:border-box;position:absolute;top:0;z-index:4;display:flex;flex-direction:column;align-items:center;cursor:pointer;transform-origin:50% 0}
+.calaca-colg.der{right:clamp(8px,4vw,60px)}.calaca-colg.izq{left:clamp(8px,4vw,60px)}
+.calaca-colg .hilo{width:2px;height:clamp(60px,9vw,100px);background:rgba(255,255,255,.45)}
+.calaca-colg .cn-img img{display:block;width:clamp(48px,5.5vw,70px);height:auto;filter:drop-shadow(0 6px 10px rgba(0,0,0,.35))}
+.calaca-colg .cn-et{margin-top:4px;padding:3px 8px;border-radius:999px;background:#E4007C;color:#fff;font:800 10.5px/1.2 var(--tx,system-ui),sans-serif;white-space:nowrap}
+@media (prefers-reduced-motion:no-preference){.calaca-colg{animation:vaiven 4.2s ease-in-out infinite}.calaca-colg.izq{animation-delay:-2s}}
+.picado-sec{z-index:3}
+@media (max-width:760px){.calaca-colg .cn-et{font-size:9.5px}.calaca-colg .hilo{height:52px}.cn{width:84px}.cn .cn-img img{width:60px}}
+body.dm img.dm-av{object-fit:contain;background:radial-gradient(circle,#2A1240,#14081F);box-shadow:0 0 0 2px #F59E0B,0 0 22px rgba(249,115,22,.45)}
+.hero-v2 .kn.k1{left:auto!important;right:5%;top:auto;bottom:150px}
+.picado-sec .tira{padding:0 clamp(84px,10vw,150px)!important}
+.calaca-colg .hilo{height:24px!important}
+.calaca-colg.der{right:clamp(10px,2vw,40px)}.calaca-colg.izq{left:clamp(10px,2vw,40px)}
+@media (max-width:760px){.calaca-colg{display:none!important}.picado-sec .tira{padding:0 6px!important}}
 /* prioridad de los elementos de la ofrenda */
 body.dm .ofrenda{display:flex}
 body.dm .ofrenda .vela{display:block;background:none;box-shadow:none;border-radius:0;height:auto;width:clamp(18px,2.2vw,28px)}
@@ -576,7 +609,7 @@ body.dm .ofrenda .vela{display:block;background:none;box-shadow:none;border-radi
 </svg>
 <nav class="nav" aria-label="Principal">
   <div class="wrap">
-    <a class="mini" href="#inicio"><img src="avatar.webp" alt="" width="34" height="34">Shinobi Dev</a>
+    <a class="mini" href="#inicio"><img src="avatar.webp" alt="" width="34" height="34" data-dm-swap>Shinobi Dev</a>
     <ul>
       <li><a href="#servicios">Servicios</a></li>
       <li><a href="#misiones">Misiones</a></li>
@@ -615,7 +648,7 @@ body.dm .ofrenda .vela{display:block;background:none;box-shadow:none;border-radi
 </header>
 
 <main>
-<div class="picado-sec dm-only" aria-hidden="true"><div class="picado"><div class="tira" data-n="9"></div></div></div>
+<div class="picado-sec dm-only"><div class="picado" aria-hidden="true"><div class="tira" data-n="9"></div></div><button class="calaca-colg der" type="button" data-proy="Cremería Don Beto" data-img="4" aria-label="Calaverita de Cremería Don Beto"><span class="hilo"></span><span class="cn-img"></span><span class="cn-et">Calaverita de Cremería Don Beto</span></button></div>
 <section id="servicios" class="wrap" aria-labelledby="t-serv">
   <p class="kicker">SERVICIOS</p>
   <h2 id="t-serv">Tecnología a la medida de tu negocio</h2>
@@ -640,7 +673,7 @@ body.dm .ofrenda .vela{display:block;background:none;box-shadow:none;border-radi
   </div>
 </section>
 
-<div class="picado-sec dm-only" aria-hidden="true"><div class="picado"><div class="tira" data-n="9"></div></div></div>
+<div class="picado-sec dm-only"><div class="picado" aria-hidden="true"><div class="tira" data-n="9"></div></div><button class="calaca-colg izq" type="button" data-proy="Tacos Carmelita" data-img="5" aria-label="Calaverita de Tacos Carmelita"><span class="hilo"></span><span class="cn-img"></span><span class="cn-et">Calaverita de Tacos Carmelita</span></button></div>
 <section id="misiones" class="wrap" aria-labelledby="t-mis">
   <p class="kicker">MISIONES</p>
   <h2 id="t-mis">Proyectos realizados</h2>
@@ -851,9 +884,23 @@ body.dm .ofrenda .vela{display:block;background:none;box-shadow:none;border-radi
     </div></div></div><span class="rod rod-b" aria-hidden="true"></span></div>
     </article>
   </div>
+
+  <div class="calacas-neg dm-only">
+    <p class="cn-tit">🌼 Calaveritas de los negocios</p>
+    <p class="cn-sub">Toca una calavera para leer su verso.</p>
+    <div class="cn-fila">
+      <button class="cn" type="button" data-proy="Pollos Colorado" data-img="1"><span class="cn-img"></span><span class="cn-n">Pollos Colorado</span></button>
+      <button class="cn" type="button" data-proy="Arreola 1" data-img="2"><span class="cn-img"></span><span class="cn-n">Arreola 1</span></button>
+      <button class="cn" type="button" data-proy="Cremería Don Beto" data-img="4"><span class="cn-img"></span><span class="cn-n">Don Beto</span></button>
+      <button class="cn" type="button" data-proy="MarkaForense" data-img="3"><span class="cn-img"></span><span class="cn-n">MarkaForense</span></button>
+      <button class="cn" type="button" data-proy="Tacos Carmelita" data-img="5"><span class="cn-img"></span><span class="cn-n">Carmelita</span></button>
+      <button class="cn" type="button" data-proy="Conceptos Gráficos" data-img="6"><span class="cn-img"></span><span class="cn-n">Conceptos Gráficos</span></button>
+      <button class="cn" type="button" data-proy="SD Shop" data-img="1"><span class="cn-img"></span><span class="cn-n">SD Shop</span></button>
+    </div>
+  </div>
 </section>
 
-<div class="picado-sec dm-only" aria-hidden="true"><div class="picado"><div class="tira" data-n="9"></div></div></div>
+<div class="picado-sec dm-only"><div class="picado" aria-hidden="true"><div class="tira" data-n="9"></div></div><button class="calaca-colg der" type="button" data-proy="SD Shop" data-img="3" aria-label="Calaverita de SD Shop"><span class="hilo"></span><span class="cn-img"></span><span class="cn-et">Calaverita de SD Shop</span></button></div>
 <section id="como" class="wrap" aria-labelledby="t-como">
   <p class="kicker">CÓMO TRABAJO</p>
   <h2 id="t-como">Simple, de principio a fin</h2>
@@ -866,13 +913,13 @@ body.dm .ofrenda .vela{display:block;background:none;box-shadow:none;border-radi
   </div>
 </section>
 
-<div class="picado-sec dm-only" aria-hidden="true"><div class="picado"><div class="tira" data-n="9"></div></div></div>
+<div class="picado-sec dm-only"><div class="picado" aria-hidden="true"><div class="tira" data-n="9"></div></div><button class="calaca-colg izq" type="button" data-proy="Pollos Colorado" data-img="2" aria-label="Calaverita de Pollos Colorado"><span class="hilo"></span><span class="cn-img"></span><span class="cn-et">Calaverita de Pollos Colorado</span></button></div>
 <section id="quien" class="wrap" aria-labelledby="t-quien">
   <p class="kicker">QUIÉN SOY</p>
   <h2 id="t-quien">El ninja detrás del código</h2>
   <span class="kunai-lineas"><img class="divk" src="kunai.webp" alt="" aria-hidden="true"></span>
   <div class="quien">
-    <div class="fuego chico"><span class="fl f1"></span><span class="fl f2"></span><span class="fl f3"></span><span class="fl f4"></span><span class="fl f5"></span><img class="av-q" src="avatar.webp" width="200" height="200" alt="Avatar de Shinobi Dev"></div>
+    <div class="fuego chico"><span class="fl f1"></span><span class="fl f2"></span><span class="fl f3"></span><span class="fl f4"></span><span class="fl f5"></span><img class="av-q" src="avatar.webp" width="200" height="200" alt="Avatar de Shinobi Dev" data-dm-swap></div>
     <div>
       <p class="cred">Ingeniero en Informática · Cédula profesional</p>
       <p>Soy <b>Max Vargas</b>, <b>Ingeniero en Informática</b> con cédula profesional y desarrollador web.</p>
@@ -1172,17 +1219,22 @@ const VERSOS=[
  ['General','La Huesuda llevaba en libreta<br>las cuentas de todo su altar;','ahora con su punto de venta<br>sabe cuántos panes van a sobrar.']];
 const orden=VERSOS.map((_,i)=>i).sort(()=>Math.random()-.5);
 let iv=0;const md=document.querySelector('.verso'),cu=md.querySelector('.cuerpo');let origen=null;
-function verso(){const v=VERSOS[orden[iv%orden.length]];iv++;cu.innerHTML=`<p class="tema">${v[0]}</p><p class="v">${v[1]}</p><p class="v">${v[2]}</p>`}
-function abre(b){origen=b;verso();md.hidden=false;md.querySelector('.otra').focus()}
+function verso(){let v;if(filtro){const l=VERSOS.filter(x=>x[0]===filtro);v=l[iv%l.length]}else v=VERSOS[orden[iv%orden.length]];iv++;cu.innerHTML=`<p class="tema">${v[0]}</p><p class="v">${v[1]}</p><p class="v">${v[2]}</p>`}
+let filtro=null;function abre(b,proy){origen=b;filtro=proy||null;verso();md.hidden=false;md.querySelector('.otra').focus()}
 function cierra(){md.hidden=true;origen&&origen.focus()}
-document.querySelectorAll('[data-calaca]').forEach(b=>b.addEventListener('click',e=>{e.stopPropagation();b.classList.remove('tiembla');void b.offsetWidth;b.classList.add('tiembla');setTimeout(()=>{b.innerHTML=calImg()},250);lluvia(12,b.getBoundingClientRect());setTimeout(()=>abre(b),350)}));
+document.querySelectorAll('[data-calaca]').forEach(b=>b.addEventListener('click',e=>{filtro=null;e.stopPropagation();b.classList.remove('tiembla');void b.offsetWidth;b.classList.add('tiembla');setTimeout(()=>{b.innerHTML=calImg()},250);lluvia(12,b.getBoundingClientRect());setTimeout(()=>abre(b),350)}));
 md.querySelector('.otra').onclick=verso;md.querySelector('.x').onclick=cierra;md.addEventListener('click',e=>{if(e.target===md)cierra()});
 addEventListener('keydown',e=>{if(e.key==='Escape'&&!md.hidden)cierra()});
 // ---- aviso y frases de temporada
 const av=document.querySelector('.aviso-dm');if(av){av.textContent='🌼 Edición Día de Muertos';av.style.display=''}
 // ---- interruptor
+const swaps=[...document.querySelectorAll('[data-dm-swap]')];swaps.forEach(im=>im.dataset.orig=im.getAttribute('src'));
+function avatares(){const on=document.body.classList.contains('dm');swaps.forEach(im=>{im.src=on?A('dm-ninja.webp'):im.dataset.orig;im.classList.toggle('dm-av',on)})}
+avatares();
+document.querySelectorAll('[data-proy] .cn-img').forEach(s=>{const b=s.closest('[data-proy]');s.innerHTML=`<img src="${A('dm-calaca'+b.dataset.img+'.webp')}" alt="">`});
+document.querySelectorAll('.cn,.calaca-colg').forEach(b=>b.addEventListener('click',e=>{e.stopPropagation();lluvia(10,b.getBoundingClientRect());abre(b,b.dataset.proy)}));
 const sw=document.querySelector('.dm-switch');
-sw.addEventListener('click',()=>{const on=document.body.classList.toggle('dm');sw.setAttribute('aria-pressed',on);if(on)lluvia(30)});
+sw.addEventListener('click',()=>{const on=document.body.classList.toggle('dm');sw.setAttribute('aria-pressed',on);avatares();if(on)lluvia(30)});
 setTimeout(()=>lluvia(26),600);
 })();
 </script>
