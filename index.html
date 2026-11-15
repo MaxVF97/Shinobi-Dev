@@ -564,7 +564,9 @@ body.dm .dm-switch .pista{background:var(--rosa)}body.dm .dm-switch .pista::afte
 body:not(.dm) .dm-only{display:none!important}
 body.dm .hero{-webkit-user-select:none;user-select:none}
 body.dm .hero .fuego .fl,body.dm .hero .fuego::after{display:none}
-body.dm .hero .ninja-dm{filter:none}
+body.dm .hero .ninja-dm{filter:drop-shadow(0 0 14px rgba(249,115,22,.75)) drop-shadow(0 0 34px rgba(228,0,124,.35))}
+@media (prefers-reduced-motion:no-preference){body.dm .hero .ninja-dm{animation:flota 6s ease-in-out infinite,auraDM 2.8s ease-in-out infinite}}
+@keyframes auraDM{0%,100%{filter:drop-shadow(0 0 12px rgba(249,115,22,.65)) drop-shadow(0 0 30px rgba(228,0,124,.3))}50%{filter:drop-shadow(0 0 22px rgba(255,170,40,.95)) drop-shadow(0 0 46px rgba(228,0,124,.5))}}
 body.dm .hero-v2 .kn.k1{left:auto;right:5%;top:auto;bottom:150px}
 body.dm .hero-v2 .sk.s2{left:3%;top:20%}
 body.dm .hero-v2 .sk.s1{right:22%;top:auto;bottom:160px}
@@ -592,6 +594,23 @@ body.dm img.dm-av{object-fit:contain;background:radial-gradient(circle,#2A1240,#
 .calaca-colg .hilo{height:24px!important}
 .calaca-colg.der{right:clamp(10px,2vw,40px)}.calaca-colg.izq{left:clamp(10px,2vw,40px)}
 @media (max-width:760px){.calaca-colg{display:none!important}.picado-sec .tira{padding:0 6px!important}}
+
+/* ---- Quién soy y Contacto en colores de temporada ---- */
+body.dm .quien{background:linear-gradient(135deg,rgba(124,58,237,.14),rgba(228,0,124,.08));border-color:rgba(245,158,11,.4)}
+body.dm .quien .av-q{animation:aroDM 2.6s ease-in-out infinite;box-shadow:0 0 0 3px #F59E0B,0 0 30px rgba(249,115,22,.5)}
+@keyframes aroDM{0%,100%{box-shadow:0 0 0 3px #F59E0B,0 0 26px rgba(249,115,22,.45)}50%{box-shadow:0 0 0 3px #E4007C,0 0 42px rgba(228,0,124,.6)}}
+body.dm .quien .fuego::after{background:radial-gradient(circle,rgba(249,115,22,.35),rgba(249,115,22,0) 65%)}
+body.dm .quien .fuego .fl{background:radial-gradient(ellipse at 50% 80%,rgba(255,200,90,.95),rgba(249,115,22,.6) 45%,rgba(249,115,22,0) 72%);display:block}
+body.dm .quien .cred{background:rgba(228,0,124,.14);border-color:rgba(228,0,124,.55)}
+body.dm .quien .chips li::before,body.dm .chips li::before{background:#F59E0B}
+body.dm .contacto{background:radial-gradient(ellipse at 30% 0%,#3A1458 0%,#1A0A26 55%,#0B0610 100%)}
+body.dm .contacto::before{opacity:.18}
+body.dm .contacto .luna-c{filter:sepia(1) saturate(4) hue-rotate(-15deg);opacity:.55}
+body.dm .contacto .btn.pri{background:linear-gradient(135deg,#E4007C,#B0005F);box-shadow:0 5px 0 #7A0042}
+body.dm .contacto .kicker,body.dm .contacto .tel b{color:#F59E0B}
+body.dm .contacto .qr span{color:#FFC27A}
+body.dm footer{background:#0B0610;border-top:3px solid #F59E0B}
+body.dm .flota{background:linear-gradient(135deg,#E4007C,#B0005F)}
 /* prioridad de los elementos de la ofrenda */
 body.dm .ofrenda{display:flex}
 body.dm .ofrenda .vela{display:block;background:none;box-shadow:none;border-radius:0;height:auto;width:clamp(18px,2.2vw,28px)}
