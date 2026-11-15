@@ -414,9 +414,161 @@ html.bloq,html.bloq body{overflow:hidden}
 .btn.pri:hover .bsk{transform:rotate(180deg)}
 @media (prefers-reduced-motion:reduce){.sk,.psk{position:absolute;right:-22px;top:-22px;width:110px;opacity:.12;transition:transform .9s ease}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero .ninja{animation:none}}
+
+/* ===== Portada v2: ninja a la izquierda, información arriba ===== */
+.hero.hero-v2{padding:calc(84px + env(safe-area-inset-top,0px)) 0 70px;text-align:left;background:radial-gradient(ellipse at 22% 45%,#0F1D33 0%,var(--negro) 60%)}
+.hero-v2 .luna{left:24%;top:-4%;width:min(620px,130vw)}
+.hero-v2 .hero-grid{display:grid;grid-template-columns:minmax(260px,380px) 1fr;column-gap:clamp(28px,5vw,72px);align-items:center;align-content:center}
+.hero-v2 .fuego.grande{grid-column:1;grid-row:1/span 6;width:100%;max-width:380px;margin:0}
+.hero-v2 .ninja,.hero-v2 .ninja-fl{height:auto}
+.hero-v2 h1,.hero-v2 .por,.hero-v2 .tag,.hero-v2 .typer,.hero-v2 .acts{grid-column:2}
+.hero-v2 h1{margin:0}
+.hero-v2 .logo{width:min(470px,100%);margin:0;display:block}
+.hero-v2 .por{margin:12px 0 0;font-size:21px}
+.hero-v2 .tag{margin:6px 0 0;font-size:clamp(20px,2.2vw,26px);font-weight:700;color:#E8ECF1;letter-spacing:.01em}
+.hero-v2 .typer{margin:14px 0 0}
+.hero-v2 .acts{justify-content:flex-start;margin-top:26px}
+.hero-v2 .sk.s1{top:12%;left:auto;right:30%}
+.hero-v2 .kn.k1{top:auto;bottom:22%;left:46%}
+@media (max-width:760px){
+  .hero.hero-v2{padding:calc(74px + env(safe-area-inset-top,0px)) 0 64px}
+  .hero-v2 .luna{left:12%;top:-2%}
+  .hero-v2 .hero-grid{grid-template-columns:118px 1fr;column-gap:14px;align-items:center}
+  .hero-v2 .fuego.grande{grid-row:1/span 2;max-width:118px}
+  .hero-v2 h1{grid-column:2;align-self:end}
+  .hero-v2 .por{grid-column:2;align-self:start;margin-top:6px;font-size:16px}
+  .hero-v2 .tag,.hero-v2 .typer,.hero-v2 .acts{grid-column:1/-1}
+  .hero-v2 .tag{margin-top:18px;font-size:20px}
+  .hero-v2 .typer{font-size:14px}
+  .hero-v2 .acts .btn{flex:1 1 auto}
+  .hero-v2 .fuego .fl{filter:blur(7px)}
+}
+</style>
+<!-- ===================== Día de Muertos ===================== -->
+<style>
+:root{--rosa:#E4007C;--cempa:#F59E0B;--cempa2:#F97316;--morado:#7C3AED;--verde:#16A34A}
+body.dm .hero.hero-v2{background:radial-gradient(ellipse at 22% 45%,#2A1240 0%,#14081F 45%,var(--negro) 75%)}
+body.dm .hero-v2 .luna{filter:sepia(1) saturate(4) hue-rotate(-15deg);opacity:.55}
+body.dm .hero .por{color:var(--cempa)}
+body.dm .typer .pr,body.dm .typer{color:#FFC27A}
+body.dm .typer .car{background:var(--cempa)}
+body.dm .hero .btn.pri{background:linear-gradient(135deg,var(--rosa),#B0005F);box-shadow:0 4px 0 #7A0042}
+body.dm .fuego .fl{background:radial-gradient(ellipse at 50% 80%,rgba(255,200,90,.95),rgba(249,115,22,.6) 45%,rgba(249,115,22,0) 72%)}
+body.dm .fuego::after{background:radial-gradient(circle,rgba(249,115,22,.32),rgba(249,115,22,0) 65%)}
+body.dm .hero .ninja-fl{filter:url(#llamaFx) hue-rotate(185deg) saturate(1.6) brightness(1.1) drop-shadow(0 0 8px rgba(249,115,22,.7))}
+body.dm .hero .ninja{filter:drop-shadow(0 0 18px rgba(249,115,22,.45))}
+body.dm .bambu{display:none}
+.dm-only{display:none}body.dm .dm-only{display:block}
+/* ---- Diseños de temporada (Gemini) ---- */
+.ninja-dm{display:none}
+body.dm .hero .ninja-mov{display:none}
+body.dm .hero .ninja-dm{display:block;position:relative;z-index:2;width:112%;max-width:none;height:auto;margin:-6% -6% 0;filter:drop-shadow(0 0 22px rgba(249,115,22,.45))}
+@media (prefers-reduced-motion:no-preference){body.dm .hero .ninja-dm{animation:flota 6s ease-in-out infinite}}
+body.dm .hero.hero-v2{background:linear-gradient(90deg,rgba(20,8,31,.35),rgba(20,8,31,.15) 55%,rgba(20,8,31,.45)),url(dm-fondo.webp) 70% 30%/cover no-repeat,#14081F}
+body.dm .hero::before{opacity:.12}
+body.dm .hero-v2 .luna,body.dm .hero .nube{display:none}
+.picado svg,.picado img{width:clamp(44px,7vw,78px);height:auto;transform-origin:50% 0;pointer-events:auto;cursor:pointer;filter:drop-shadow(0 3px 4px rgba(0,0,0,.35))}
+@media (prefers-reduced-motion:no-preference){.picado img{animation:vaiven 3.6s ease-in-out infinite}}
+.picado img.sopla{animation:sopla .9s ease-out}
+.calaca img{display:block;width:100%;height:auto;pointer-events:none}
+.ofrenda .flor,.ofrenda .obj{height:auto;margin-bottom:-4px;transform-origin:50% 100%}
+.ofrenda .flor{width:clamp(36px,4.4vw,58px)}
+.ofrenda .obj{width:clamp(40px,5vw,66px)}.ofrenda .obj.ramo{width:clamp(34px,3.8vw,50px)}.ofrenda .obj.petalos{width:clamp(56px,7vw,96px);margin-bottom:-8px}
+.vela{all:unset;position:relative;display:block;cursor:pointer;width:clamp(18px,2.2vw,28px);margin-bottom:-2px}
+.vela::before{content:none}
+.vela img{display:block;width:100%;height:auto;pointer-events:none}
+.vela .fuego-v{position:absolute;left:0;top:0;width:100%;opacity:0;transform-origin:50% 30%;transition:opacity .25s}
+.vela.on .fuego-v{opacity:1;filter:drop-shadow(0 0 10px rgba(255,170,40,.9))}
+@media (prefers-reduced-motion:no-preference){.vela.on .fuego-v{animation:flick .2s ease-in-out infinite alternate}}
+.vela .llama{display:none}
+@media (max-width:760px){.vela{width:16px}.ofrenda .obj{width:38px}.ofrenda .obj.petalos{width:56px}.ofrenda .obj.ramo{width:30px}}
+@media (max-width:420px){.ofrenda>:nth-child(n+11):not(.ofrenda-cuenta){display:none}}
+
+body.dm .hero.hero-v2{padding-top:calc(150px + env(safe-area-inset-top,0px));padding-bottom:124px}
+.calaca svg{display:block;width:100%;height:auto}
+body.dm .hero-v2 .aviso-dm{display:inline-flex;grid-column:2;justify-self:start}
+@media (max-width:760px){body.dm .hero.hero-v2{padding-top:calc(118px + env(safe-area-inset-top,0px));padding-bottom:150px}
+ body.dm .hero-v2 .aviso-dm{grid-column:1/-1;grid-row:1}
+ body.dm .hero-v2 .fuego.grande{grid-row:2/span 2}
+ body.dm .hero-v2 h1{grid-row:2}body.dm .hero-v2 .por{grid-row:3}}
+
+/* Papel picado */
+.picado{position:absolute;left:0;right:0;top:calc(58px + env(safe-area-inset-top,0px));height:0;z-index:3;pointer-events:none}
+.picado::before{content:"";position:absolute;left:-2%;right:-2%;top:2px;height:22px;border-top:2px solid rgba(255,255,255,.35);border-radius:0 0 50% 50%/0 0 22px 22px}
+.picado .tira{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-around;padding:0 6px}
+.picado svg{width:clamp(44px,7vw,78px);height:auto;transform-origin:50% 0;pointer-events:auto;cursor:pointer;filter:drop-shadow(0 3px 4px rgba(0,0,0,.35))}
+@media (prefers-reduced-motion:no-preference){.picado svg{animation:vaiven 3.6s ease-in-out infinite}}
+@keyframes vaiven{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
+.picado svg.sopla{animation:sopla .9s ease-out}
+@keyframes sopla{0%{transform:rotate(0)}30%{transform:rotate(22deg) skewX(-6deg)}60%{transform:rotate(-12deg)}100%{transform:rotate(0)}}
+.picado-sec{position:relative;height:clamp(78px,10vw,112px);margin:0 0 10px;overflow:visible}
+.picado-sec .picado svg,.picado-sec .picado img{width:clamp(44px,6vw,72px)}
+.picado-sec .picado{top:0}
+
+/* Calaveras */
+.calaca{all:unset;box-sizing:border-box;display:block;position:absolute;z-index:3;width:clamp(64px,8vw,104px);cursor:pointer;filter:drop-shadow(0 6px 12px rgba(0,0,0,.5));transition:transform .3s}
+.calaca:hover{transform:rotate(-8deg) scale(1.08)}
+.calaca:focus-visible{outline:3px solid var(--cempa);outline-offset:4px;border-radius:50%}
+.calaca.c1{left:3%;bottom:96px}.calaca.c2{right:3%;top:150px}
+@media (prefers-reduced-motion:no-preference){.calaca{animation:flotaC 5s ease-in-out infinite}.calaca.c2{animation-delay:-2.4s}}
+@keyframes flotaC{0%,100%{translate:0 0}50%{translate:0 -8px}}
+.calaca.tiembla{animation:tiembla .5s linear 2}
+@keyframes tiembla{0%,100%{rotate:0}25%{rotate:-10deg}75%{rotate:10deg}}
+.calaca .ojo{transition:fill .3s}.calaca:hover .ojo{fill:var(--cempa)}
+
+/* Ofrenda: flores y velas al pie de la portada */
+.ofrenda{position:absolute;left:0;right:0;bottom:0;height:86px;z-index:2;display:flex;align-items:flex-end;justify-content:center;gap:clamp(4px,1.6vw,22px);padding:0 10px;background:linear-gradient(180deg,transparent,rgba(124,58,237,.18));border-bottom:6px solid #7C2D12}
+.ofrenda .flor{width:clamp(34px,4.6vw,56px);margin-bottom:-6px;transform-origin:50% 100%}
+@media (prefers-reduced-motion:no-preference){.ofrenda .flor{animation:mece 4s ease-in-out infinite}.ofrenda .flor:nth-child(odd){animation-delay:-2s}}
+@keyframes mece{0%,100%{rotate:-3deg}50%{rotate:3deg}}
+.vela{all:unset;position:relative;width:16px;height:46px;border-radius:3px 3px 2px 2px;background:linear-gradient(90deg,#F5E6C8,#FFF8E8 45%,#E9D3A6);cursor:pointer;margin-bottom:0;box-shadow:inset 0 -6px 0 rgba(0,0,0,.08)}
+.vela.v2{height:60px;width:18px}.vela.v3{height:38px}
+.vela::before{content:"";position:absolute;left:50%;top:-6px;width:2px;height:7px;background:#3B2A1A;translate:-50% 0}
+.vela .llama{position:absolute;left:50%;bottom:calc(100% + 3px);width:12px;height:20px;translate:-50% 0;border-radius:50% 50% 50% 50%/62% 62% 38% 38%;background:radial-gradient(ellipse at 50% 70%,#FFF7C2,#FFC23A 45%,#F97316 75%,transparent 80%);box-shadow:0 0 18px 6px rgba(249,115,22,.55);opacity:0;transform-origin:50% 100%;transition:opacity .25s}
+.vela.on .llama{opacity:1}
+@media (prefers-reduced-motion:no-preference){.vela.on .llama{animation:flick .18s ease-in-out infinite alternate}}
+@keyframes flick{from{transform:scale(1,1) rotate(-2deg)}to{transform:scale(.92,1.08) rotate(2deg)}}
+.vela:focus-visible{outline:2px solid var(--cempa);outline-offset:3px}
+.ofrenda-cuenta{position:absolute;right:12px;bottom:10px;font:700 12px/1 ui-monospace,Menlo,monospace;color:#FFC27A;opacity:.85}
+
+/* Pétalos */
+#petalos{position:fixed;inset:0;pointer-events:none;z-index:40;overflow:hidden}
+.petalo{position:absolute;top:-20px;width:12px;height:9px;border-radius:60% 40% 60% 40%;background:radial-gradient(circle at 35% 35%,#FFD27A,#F59E0B 55%,#EA580C);opacity:.9;will-change:transform}
+
+/* Interruptor y calaverita */
+.dm-switch{position:fixed;left:14px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:60;display:flex;align-items:center;gap:8px;padding:8px 14px 8px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.18);background:rgba(20,8,31,.88);color:#FFE7C2;font:700 13px/1 var(--tx,system-ui),sans-serif;cursor:pointer;backdrop-filter:blur(6px);box-shadow:0 8px 20px rgba(0,0,0,.35)}
+.dm-switch .pista{width:34px;height:20px;border-radius:999px;background:#3A2A4A;position:relative;transition:background .25s}
+.dm-switch .pista::after{content:"";position:absolute;top:3px;left:3px;width:14px;height:14px;border-radius:50%;background:#fff;transition:transform .25s}
+body.dm .dm-switch .pista{background:var(--rosa)}body.dm .dm-switch .pista::after{transform:translateX(14px)}
+.dm-switch:focus-visible{outline:3px solid var(--cempa);outline-offset:3px}
+.verso{position:fixed;inset:0;z-index:80;display:grid;place-items:center;background:rgba(10,4,16,.72);padding:18px}
+.verso[hidden]{display:none}
+.verso .hoja{position:relative;max-width:380px;width:100%;background:#FFF7EA;color:#2B1630;border-radius:16px;padding:26px 24px 20px;text-align:center;box-shadow:0 24px 60px rgba(0,0,0,.5);border-top:10px solid var(--rosa);font:500 16px/1.6 var(--tx,system-ui),sans-serif}
+.verso .hoja h3{margin:0 0 4px;font:800 20px/1.2 var(--wm,sans-serif);color:#7A0042}
+.verso .hoja .sub{margin:0 0 14px;font-size:12.5px;color:#8A6A7A;letter-spacing:.08em;text-transform:uppercase}
+.verso .hoja p.v{margin:0 0 12px;font-style:italic}
+.verso .hoja p.tema{display:inline-block;margin:0 0 12px;padding:4px 10px;border-radius:999px;background:#FDE7F2;color:#B0005F;font:800 11.5px/1 var(--tx,system-ui),sans-serif;letter-spacing:.06em;text-transform:uppercase}
+.verso .hoja button.x{all:unset;position:absolute;top:8px;right:12px;font-size:22px;color:#8A6A7A;cursor:pointer;padding:4px 8px}
+.verso .hoja .otra{all:unset;cursor:pointer;margin-top:4px;padding:10px 16px;border-radius:10px;background:var(--cempa);color:#2B1630;font-weight:800}
+.verso .hoja button:focus-visible{outline:3px solid var(--rosa);outline-offset:2px}
+.aviso-dm{display:inline-flex;align-items:center;gap:8px;margin:0 0 14px;padding:6px 12px;border-radius:999px;background:rgba(228,0,124,.16);border:1px solid rgba(228,0,124,.5);color:#FFC2E2;font:700 12.5px/1 var(--tx,system-ui),sans-serif;letter-spacing:.04em}
+@media (max-width:760px){
+  .calaca.c1{left:3%;bottom:80px;width:52px;top:auto}.calaca.c2{right:3%;bottom:80px;width:52px;top:auto}
+  .ofrenda{height:72px}.vela{width:12px;height:34px}.vela.v2{height:44px;width:14px}.vela.v3{height:30px}
+  .hero-v2 .aviso-dm{grid-column:1/-1}
+}
+
+
+/* prioridad de los elementos de la ofrenda */
+body.dm .ofrenda{display:flex}
+body.dm .ofrenda .vela{display:block;background:none;box-shadow:none;border-radius:0;height:auto;width:clamp(18px,2.2vw,28px)}
+@media (max-width:760px){body.dm .ofrenda{gap:4px;height:78px}body.dm .ofrenda .vela{width:20px;flex:none}
+ body.dm .ofrenda .flor{width:42px;flex:none}body.dm .ofrenda .obj{width:48px;flex:none}body.dm .ofrenda .obj.petalos{width:58px}body.dm .ofrenda .obj.ramo{width:34px}
+ body.dm .ofrenda>:nth-child(n+10):not(.ofrenda-cuenta){display:none}
+ body.dm .ofrenda-cuenta{bottom:auto;top:-16px;right:auto;left:50%;translate:-50% 0}}
 </style>
 </head>
-<body>
+<body class="dm">
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="shuriken" viewBox="-50 -50 100 100"><path d="M0-47C7-33 13-20 15-5L4 4-6-5Z" transform="rotate(0)"/><path d="M0-47C7-33 13-20 15-5L4 4-6-5Z" transform="rotate(90)"/><path d="M0-47C7-33 13-20 15-5L4 4-6-5Z" transform="rotate(180)"/><path d="M0-47C7-33 13-20 15-5L4 4-6-5Z" transform="rotate(270)"/><circle r="7" style="fill:var(--hole,#0A0C10)"/></symbol>
@@ -435,7 +587,7 @@ html.bloq,html.bloq body{overflow:hidden}
   </div>
 </nav>
 
-<header class="hero" id="inicio">
+<header class="hero hero-v2" id="inicio">
   <div class="estrellas" aria-hidden="true">
     <img class="luna" src="luna.webp" alt="">
     <img class="nube n1" src="nube.webp" alt=""><img class="nube n2" src="nube.webp" alt="">
@@ -443,9 +595,14 @@ html.bloq,html.bloq body{overflow:hidden}
     <img class="kn k1" src="kunai.webp" alt=""><img class="kn k2" src="kunai-tag.webp" alt="">
   </div>
   <div class="bambu" aria-hidden="true"></div>
-  <div class="wrap">
-    <div class="fuego grande"><span class="fl f1"></span><span class="fl f2"></span><span class="fl f3"></span><span class="fl f4"></span><span class="fl f5"></span><div class="ninja-mov"><img class="ninja" src="ninja-base.webp?v=3" width="280" height="280" alt="Logo de Shinobi Dev: ninja encapuchado con aura azul"><img class="ninja-fl" src="ninja-flamas.webp?v=3" width="280" height="280" alt="" aria-hidden="true"></div></div>
+  <div class="picado dm-only" aria-hidden="true"><div class="tira" data-n="11"></div></div>
+  <button class="calaca c1 dm-only" type="button" aria-label="Calaverita: toca para leer un verso" data-calaca></button>
+  <button class="calaca c2 dm-only" type="button" aria-label="Calaverita: toca para leer otro verso" data-calaca></button>
+  <div class="ofrenda dm-only" aria-label="Ofrenda: toca las velas para encenderlas"></div>
+  <div class="wrap hero-grid">
+    <div class="fuego grande"><span class="fl f1"></span><span class="fl f2"></span><span class="fl f3"></span><span class="fl f4"></span><span class="fl f5"></span><div class="ninja-mov"><img class="ninja" src="ninja-base.webp?v=3" width="280" height="280" alt="Logo de Shinobi Dev: ninja encapuchado con aura azul"><img class="ninja-fl" src="ninja-flamas.webp?v=3" width="280" height="280" alt="" aria-hidden="true"></div><img class="ninja-dm" src="dm-ninja.webp" width="720" height="720" alt="Logo de Shinobi Dev en edición Día de Muertos: ninja con flores de cempasúchil y cara de calavera"></div>
     <svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="llamaFx" x="-15%" y="-15%" width="130%" height="130%"><feTurbulence type="fractalNoise" baseFrequency="0.012 0.05" numOctaves="2" seed="4" result="n"><animate attributeName="baseFrequency" dur="2.6s" values="0.012 0.05;0.016 0.075;0.011 0.06;0.012 0.05" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" in2="n" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></svg>
+    <p class="aviso-dm dm-only" style="display:none"></p>
     <h1><img class="logo" src="logotipo.svg" alt="Shinobi Dev"></h1>
     <p class="por">por Max Vargas</p>
     <p class="tag">Incrementa el nivel de tu negocio</p>
@@ -458,6 +615,7 @@ html.bloq,html.bloq body{overflow:hidden}
 </header>
 
 <main>
+<div class="picado-sec dm-only" aria-hidden="true"><div class="picado"><div class="tira" data-n="9"></div></div></div>
 <section id="servicios" class="wrap" aria-labelledby="t-serv">
   <p class="kicker">SERVICIOS</p>
   <h2 id="t-serv">Tecnología a la medida de tu negocio</h2>
@@ -482,6 +640,7 @@ html.bloq,html.bloq body{overflow:hidden}
   </div>
 </section>
 
+<div class="picado-sec dm-only" aria-hidden="true"><div class="picado"><div class="tira" data-n="9"></div></div></div>
 <section id="misiones" class="wrap" aria-labelledby="t-mis">
   <p class="kicker">MISIONES</p>
   <h2 id="t-mis">Proyectos realizados</h2>
@@ -694,6 +853,7 @@ html.bloq,html.bloq body{overflow:hidden}
   </div>
 </section>
 
+<div class="picado-sec dm-only" aria-hidden="true"><div class="picado"><div class="tira" data-n="9"></div></div></div>
 <section id="como" class="wrap" aria-labelledby="t-como">
   <p class="kicker">CÓMO TRABAJO</p>
   <h2 id="t-como">Simple, de principio a fin</h2>
@@ -706,6 +866,7 @@ html.bloq,html.bloq body{overflow:hidden}
   </div>
 </section>
 
+<div class="picado-sec dm-only" aria-hidden="true"><div class="picado"><div class="tira" data-n="9"></div></div></div>
 <section id="quien" class="wrap" aria-labelledby="t-quien">
   <p class="kicker">QUIÉN SOY</p>
   <h2 id="t-quien">El ninja detrás del código</h2>
@@ -860,12 +1021,12 @@ const io=new IntersectionObserver(e=>{if(e[0].isIntersecting){q.classList.add('v
 // ===== Easter egg: los stickers se asoman de vez en cuando =====
 (function(){
   if(reducido)return;
-  const capa=document.getElementById('asomos');const fotos=['stk1.webp?v=3','stk2.webp?v=3','stk3.webp?v=3','stk4.webp?v=3','stk5.webp?v=3','stk6.webp?v=3','stk7.webp?v=3'];
+  const capa=document.getElementById('asomos');const fotosN=['stk1.webp?v=3','stk2.webp?v=3','stk3.webp?v=3','stk4.webp?v=3','stk5.webp?v=3','stk6.webp?v=3','stk7.webp?v=3'],fotosDM=['dm-stk1.webp','dm-stk2.webp','dm-stk3.webp','dm-stk4.webp','dm-stk5.webp','dm-stk6.webp'];let fotos=fotosN;
   let vistos=0,ocupado=false,ultimo=-1;
   function asomar(){
     const sy=window.scrollY||document.documentElement.scrollTop||document.body.scrollTop||0;
     if(ocupado||document.hidden||!term.hidden||sy<120||vistos>=10)return programar();
-    ocupado=true;vistos++;
+    ocupado=true;vistos++;fotos=document.body.classList.contains('dm')?fotosDM:fotosN;
     let i;do{i=Math.floor(Math.random()*fotos.length)}while(i===ultimo&&fotos.length>1);ultimo=i;
     const im=new Image();im.className='asoma';im.alt='';im.src=fotos[i];
     const lado=['izq','der','abajo'][Math.floor(Math.random()*3)],w=Math.min(130,window.innerWidth*.3);
@@ -940,6 +1101,90 @@ function mensajero(destino){
 document.querySelectorAll('.js-wa').forEach(a=>a.addEventListener('click',e=>{if(!WA_URL||reducido)return;e.preventDefault();bombaHumo(WA_URL)}));
 document.querySelectorAll('.js-mail').forEach(a=>a.addEventListener('click',e=>{if(reducido)return;e.preventDefault();mensajero(a.href)}));
 document.querySelectorAll('.js-wa2').forEach(a=>a.addEventListener('click',e=>{if(reducido)return;e.preventDefault();bombaHumo(a.href)}));
+</script>
+
+<div id="petalos" aria-hidden="true"></div>
+<button class="dm-switch" type="button" aria-pressed="true" aria-label="Activar o desactivar la temática de Día de Muertos"><span class="pista"></span><span>Día de Muertos</span></button>
+<div class="verso" hidden role="dialog" aria-modal="true" aria-labelledby="verso-t"><div class="hoja"><button class="x" type="button" aria-label="Cerrar">×</button><h3 id="verso-t">Calaverita literaria</h3><p class="sub">Shinobi Dev · Día de Muertos</p><div class="cuerpo"></div><button class="otra" type="button">Otra calaverita</button></div></div>
+<script>
+(function(){
+const red=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const A=n=>(window.DMA&&window.DMA[n])||n;
+const COL=['#E4007C','#F59E0B','#7C3AED','#16A34A','#0EA5E9','#F97316'];
+// ---- papel picado (diseños propios: flor, calavera, corazón, estrella)
+const recorte={
+ flor:'M40 30a6 6 0 1 0 0.01 0zM40 18c4 0 6 6 0 10c-6-4-4-10 0-10zM40 42c4 0 6-6 0-10c-6 4-4 10 0 10zM28 30c0-4 6-6 10 0c-4 6-10 4-10 0zM52 30c0-4-6-6-10 0c4 6 10 4 10 0z',
+ calaca:'M40 16c-10 0-16 7-16 15c0 6 3 9 6 11v6h20v-6c3-2 6-5 6-11c0-8-6-15-16-15zM33 28a4 4 0 1 0 0.01 0zM47 28a4 4 0 1 0 0.01 0zM40 34l-3 5h6z',
+ corazon:'M40 46c-12-8-16-14-16-19c0-5 4-8 8-8c4 0 6 2 8 5c2-3 4-5 8-5c4 0 8 3 8 8c0 5-4 11-16 19z',
+ estrella:'M40 15l4 11h12l-10 7l4 12l-10-7l-10 7l4-12l-10-7h12z'};
+const formas=Object.keys(recorte);
+function bandera(i){return `<img src="${A('dm-picado'+(i%6+1)+'.webp')}" alt="" style="animation-delay:${-(i*.37)%3.6}s">`}
+document.querySelectorAll('.picado .tira').forEach(t=>{const n=+t.dataset.n||9;let h='';for(let i=0;i<n;i++)h+=bandera(i+(n===9?3:0));t.innerHTML=h;
+  t.querySelectorAll('img').forEach(s=>s.addEventListener('click',()=>{s.classList.remove('sopla');void s.offsetWidth;s.classList.add('sopla');lluvia(10,s.getBoundingClientRect())}));});
+// ---- calaveras (dibujo original)
+let ic=0;const calImg=()=>`<img src="${A('dm-calaca'+((ic++%6)+1)+'.webp')}" alt="">`;
+document.querySelectorAll('[data-calaca]').forEach((b,k)=>{ic=k?3:0;b.innerHTML=calImg()});ic=1;
+// ---- flor de cempasúchil
+function flor(){let g='';const capas=[[26,'#EA580C',16],[20,'#F97316',14],[14,'#F59E0B',12],[8,'#FBBF24',10]];
+  capas.forEach(([r,c,n],k)=>{for(let i=0;i<n;i++){const a=i/n*Math.PI*2+k*.3;g+=`<ellipse cx="${32+Math.cos(a)*r*.55}" cy="${32+Math.sin(a)*r*.55}" rx="${r*.38}" ry="${r*.24}" transform="rotate(${a*180/Math.PI} ${32+Math.cos(a)*r*.55} ${32+Math.sin(a)*r*.55})" fill="${c}"/>`}});
+  return `<svg class="flor" viewBox="0 0 64 84" aria-hidden="true"><path d="M32 52v32" stroke="#15803D" stroke-width="4"/><path d="M32 70c-8-6-14-4-16 0c6 2 12 2 16 0z" fill="#16A34A"/>${g}<circle cx="32" cy="32" r="4" fill="#B45309"/></svg>`;}
+const of=document.querySelector('.ofrenda');
+if(of){const seq=['petalos','flor1','v1','pan','flor2','v2','ramo','v3','calavera','flor3','v1','jarrito','flor4','v2','petalos'];let h='';
+  seq.forEach(x=>{if(x[0]==='v'){const n=x[1];h+=`<button class="vela" type="button" aria-pressed="false" aria-label="Encender vela"><img src="${A('dm-vela'+n+'.webp')}" alt=""><img class="fuego-v" src="${A('dm-llama'+n+'.webp')}" alt=""><span class="llama"></span></button>`}
+    else if(x.startsWith('flor'))h+=`<img class="flor" src="${A('dm-'+x+'.webp')}" alt="">`;else h+=`<img class="obj ${x}" src="${A('dm-'+x+'.webp')}" alt="">`});
+  of.innerHTML=h+'<span class="ofrenda-cuenta" aria-live="polite"></span>';
+  const velas=[...of.querySelectorAll('.vela')],cta=of.querySelector('.ofrenda-cuenta');
+  const pinta=()=>{const n=velas.filter(v=>v.classList.contains('on')).length;cta.textContent=n===velas.length?'¡Ofrenda completa! 🕯':`velas ${n}/${velas.length}`;if(n===velas.length)lluvia(40)};
+  velas.forEach((v,i)=>{if(i%2===0)v.classList.add('on');v.setAttribute('aria-pressed',v.classList.contains('on'));
+    v.addEventListener('click',e=>{e.stopPropagation();v.classList.toggle('on');v.setAttribute('aria-pressed',v.classList.contains('on'));v.setAttribute('aria-label',v.classList.contains('on')?'Apagar vela':'Encender vela');pinta()})});
+  pinta();}
+// ---- pétalos de cempasúchil
+const caja=document.getElementById('petalos');let activos=[];
+function petalo(x,y,burst){const d=document.createElement('i');d.className='petalo';caja.appendChild(d);
+  const p={el:d,x:x??Math.random()*innerWidth,y:y??-20,vx:burst?(Math.random()-.5)*5:(Math.random()-.5)*.6,vy:burst?-Math.random()*4-1:Math.random()*.8+.6,r:Math.random()*360,vr:(Math.random()-.5)*6,s:.7+Math.random()*.7,t:0};activos.push(p);}
+function lluvia(n,rect){for(let i=0;i<n;i++){rect?petalo(rect.left+rect.width/2,rect.top+rect.height/2,true):petalo()}}
+function paso(){if(!document.body.classList.contains('dm')){activos.forEach(p=>p.el.remove());activos=[];requestAnimationFrame(paso);return}
+  if(!red&&activos.length<22&&Math.random()<.06)petalo();
+  activos=activos.filter(p=>{p.t++;p.vy+=.03;p.vy=Math.min(p.vy,1.8);p.vx+=Math.sin(p.t/30)*.03;p.x+=p.vx;p.y+=p.vy;p.r+=p.vr;
+    p.el.style.transform=`translate(${p.x}px,${p.y}px) rotate(${p.r}deg) scale(${p.s})`;if(p.y>innerHeight+30){p.el.remove();return false}return true});
+  requestAnimationFrame(paso);}
+requestAnimationFrame(paso);
+// clic en la portada: ráfaga de pétalos
+const hero=document.querySelector('.hero');
+hero&&hero.addEventListener('click',e=>{if(!document.body.classList.contains('dm')||e.target.closest('a,button'))return;lluvia(14,{left:e.clientX,top:e.clientY,width:0,height:0})});
+// ---- calaveritas literarias (originales)
+const VERSOS=[
+ ['General','La Calaca fue a Colima<br>a llevarse a un ingeniero,','pero el ninja, con su app en ruta,<br>le cobró el viaje primero.'],
+ ['Pollos Colorado','La Muerte pidió un pollo<br>al carbón, sabor Diabla;','lo mandó por WhatsApp<br>¡y hasta el picante le habla!'],
+ ['Pollos Colorado','La Flaca armó su paquete<br>con arroz y su chipotle,','pero vio "Hoy se terminó"<br>y lloró por su cebollita en el bote.'],
+ ['Cremería Don Beto','La Calaca anda en la ruta<br>vendiendo crema y jamón;','con la app de Don Beto<br>ya no fía sin razón.'],
+ ['Cremería Don Beto','El tendero pidió fiado<br>y la Huesuda sonrió:','"en la app quedó tu saldo,<br>y el ticket ya se imprimió".'],
+ ['Arreola 1','Llegaron muchos difuntos<br>con hambre a Arreola 1;','la página les dijo qué pedir<br>y no quedó ni uno en ayuno.'],
+ ['MarkaForense','La Muerte firmó un papel<br>creyendo que nadie lo nota;','el perito con MarkaForense<br>le midió hasta la última jota.'],
+ ['MarkaForense','La Catrina falsificó<br>la firma de un notario;','la cotejaron lado a lado<br>¡y acabó en el osario!'],
+ ['Tacos Carmelita','La Flaca fue a Carmelita<br>por tacos de pastor;','la cuenta salió dividida<br>¡y dejó propina, señor!'],
+ ['Tacos Carmelita','"Mesa dos, sin cebolla",<br>gritó la Calaca al llegar;','la comanda voló a cocina<br>y ni tuvo que esperar.'],
+ ['Conceptos Gráficos','La Catrina quería una taza<br>con su nombre bien grabado;','la giró en el simulador<br>¡y le quedó de lujo el acabado!'],
+ ['Conceptos Gráficos','La Huesuda pidió un termo<br>grabado en láser plateado;','cotizó por WhatsApp<br>y lo estrenó en su altar adornado.'],
+ ['SD Shop','La Muerte se compró unos tenis<br>en la boutique SD Shop;','le escanearon la etiqueta<br>¡y salió corriendo sin stop!'],
+ ['SD Shop','La Calaca pidió talla<br>de calavera mediana;','el inventario por talla<br>le encontró la más galana.'],
+ ['General','El ninja no se fue al panteón,<br>se escondió en el código fuente;','la Muerte lo buscó en papel<br>y él ya estaba en la nube, ¡qué valiente!'],
+ ['General','La Huesuda llevaba en libreta<br>las cuentas de todo su altar;','ahora con su punto de venta<br>sabe cuántos panes van a sobrar.']];
+const orden=VERSOS.map((_,i)=>i).sort(()=>Math.random()-.5);
+let iv=0;const md=document.querySelector('.verso'),cu=md.querySelector('.cuerpo');let origen=null;
+function verso(){const v=VERSOS[orden[iv%orden.length]];iv++;cu.innerHTML=`<p class="tema">${v[0]}</p><p class="v">${v[1]}</p><p class="v">${v[2]}</p>`}
+function abre(b){origen=b;verso();md.hidden=false;md.querySelector('.otra').focus()}
+function cierra(){md.hidden=true;origen&&origen.focus()}
+document.querySelectorAll('[data-calaca]').forEach(b=>b.addEventListener('click',e=>{e.stopPropagation();b.classList.remove('tiembla');void b.offsetWidth;b.classList.add('tiembla');setTimeout(()=>{b.innerHTML=calImg()},250);lluvia(12,b.getBoundingClientRect());setTimeout(()=>abre(b),350)}));
+md.querySelector('.otra').onclick=verso;md.querySelector('.x').onclick=cierra;md.addEventListener('click',e=>{if(e.target===md)cierra()});
+addEventListener('keydown',e=>{if(e.key==='Escape'&&!md.hidden)cierra()});
+// ---- aviso y frases de temporada
+const av=document.querySelector('.aviso-dm');if(av){av.textContent='🌼 Edición Día de Muertos';av.style.display=''}
+// ---- interruptor
+const sw=document.querySelector('.dm-switch');
+sw.addEventListener('click',()=>{const on=document.body.classList.toggle('dm');sw.setAttribute('aria-pressed',on);if(on)lluvia(30)});
+setTimeout(()=>lluvia(26),600);
+})();
 </script>
 </body>
 </html>
