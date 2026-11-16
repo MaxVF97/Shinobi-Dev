@@ -482,7 +482,7 @@ body.dm .hero-v2 .luna,body.dm .hero .nube{display:none}
 @media (prefers-reduced-motion:no-preference){.vela.on .fuego-v{animation:flick .2s ease-in-out infinite alternate}}
 .vela .llama{display:none}
 @media (max-width:760px){.vela{width:16px}.ofrenda .obj{width:38px}.ofrenda .obj.petalos{width:56px}.ofrenda .obj.ramo{width:30px}}
-@media (max-width:420px){.ofrenda>:nth-child(n+11):not(.ofrenda-cuenta){display:none}}
+
 
 body.dm .hero.hero-v2{padding-top:calc(150px + env(safe-area-inset-top,0px));padding-bottom:124px}
 .calaca svg{display:block;width:100%;height:auto}
@@ -611,12 +611,39 @@ body.dm .contacto .kicker,body.dm .contacto .tel b{color:#F59E0B}
 body.dm .contacto .qr span{color:#FFC27A}
 body.dm footer{background:#0B0610;border-top:3px solid #F59E0B}
 body.dm .flota{background:linear-gradient(135deg,#E4007C,#B0005F)}
+/* botones de cotizar en morado (temporada) */
+body.dm .flota,body.dm .flota.on,body.dm .flota.vis{background:linear-gradient(135deg,#8B5CF6,#6D28D9)!important;box-shadow:0 5px 0 #4C1D95,0 10px 24px rgba(0,0,0,.35)!important;color:#fff!important}
+body.dm .btn.pri,body.dm .contacto .btn.pri,body.dm .hero .btn.pri,body.dm .cta{background:linear-gradient(135deg,#8B5CF6,#6D28D9)!important;box-shadow:0 5px 0 #4C1D95!important;color:#fff!important}
+body.dm .dm-switch .pista{background:#7C3AED}
+/* interruptor de temporada en el menú */
+.nav-der{display:flex;align-items:center;gap:10px}
+.dm-switch{all:unset;box-sizing:border-box;position:static!important;display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 10px 0 4px;border-radius:999px;cursor:pointer;background:#1A1022;border:1.5px solid rgba(195,202,208,.35);color:#C3CAD0;font:800 12.5px/1 var(--tx,system-ui),sans-serif;box-shadow:none!important;transition:background .3s,border-color .3s}
+.dm-switch .sw-ic{width:30px;height:30px;object-fit:contain;filter:grayscale(1) opacity(.7);transition:filter .3s,transform .3s}
+.dm-switch .pista{width:30px;height:18px;border-radius:999px;background:#3A3346;position:relative;flex:none;transition:background .3s}
+.dm-switch .pista::after{content:"";position:absolute;top:3px;left:3px;width:12px;height:12px;border-radius:50%;background:#fff;transition:transform .3s}
+body.dm .dm-switch{background:linear-gradient(135deg,#3A1458,#1A0A26);border-color:#F59E0B;color:#FFC27A}
+body.dm .dm-switch .sw-ic{filter:drop-shadow(0 0 6px rgba(249,115,22,.6))}
+body.dm .dm-switch .pista{background:linear-gradient(90deg,#E4007C,#F59E0B)}
+body.dm .dm-switch .pista::after{transform:translateX(12px)}
+.dm-switch:hover .sw-ic{transform:rotate(-12deg) scale(1.08)}
+.dm-switch:focus-visible{outline:3px solid #F59E0B;outline-offset:3px}
+@media (max-width:900px){.dm-switch .sw-tx{display:none}.dm-switch{padding:0 8px 0 4px;gap:6px}}
+/* calaveritas de los negocios alineadas */
+.cn-fila{display:grid!important;grid-template-columns:repeat(7,minmax(0,1fr));gap:14px 8px;max-width:820px;margin:0 auto;align-items:start}
+.cn{width:auto!important;padding:4px 0!important;gap:8px!important}
+.cn .cn-img{display:flex;align-items:flex-end;justify-content:center;height:84px;width:100%}
+.cn .cn-img img{width:auto!important;max-width:78px;max-height:84px}
+.cn-n{min-height:2.4em;display:flex;align-items:flex-start;justify-content:center;line-height:1.2}
+@media (max-width:760px){.cn-fila{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px 6px}
+ .cn:nth-child(5){grid-column:1/span 1}
+ .cn .cn-img{height:66px}.cn .cn-img img{max-width:62px;max-height:66px}.cn-n{font-size:11.5px}}
+@media (max-width:760px){.cn-fila .cn:nth-child(5){grid-column:auto}.cn-fila{grid-template-columns:repeat(4,1fr)}.cn-fila .cn:nth-child(n+5){transform:translateX(50%)}}
 /* prioridad de los elementos de la ofrenda */
 body.dm .ofrenda{display:flex}
 body.dm .ofrenda .vela{display:block;background:none;box-shadow:none;border-radius:0;height:auto;width:clamp(18px,2.2vw,28px)}
 @media (max-width:760px){body.dm .ofrenda{gap:4px;height:78px}body.dm .ofrenda .vela{width:20px;flex:none}
  body.dm .ofrenda .flor{width:42px;flex:none}body.dm .ofrenda .obj{width:48px;flex:none}body.dm .ofrenda .obj.petalos{width:58px}body.dm .ofrenda .obj.ramo{width:34px}
- body.dm .ofrenda>:nth-child(n+10):not(.ofrenda-cuenta){display:none}
+ body.dm .ofrenda .obj.pan,body.dm .ofrenda .obj.ramo,body.dm .ofrenda .obj.jarrito,body.dm .ofrenda .obj.petalos{display:none}
  body.dm .ofrenda-cuenta{bottom:auto;top:-16px;right:auto;left:50%;translate:-50% 0}}
 </style>
 </head>
@@ -635,7 +662,10 @@ body.dm .ofrenda .vela{display:block;background:none;box-shadow:none;border-radi
       <li><a href="#como">Cómo trabajo</a></li>
       <li><a href="#quien">Quién soy</a></li>
     </ul>
-    <a class="btn pri cta" href="#contacto">Cotiza</a>
+    <div class="nav-der">
+      <button class="dm-switch" type="button" aria-pressed="true" aria-label="Edición Día de Muertos: activar o desactivar" title="Edición Día de Muertos"><img class="sw-ic" src="dm-calaca2.webp" alt=""><span class="sw-tx">Día de Muertos</span><span class="pista"></span></button>
+      <a class="btn pri cta" href="#contacto">Cotiza</a>
+    </div>
   </div>
 </nav>
 
@@ -720,29 +750,10 @@ body.dm .ofrenda .vela{display:block;background:none;box-shadow:none;border-radi
       </div>
     </div></div></div><span class="rod rod-b" aria-hidden="true"></span></div>
     </article>
-    <article class="perg" id="mis02">
-      <button class="perg-cab" aria-expanded="false" aria-controls="papel02">
-        <span class="rod" aria-hidden="true"></span>
-        <span class="cinta"><span class="num">MISIÓN 02</span><span class="logo-ini" style="background:#D7261E" aria-hidden="true">A1</span><b>Arreola 1</b><span class="badge b-demo">Demo</span><span class="abre" aria-hidden="true">Abrir</span></span>
-        <img class="sello" src="sello2.webp" alt="" aria-hidden="true">
-      </button>
-      <div class="rollo"><div class="papel" id="papel02"><div class="papel-in"><div class="contenido ancha">
-      <button class="phone real pantalla" type="button" style="--ar:1.19;--bgshot:#FFF7E8" aria-label="Ver capturas de Arreola 1 en grande"><span class="scr shots"><img src="arr-1.webp?v=2" alt="Arreola 1: portada del menú con el combo destacado, botones de pedido y horario" class="on" loading="lazy"><img src="arr-2.webp?v=2" alt="Arreola 1: sección de combos con precios, lo que incluye cada uno y botón para agregar" loading="lazy"></span><span class="dots"><i></i><i></i></span></button>
-      <div>
-        <h3>Pollos y Carnes Asadas Arreola 1</h3>
-        <p class="giro">Pollos y carnes asadas · Colima</p>
-        <p class="reto"><b>La propuesta:</b> un menú con personalidad que ayuda a decidir. El cliente dice cuántos son y la página le recomienda qué pedir.</p>
-        <ul class="chips">
-          <li>"Arma tu comida"</li><li>Tiempo estimado de entrega</li><li>Sugerencias de antojo</li><li>Animaciones</li><li>Pedidos por WhatsApp</li>
-        </ul>
-        <div class="macts"><span class="nota">Demo disponible: pídemela y te la enseño.</span></div>
-      </div>
-    </div></div></div><span class="rod rod-b" aria-hidden="true"></span></div>
-    </article>
     <article class="perg" id="mis03">
       <button class="perg-cab" aria-expanded="false" aria-controls="papel03">
         <span class="rod" aria-hidden="true"></span>
-        <span class="cinta"><span class="num">MISIÓN 03</span><img class="logo-neg" src="logo-beto.webp" alt="" aria-hidden="true"><b>Cremería Don Beto</b><span class="badge b-uso">En uso</span><span class="abre" aria-hidden="true">Abrir</span></span>
+        <span class="cinta"><span class="num">MISIÓN 02</span><img class="logo-neg" src="logo-beto.webp" alt="" aria-hidden="true"><b>Cremería Don Beto</b><span class="badge b-uso">En uso</span><span class="abre" aria-hidden="true">Abrir</span></span>
         <img class="sello" src="sello3.webp" alt="" aria-hidden="true">
       </button>
       <div class="rollo"><div class="papel" id="papel03"><div class="papel-in"><div class="contenido">
@@ -759,81 +770,10 @@ body.dm .ofrenda .vela{display:block;background:none;box-shadow:none;border-radi
       </div>
     </div></div></div><span class="rod rod-b" aria-hidden="true"></span></div>
     </article>
-    <article class="perg" id="mis04">
-      <button class="perg-cab" aria-expanded="false" aria-controls="papel04">
-        <span class="rod" aria-hidden="true"></span>
-        <span class="cinta"><span class="num">MISIÓN 04</span><span class="logo-ini" style="background:#1858BE" aria-hidden="true">MF</span><b>MarkaForense</b><span class="badge b-dev">En pruebas</span><span class="abre" aria-hidden="true">Abrir</span></span>
-        <img class="sello" src="sello1.webp" alt="" aria-hidden="true">
-      </button>
-      <div class="rollo"><div class="papel" id="papel04"><div class="papel-in"><div class="contenido ancha">
-      <button class="phone real pantalla" type="button" style="--ar:1.7;--bgshot:#EEF1F5" aria-label="Ver capturas de MarkaForense en grande"><span class="scr shots"><img src="mf-1.webp?v=1" alt="MarkaForense, pantalla Marcar firma: firma de ejemplo con marcas numeradas, recuadros, flechas, líneas de color y mediciones de inclinación y distancia en milímetros" class="on" loading="lazy"><img src="mf-2.webp?v=1" alt="MarkaForense, pantalla Comparar firmas: la firma cuestionada y tres firmas de comparación lado a lado con las mismas marcas numeradas" loading="lazy"><img src="mf-3.webp?v=1" alt="MarkaForense, pantalla Anexo y dictamen: datos del expediente, botones para descargar el anexo en PDF y el dictamen en Word, y vista previa del anexo fotográfico" loading="lazy"><img src="mf-4.webp?v=1" alt="MarkaForense, versión personalizada para un perito: logotipo con su inicial, color propio y nombre de ejemplo en el encabezado" loading="lazy"></span><span class="dots"><i></i><i></i><i></i><i></i></span></button>
-      <div>
-        <h3>MarkaForense</h3>
-        <p class="giro">Aplicación web a la medida (instalable) · Herramienta profesional</p>
-        <p class="gancho">“MarkaForense: el cotejo de firmas, ordenado y documentado.”</p>
-        <p class="reto">Aplicación web para peritos grafoscópicos que ayuda a limpiar, marcar, medir y comparar firmas, y genera el anexo en PDF y el dictamen en Word.</p>
-        <p class="reto"><b>El reto:</b> el cotejo de firmas se hace en programas generales, de forma manual y sin un orden uniforme.</p>
-        <p class="reto"><b>La solución:</b> una sola herramienta, simple y pensada para leer bien en computadora, tablet y celular.</p>
-        <ol class="pasos-mf"><li>Marcar firma</li><li>Comparar firmas</li><li>Anexo y dictamen</li></ol>
-        <ul class="chips">
-          <li>Limpieza sobre una copia (el original no se modifica)</li><li>Marcas numeradas con observación del perito</li><li>Medición de distancias, inclinación y proporción en mm</li><li>Cotejo de varias firmas lado a lado</li><li>Anexo en PDF y dictamen en Word</li><li>Guardar y reabrir el caso</li><li>Huella digital SHA-256 y registro de ediciones</li><li>Letra grande y alto contraste</li>
-        </ul>
-        <details class="mas-mf">
-          <summary>Ver más detalles</summary>
-          <p class="reto">El perito sube la firma cuestionada y varias firmas de comparación, quita la raya o el texto impreso, marca los rasgos con puntos, recuadros, flechas y líneas de color, mide distancias e inclinación, y compara todas las firmas en una sola pantalla. Al final descarga el anexo fotográfico en PDF y el dictamen en Word. <b>La herramienta no redacta conclusiones: son del perito.</b></p>
-          <p class="reto"><b>Personalización por cliente:</b> nombre, cargo, logo, color, leyenda en documentos, ícono con su inicial y dirección propia.</p>
-          <p class="reto"><b>Detalles técnicos:</b></p>
-          <ul class="chips"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>PWA instalable</li><li>Cloudflare Pages</li><li>Cloudflare Access (acceso por correo)</li><li>Exportación a PDF y Word</li><li>Privacidad: los archivos no salen del dispositivo</li></ul>
-          <p class="reto"><b>Servicio:</b> licencia individual con acompañamiento mensual (soporte, ajustes y mejoras).</p>
-          <p class="nota">Las firmas que aparecen en las imágenes son de ejemplo y ficticias.</p>
-        </details>
-        <p class="nota estado-mf">Primera versión en pruebas con peritos.</p>
-        
-      </div>
-      </div></div></div><span class="rod rod-b" aria-hidden="true"></span></div>
-    </article>
-    <article class="perg" id="mis05">
-      <button class="perg-cab" aria-expanded="false" aria-controls="papel05">
-        <span class="rod" aria-hidden="true"></span>
-        <span class="cinta"><span class="num">MISIÓN 05</span><img class="logo-neg" src="logo-carmelita.webp?v=1" alt="" aria-hidden="true"><b>Tacos Carmelita</b><span class="badge b-demo">Demo</span><span class="abre" aria-hidden="true">Abrir</span></span>
-        <img class="sello" src="sello3.webp" alt="" aria-hidden="true">
-      </button>
-      <div class="rollo"><div class="papel" id="papel05"><div class="papel-in"><div class="contenido">
-      <button class="phone real" type="button" style="--ar:.745;--bgshot:#F7F3EE;width:270px" aria-label="Ver capturas de Tacos Carmelita en grande"><span class="scr shots"><img src="carm-1.webp?v=1" alt="Tacos Carmelita: nueva orden para elegir el tipo de pedido y las mesas libres u ocupadas" class="on" loading="lazy"><img src="carm-2.webp?v=1" alt="Tacos Carmelita: órdenes abiertas con indicador de color por estado" loading="lazy"><img src="carm-3.webp?v=1" alt="Tacos Carmelita: vista de cocina con comandas por imprimir y en preparación" loading="lazy"><img src="carm-4.webp?v=1" alt="Tacos Carmelita: cobro con cálculo de cambio y billetes rápidos" loading="lazy"><img src="carm-5.webp?v=1" alt="Tacos Carmelita: reportes de ventas, ventas por hora y por método de pago" loading="lazy"><img src="carm-6.webp?v=1" alt="Tacos Carmelita: catálogo editable con precios, agotados y visibilidad" loading="lazy"><img src="carm-7.webp?v=1" alt="Tacos Carmelita: la misma pantalla de nueva orden en modo oscuro" loading="lazy"><img src="carm-8.webp?v=1" alt="Tacos Carmelita: creación del PIN y del código de papel para recuperar el acceso" loading="lazy"></span><span class="dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></button>
-      <div>
-        <h3>Tortillas a mano y Tacos Carmelita</h3>
-        <p class="giro">Taquería y tortillería · Colima</p>
-        <p class="reto"><b>El reto:</b> una taquería y tortillería donde las órdenes se llevaban en papel: no se sabía qué mesa estaba libre, qué pedido seguía pendiente ni cuánto se vendió al final del día.</p>
-        <p class="reto"><b>La solución:</b> un punto de venta hecho a la medida, con la imagen y los productos de Carmelita. Funciona en tablet, celular o computadora, sin instalar nada y sin depender de internet para vender.</p>
-        <ul class="chips">
-          <li>Mesas, para llevar y a domicilio</li><li>Estado de cada orden por color</li><li>Comanda para cocina 58/80 mm</li><li>Cobro mixto, propinas y cuenta dividida</li><li>Ticket con logotipo</li><li>Reportes y caja</li><li>Menú editable y agotados</li><li>Modo claro u oscuro</li><li>PIN y código de papel</li><li>Respaldo de información</li>
-        </ul>
-        <details class="mas-mf">
-          <summary>Ver más detalles</summary>
-          <ul class="lista-mf">
-            <li>Pedidos para comer aquí (mesas y barra), para llevar (con hora de recogida) y a domicilio, con dirección por campos y envío por WhatsApp a repartidores.</li>
-            <li>Indicador de color por orden: rojo abierta, azul en preparación, verde lista; aviso de que ya solo falta cobrar.</li>
-            <li>Comanda para cocina en papel de 58 u 80 mm; si se agrega algo después, imprime solo lo adicional.</li>
-            <li>Cobro flexible: efectivo con cambio, tarjeta, transferencia y pago mixto; propinas y dividir la cuenta por persona.</li>
-            <li>Ticket con vista previa, total en letra y logotipo.</li>
-            <li>Reportes de ventas, gastos, propinas, ventas por hora y lo más vendido, y caja opcional (apertura y cierre).</li>
-            <li>Menú editable: secciones, extras con costo, agotados y comentarios rápidos (con todo, sin cebolla…).</li>
-            <li>Modo claro, oscuro o automático, cuatro tamaños de letra y color principal a elegir.</li>
-            <li>Reportes y configuración protegidos con PIN y recuperación con código de papel; reset asistido por Shinobi Dev.</li>
-            <li>Respaldo y restauración de la información.</li>
-          </ul>
-          <p class="reto"><b>Detalles técnicos:</b></p>
-          <ul class="chips"><li>HTML, CSS y JavaScript sin librerías</li><li>App de un solo archivo</li><li>Datos en el dispositivo con respaldo</li><li>PIN con SHA-256 y sal</li><li>Recuperación con firma digital</li><li>Impresión de tickets 58/80 mm</li></ul>
-          <p class="nota">Las cifras y nombres de las imágenes son datos de ejemplo.</p>
-        </details>
-        <div class="macts"><span class="nota">Demo, aún no en uso. ¿Quieres verla funcionar en vivo? Contáctame y te la enseño.</span></div>
-      </div>
-    </div></div></div><span class="rod rod-b" aria-hidden="true"></span></div>
-    </article>
     <article class="perg" id="mis06">
       <button class="perg-cab" aria-expanded="false" aria-controls="papel06">
         <span class="rod" aria-hidden="true"></span>
-        <span class="cinta"><span class="num">MISIÓN 06</span><img class="logo-neg" src="logo-conceptos.webp?v=1" alt="" aria-hidden="true"><b>Conceptos Gráficos</b><span class="badge b-desa">En desarrollo</span><span class="abre" aria-hidden="true">Abrir</span></span>
+        <span class="cinta"><span class="num">MISIÓN 03</span><img class="logo-neg" src="logo-conceptos.webp?v=1" alt="" aria-hidden="true"><b>Conceptos Gráficos</b><span class="badge b-desa">En desarrollo</span><span class="abre" aria-hidden="true">Abrir</span></span>
         <img class="sello" src="sello1.webp" alt="" aria-hidden="true">
       </button>
       <div class="rollo"><div class="papel" id="papel06"><div class="papel-in"><div class="contenido ancha">
@@ -865,10 +805,43 @@ body.dm .ofrenda .vela{display:block;background:none;box-shadow:none;border-radi
       </div>
     </div></div></div><span class="rod rod-b" aria-hidden="true"></span></div>
     </article>
+    <article class="perg" id="mis04">
+      <button class="perg-cab" aria-expanded="false" aria-controls="papel04">
+        <span class="rod" aria-hidden="true"></span>
+        <span class="cinta"><span class="num">MISIÓN 04</span><span class="logo-ini" style="background:#1858BE" aria-hidden="true">MF</span><b>MarkaForense</b><span class="badge b-desa">En desarrollo</span><span class="abre" aria-hidden="true">Abrir</span></span>
+        <img class="sello" src="sello1.webp" alt="" aria-hidden="true">
+      </button>
+      <div class="rollo"><div class="papel" id="papel04"><div class="papel-in"><div class="contenido ancha">
+      <button class="phone real pantalla" type="button" style="--ar:1.7;--bgshot:#EEF1F5" aria-label="Ver capturas de MarkaForense en grande"><span class="scr shots"><img src="mf-1.webp?v=1" alt="MarkaForense, pantalla Marcar firma: firma de ejemplo con marcas numeradas, recuadros, flechas, líneas de color y mediciones de inclinación y distancia en milímetros" class="on" loading="lazy"><img src="mf-2.webp?v=1" alt="MarkaForense, pantalla Comparar firmas: la firma cuestionada y tres firmas de comparación lado a lado con las mismas marcas numeradas" loading="lazy"><img src="mf-3.webp?v=1" alt="MarkaForense, pantalla Anexo y dictamen: datos del expediente, botones para descargar el anexo en PDF y el dictamen en Word, y vista previa del anexo fotográfico" loading="lazy"><img src="mf-4.webp?v=1" alt="MarkaForense, versión personalizada para un perito: logotipo con su inicial, color propio y nombre de ejemplo en el encabezado" loading="lazy"></span><span class="dots"><i></i><i></i><i></i><i></i></span></button>
+      <div>
+        <h3>MarkaForense</h3>
+        <p class="giro">Aplicación web a la medida (instalable) · Herramienta profesional</p>
+        <p class="gancho">“MarkaForense: el cotejo de firmas, ordenado y documentado.”</p>
+        <p class="reto">Aplicación web para peritos grafoscópicos que ayuda a limpiar, marcar, medir y comparar firmas, y genera el anexo en PDF y el dictamen en Word.</p>
+        <p class="reto"><b>El reto:</b> el cotejo de firmas se hace en programas generales, de forma manual y sin un orden uniforme.</p>
+        <p class="reto"><b>La solución:</b> una sola herramienta, simple y pensada para leer bien en computadora, tablet y celular.</p>
+        <ol class="pasos-mf"><li>Marcar firma</li><li>Comparar firmas</li><li>Anexo y dictamen</li></ol>
+        <ul class="chips">
+          <li>Limpieza sobre una copia (el original no se modifica)</li><li>Marcas numeradas con observación del perito</li><li>Medición de distancias, inclinación y proporción en mm</li><li>Cotejo de varias firmas lado a lado</li><li>Anexo en PDF y dictamen en Word</li><li>Guardar y reabrir el caso</li><li>Huella digital SHA-256 y registro de ediciones</li><li>Letra grande y alto contraste</li>
+        </ul>
+        <details class="mas-mf">
+          <summary>Ver más detalles</summary>
+          <p class="reto">El perito sube la firma cuestionada y varias firmas de comparación, quita la raya o el texto impreso, marca los rasgos con puntos, recuadros, flechas y líneas de color, mide distancias e inclinación, y compara todas las firmas en una sola pantalla. Al final descarga el anexo fotográfico en PDF y el dictamen en Word. <b>La herramienta no redacta conclusiones: son del perito.</b></p>
+          <p class="reto"><b>Personalización por cliente:</b> nombre, cargo, logo, color, leyenda en documentos, ícono con su inicial y dirección propia.</p>
+          <p class="reto"><b>Detalles técnicos:</b></p>
+          <ul class="chips"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>PWA instalable</li><li>Cloudflare Pages</li><li>Cloudflare Access (acceso por correo)</li><li>Exportación a PDF y Word</li><li>Privacidad: los archivos no salen del dispositivo</li></ul>
+          <p class="reto"><b>Servicio:</b> licencia individual con acompañamiento mensual (soporte, ajustes y mejoras).</p>
+          <p class="nota">Las firmas que aparecen en las imágenes son de ejemplo y ficticias.</p>
+        </details>
+        <p class="nota estado-mf">En desarrollo: primera versión en pruebas con peritos.</p>
+        
+      </div>
+      </div></div></div><span class="rod rod-b" aria-hidden="true"></span></div>
+    </article>
     <article class="perg" id="mis07">
       <button class="perg-cab" aria-expanded="false" aria-controls="papel07">
         <span class="rod" aria-hidden="true"></span>
-        <span class="cinta"><span class="num">MISIÓN 07</span><img class="logo-neg" src="logo-sdshop.webp?v=1" alt="" aria-hidden="true"><b>SD Shop POS</b><span class="badge b-dev">En pruebas</span><span class="abre" aria-hidden="true">Abrir</span></span>
+        <span class="cinta"><span class="num">MISIÓN 05</span><img class="logo-neg" src="logo-sdshop.webp?v=1" alt="" aria-hidden="true"><b>SD Shop POS</b><span class="badge b-desa">En desarrollo</span><span class="abre" aria-hidden="true">Abrir</span></span>
         <img class="sello" src="sello2.webp" alt="" aria-hidden="true">
       </button>
       <div class="rollo"><div class="papel" id="papel07"><div class="papel-in"><div class="contenido ancha">
@@ -898,7 +871,64 @@ body.dm .ofrenda .vela{display:block;background:none;box-shadow:none;border-radi
           <p class="reto"><b>El negocio:</b> S.D. SHOP · Instagram <a href="https://www.instagram.com/s.dshop.88" target="_blank" rel="noopener">@s.dshop.88</a> · WhatsApp 312 106 8493 · Akautlan #193 A, Villa Izcalli, Caxitlán, Colima.</p>
           <p class="nota">Las cifras y productos de las imágenes son datos de demostración.</p>
         </details>
-        <div class="macts"><span class="nota">En pruebas. Demo a solicitud: pídemela y te la enseño.</span></div>
+        <div class="macts"><span class="nota">En desarrollo. Demo a solicitud: pídemela y te la enseño.</span></div>
+      </div>
+    </div></div></div><span class="rod rod-b" aria-hidden="true"></span></div>
+    </article>
+    <article class="perg" id="mis02">
+      <button class="perg-cab" aria-expanded="false" aria-controls="papel02">
+        <span class="rod" aria-hidden="true"></span>
+        <span class="cinta"><span class="num">MISIÓN 06</span><span class="logo-ini" style="background:#D7261E" aria-hidden="true">A1</span><b>Arreola 1</b><span class="badge b-desa">En desarrollo</span><span class="abre" aria-hidden="true">Abrir</span></span>
+        <img class="sello" src="sello2.webp" alt="" aria-hidden="true">
+      </button>
+      <div class="rollo"><div class="papel" id="papel02"><div class="papel-in"><div class="contenido ancha">
+      <button class="phone real pantalla" type="button" style="--ar:1.19;--bgshot:#FFF7E8" aria-label="Ver capturas de Arreola 1 en grande"><span class="scr shots"><img src="arr-1.webp?v=2" alt="Arreola 1: portada del menú con el combo destacado, botones de pedido y horario" class="on" loading="lazy"><img src="arr-2.webp?v=2" alt="Arreola 1: sección de combos con precios, lo que incluye cada uno y botón para agregar" loading="lazy"></span><span class="dots"><i></i><i></i></span></button>
+      <div>
+        <h3>Pollos y Carnes Asadas Arreola 1</h3>
+        <p class="giro">Pollos y carnes asadas · Colima</p>
+        <p class="reto"><b>La propuesta:</b> un menú con personalidad que ayuda a decidir. El cliente dice cuántos son y la página le recomienda qué pedir.</p>
+        <ul class="chips">
+          <li>"Arma tu comida"</li><li>Tiempo estimado de entrega</li><li>Sugerencias de antojo</li><li>Animaciones</li><li>Pedidos por WhatsApp</li>
+        </ul>
+        <div class="macts"><span class="nota">En desarrollo. Demo disponible: pídemela y te la enseño.</span></div>
+      </div>
+    </div></div></div><span class="rod rod-b" aria-hidden="true"></span></div>
+    </article>
+    <article class="perg" id="mis05">
+      <button class="perg-cab" aria-expanded="false" aria-controls="papel05">
+        <span class="rod" aria-hidden="true"></span>
+        <span class="cinta"><span class="num">MISIÓN 07</span><img class="logo-neg" src="logo-carmelita.webp?v=1" alt="" aria-hidden="true"><b>Tacos Carmelita</b><span class="badge b-demo">Demo</span><span class="abre" aria-hidden="true">Abrir</span></span>
+        <img class="sello" src="sello3.webp" alt="" aria-hidden="true">
+      </button>
+      <div class="rollo"><div class="papel" id="papel05"><div class="papel-in"><div class="contenido">
+      <button class="phone real" type="button" style="--ar:.745;--bgshot:#F7F3EE;width:270px" aria-label="Ver capturas de Tacos Carmelita en grande"><span class="scr shots"><img src="carm-1.webp?v=1" alt="Tacos Carmelita: nueva orden para elegir el tipo de pedido y las mesas libres u ocupadas" class="on" loading="lazy"><img src="carm-2.webp?v=1" alt="Tacos Carmelita: órdenes abiertas con indicador de color por estado" loading="lazy"><img src="carm-3.webp?v=1" alt="Tacos Carmelita: vista de cocina con comandas por imprimir y en preparación" loading="lazy"><img src="carm-4.webp?v=1" alt="Tacos Carmelita: cobro con cálculo de cambio y billetes rápidos" loading="lazy"><img src="carm-5.webp?v=1" alt="Tacos Carmelita: reportes de ventas, ventas por hora y por método de pago" loading="lazy"><img src="carm-6.webp?v=1" alt="Tacos Carmelita: catálogo editable con precios, agotados y visibilidad" loading="lazy"><img src="carm-7.webp?v=1" alt="Tacos Carmelita: la misma pantalla de nueva orden en modo oscuro" loading="lazy"><img src="carm-8.webp?v=1" alt="Tacos Carmelita: creación del PIN y del código de papel para recuperar el acceso" loading="lazy"></span><span class="dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></button>
+      <div>
+        <h3>Tortillas a mano y Tacos Carmelita</h3>
+        <p class="giro">Taquería y tortillería · Colima</p>
+        <p class="reto"><b>El reto:</b> una taquería y tortillería donde las órdenes se llevaban en papel: no se sabía qué mesa estaba libre, qué pedido seguía pendiente ni cuánto se vendió al final del día.</p>
+        <p class="reto"><b>La solución:</b> un punto de venta hecho a la medida, con la imagen y los productos de Carmelita. Funciona en tablet, celular o computadora, sin instalar nada y sin depender de internet para vender.</p>
+        <ul class="chips">
+          <li>Mesas, para llevar y a domicilio</li><li>Estado de cada orden por color</li><li>Comanda para cocina 58/80 mm</li><li>Cobro mixto, propinas y cuenta dividida</li><li>Ticket con logotipo</li><li>Reportes y caja</li><li>Menú editable y agotados</li><li>Modo claro u oscuro</li><li>PIN y código de papel</li><li>Respaldo de información</li>
+        </ul>
+        <details class="mas-mf">
+          <summary>Ver más detalles</summary>
+          <ul class="lista-mf">
+            <li>Pedidos para comer aquí (mesas y barra), para llevar (con hora de recogida) y a domicilio, con dirección por campos y envío por WhatsApp a repartidores.</li>
+            <li>Indicador de color por orden: rojo abierta, azul en preparación, verde lista; aviso de que ya solo falta cobrar.</li>
+            <li>Comanda para cocina en papel de 58 u 80 mm; si se agrega algo después, imprime solo lo adicional.</li>
+            <li>Cobro flexible: efectivo con cambio, tarjeta, transferencia y pago mixto; propinas y dividir la cuenta por persona.</li>
+            <li>Ticket con vista previa, total en letra y logotipo.</li>
+            <li>Reportes de ventas, gastos, propinas, ventas por hora y lo más vendido, y caja opcional (apertura y cierre).</li>
+            <li>Menú editable: secciones, extras con costo, agotados y comentarios rápidos (con todo, sin cebolla…).</li>
+            <li>Modo claro, oscuro o automático, cuatro tamaños de letra y color principal a elegir.</li>
+            <li>Reportes y configuración protegidos con PIN y recuperación con código de papel; reset asistido por Shinobi Dev.</li>
+            <li>Respaldo y restauración de la información.</li>
+          </ul>
+          <p class="reto"><b>Detalles técnicos:</b></p>
+          <ul class="chips"><li>HTML, CSS y JavaScript sin librerías</li><li>App de un solo archivo</li><li>Datos en el dispositivo con respaldo</li><li>PIN con SHA-256 y sal</li><li>Recuperación con firma digital</li><li>Impresión de tickets 58/80 mm</li></ul>
+          <p class="nota">Las cifras y nombres de las imágenes son datos de ejemplo.</p>
+        </details>
+        <div class="macts"><span class="nota">Demo, aún no en uso. ¿Quieres verla funcionar en vivo? Contáctame y te la enseño.</span></div>
       </div>
     </div></div></div><span class="rod rod-b" aria-hidden="true"></span></div>
     </article>
@@ -1000,17 +1030,17 @@ document.getElementById('anio').textContent=new Date().getFullYear();
 const term=document.getElementById('term'),out=document.getElementById('out'),tin=document.getElementById('tin');
 const MIS={
   colorado:'<span class="ok">[EN USO]</span> Pollos Colorado — pollería al carbón, Colima\n  Menú con pedidos por WhatsApp, horarios, agotados desde Google Sheets y caja en tablet.\n  <a href="https://polloscolorado.pages.dev" target="_blank" rel="noopener">polloscolorado.pages.dev</a>',
-  arreola:'<span class="c">[DEMO]</span> Arreola 1 — pollos y carnes asadas\n  "Arma tu comida", tiempos de entrega y sugerencias de antojo.',
+  arreola:'<span class="c">[EN DESARROLLO]</span> Arreola 1 — pollos y carnes asadas\n  "Arma tu comida", tiempos de entrega y sugerencias de antojo.',
   beto:'<span class="ok">[EN USO]</span> Cremería Don Beto — venta en ruta\n  Pedidos por tienda, ticket impreso, crédito y saldos, funciona sin internet.',
-  sdshop:'[EN PRUEBAS] SD Shop POS — punto de venta para boutique de ropa y tenis\n  Lector de código de barras, inventario por talla, etiquetas y corte de caja.',
+  sdshop:'[EN DESARROLLO] SD Shop POS — punto de venta para boutique de ropa y tenis\n  Lector de código de barras, inventario por talla, etiquetas y corte de caja.',
   conceptos:'[EN DESARROLLO] Conceptos Gráficos — sitio para imprenta y personalizados\n  Catálogo, cotizador por WhatsApp, simulador de personalización y videos.',
   carmelita:'[DEMO] Tacos Carmelita — punto de venta para taquería y tortillería\n  Mesas, para llevar y domicilio; comandas, cobro, ticket y reportes.',
-  markaforense:'<span class="c">[EN PRUEBAS]</span> MarkaForense — cotejo de firmas para peritos grafoscópicos\n  Marcar, medir y comparar firmas; anexo en PDF y dictamen en Word.'
+  markaforense:'<span class="c">[EN DESARROLLO]</span> MarkaForense — cotejo de firmas para peritos grafoscópicos\n  Marcar, medir y comparar firmas; anexo en PDF y dictamen en Word.'
 };
 const CMD={
   help:()=>'Comandos: <span class="c">whoami</span>, <span class="c">lanzar</span>, <span class="c">ls misiones</span>, <span class="c">cat colorado</span> | <span class="c">arreola</span> | <span class="c">beto</span> | <span class="c">markaforense</span> | <span class="c">carmelita</span> | <span class="c">conceptos</span> | <span class="c">sdshop</span>, <span class="c">servicios</span>, <span class="c">contacto</span>, <span class="c">clear</span>, <span class="c">exit</span>',
   whoami:()=>'Max Vargas — Ingeniero en Informática (cédula profesional) y desarrollador web.\nExperiencia en infraestructura bancaria y soporte de cajeros automáticos.\nShinobi Dev: incrementa el nivel de tu negocio.',
-  'ls misiones':()=>'01  colorado   <span class="ok">en uso</span>\n02  arreola    demo\n03  beto       <span class="ok">en uso</span>\n04  markaforense  en pruebas\n05  carmelita  demo\n06  conceptos  en desarrollo\n07  sdshop     en pruebas\n\nUsa <span class="c">cat nombre</span> para ver detalles.',
+  'ls misiones':()=>'01  colorado   <span class="ok">en uso</span>\n02  arreola    en desarrollo\n03  beto       <span class="ok">en uso</span>\n04  markaforense  en desarrollo\n05  carmelita  demo\n06  conceptos  en desarrollo\n07  sdshop     en desarrollo\n\nUsa <span class="c">cat nombre</span> para ver detalles.',
   ls:()=>CMD['ls misiones'](),
   servicios:()=>'- Menús con pedidos por WhatsApp\n- Apps para vender y cobrar\n- Soluciones a la medida',
   contacto:()=>'Correo: <a href="mailto:shinobi.devmx@gmail.com">shinobi.devmx@gmail.com</a>'+(WHATSAPP?'\nWhatsApp: <a href="'+WA_URL+'" target="_blank" rel="noopener">312 326 6510</a>':''),
@@ -1170,7 +1200,6 @@ document.querySelectorAll('.js-wa2').forEach(a=>a.addEventListener('click',e=>{i
 </script>
 
 <div id="petalos" aria-hidden="true"></div>
-<button class="dm-switch" type="button" aria-pressed="true" aria-label="Activar o desactivar la temática de Día de Muertos"><span class="pista"></span><span>Día de Muertos</span></button>
 <div class="verso" hidden role="dialog" aria-modal="true" aria-labelledby="verso-t"><div class="hoja"><button class="x" type="button" aria-label="Cerrar">×</button><h3 id="verso-t">Calaverita literaria</h3><p class="sub">Shinobi Dev · Día de Muertos</p><div class="cuerpo"></div><button class="otra" type="button">Otra calaverita</button></div></div>
 <script>
 (function(){
