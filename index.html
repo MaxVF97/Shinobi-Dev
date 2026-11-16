@@ -10,7 +10,7 @@
 <meta property="og:url" content="https://shinobi-dev.com/">
 <meta property="og:title" content="Shinobi Dev · por Max Vargas">
 <meta property="og:description" content="Páginas web y sistemas para negocios. Cotiza sin compromiso.">
-<meta property="og:image" content="https://shinobi-dev.com/ninja.webp">
+<meta property="og:image" content="https://shinobi-dev.com/img/ninja/ninja.webp">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,7 +34,7 @@ a{color:inherit}
 .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
 h1,h2,h3{font-family:var(--wm);line-height:1.1;margin:0}
 h2{font-size:clamp(28px,5vw,40px)}
-.kicker{display:inline-block;font-family:var(--wm);font-weight:700;color:#F3E6C8;letter-spacing:.1em;font-size:13px;margin:0 0 12px;padding:8px 20px 7px;background:url(tabla.webp) center/100% 100% no-repeat;text-shadow:0 1px 0 rgba(0,0,0,.6)}
+.kicker{display:inline-block;font-family:var(--wm);font-weight:700;color:#F3E6C8;letter-spacing:.1em;font-size:13px;margin:0 0 12px;padding:8px 20px 7px;background:url(img/decoracion/tabla.webp) center/100% 100% no-repeat;text-shadow:0 1px 0 rgba(0,0,0,.6)}
 .kicker::before{color:#7FB8FF}
 .kicker::before{content:">_ "}
 .lead{color:var(--sub);max-width:620px;margin:10px 0 0;font-size:17px}
@@ -87,12 +87,12 @@ section{padding:80px 0 0;position:relative}
 /* misiones: pergaminos */
 .misiones{display:flex;flex-direction:column;gap:26px;margin-top:34px}
 .perg{position:relative;max-width:880px;margin:0 auto;width:100%;padding:0 30px;--dur:1.5s;--ease:cubic-bezier(.45,.05,.3,1)}
-.rod{display:block;position:relative;height:28px;margin:0 -18px;border-style:solid;border-width:0 36px;border-image:url(rod.webp) 0 80 fill / 0 36px stretch;filter:drop-shadow(0 5px 6px rgba(0,0,0,.4));z-index:2}
+.rod{display:block;position:relative;height:28px;margin:0 -18px;border-style:solid;border-width:0 36px;border-image:url(img/decoracion/rod.webp) 0 80 fill / 0 36px stretch;filter:drop-shadow(0 5px 6px rgba(0,0,0,.4));z-index:2}
 .perg.anim .rod-b{animation:rueda var(--dur) var(--ease)}
 @keyframes rueda{from{background-position:0 0,0 0}to{background-position:-170px 0,0 0}}
 .perg-cab{all:unset;box-sizing:border-box;display:block;width:100%;cursor:pointer;position:relative}
 .perg-cab:focus-visible .cinta{outline:3px solid var(--azul);outline-offset:-3px}
-.cinta{display:flex;align-items:center;gap:8px 12px;flex-wrap:wrap;width:100%;padding:14px 62px 14px 20px;background:url(papel.webp) center/cover;color:#2B2016;box-shadow:inset 0 10px 12px -10px rgba(60,35,10,.5)}
+.cinta{display:flex;align-items:center;gap:8px 12px;flex-wrap:wrap;width:100%;padding:14px 62px 14px 20px;background:url(img/decoracion/papel.webp) center/cover;color:#2B2016;box-shadow:inset 0 10px 12px -10px rgba(60,35,10,.5)}
 .cinta .num{font-family:var(--wm);font-weight:700;letter-spacing:.1em;font-size:12px;color:#7A5A34}
 .cinta b{font-family:var(--wm);font-size:clamp(19px,2.8vw,24px);line-height:1.1}
 .cinta .abre{margin-left:auto;font-weight:800;font-size:12px;color:#7A5A34;display:flex;align-items:center;gap:6px}
@@ -115,7 +115,7 @@ section{padding:80px 0 0;position:relative}
 @keyframes asienta{0%{transform:translateY(0)}35%{transform:translateY(5px)}65%{transform:translateY(-2px)}100%{transform:none}}
 
 .rod-b{margin-top:-2px}
-.contenido{position:relative;display:grid;grid-template-columns:210px minmax(0,1fr);gap:26px;align-items:center;padding:20px 24px 24px;background:url(papel.webp) center/cover;color:#2B2016;box-shadow:inset 12px 0 16px -14px rgba(60,35,10,.5),inset -12px 0 16px -14px rgba(60,35,10,.5),inset 0 -16px 16px -14px rgba(60,35,10,.55);}
+.contenido{position:relative;display:grid;grid-template-columns:210px minmax(0,1fr);gap:26px;align-items:center;padding:20px 24px 24px;background:url(img/decoracion/papel.webp) center/cover;color:#2B2016;box-shadow:inset 12px 0 16px -14px rgba(60,35,10,.5),inset -12px 0 16px -14px rgba(60,35,10,.5),inset 0 -16px 16px -14px rgba(60,35,10,.55);}
 .contenido .giro{color:#6B5233;font-size:15px}
 .contenido .reto{margin:10px 0 0;font-size:15px;line-height:1.55}
 .contenido .reto b{font-family:var(--wm)}
@@ -201,7 +201,7 @@ section{padding:80px 0 0;position:relative}
 .contacto .lead{color:#C3CAD0}
 .contacto .acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
 .contacto .btn.sec{color:#E8ECF1}
-.contacto::before{content:"";position:absolute;inset:0;background:url(patron.webp) center/560px auto repeat;mix-blend-mode:screen;opacity:.3;pointer-events:none}
+.contacto::before{content:"";position:absolute;inset:0;background:url(img/decoracion/patron.webp) center/560px auto repeat;mix-blend-mode:screen;opacity:.3;pointer-events:none}
 .luna-c{position:absolute;right:-60px;top:-30px;width:380px;mix-blend-mode:screen;opacity:.7;pointer-events:none}
 .contacto .wrap{position:relative;z-index:1}
 .tel{margin:10px 0 0;color:#C3CAD0}
@@ -300,7 +300,7 @@ html.bloq,html.bloq body{overflow:hidden}
 
 /* ===== Escenografía ninja (portada) ===== */
 .hero{background:radial-gradient(ellipse at 50% 30%,#0F1D33 0%,var(--negro) 64%)}
-.hero::before{content:"";position:absolute;inset:0;background:url(patron.webp) center/560px auto repeat;mix-blend-mode:screen;opacity:.35;pointer-events:none}
+.hero::before{content:"";position:absolute;inset:0;background:url(img/decoracion/patron.webp) center/560px auto repeat;mix-blend-mode:screen;opacity:.35;pointer-events:none}
 .estrellas{position:absolute;inset:0;pointer-events:none;overflow:hidden}
 .estrellas img{position:absolute;max-width:none}
 .luna{left:50%;top:6%;width:min(760px,150vw);transform:translateX(-50%);mix-blend-mode:screen;opacity:.85}
@@ -316,7 +316,7 @@ html.bloq,html.bloq body{overflow:hidden}
 .kn{width:150px;opacity:.7;filter:drop-shadow(0 4px 8px rgba(0,0,0,.5))}
 .kn.k1{top:48%;left:3%;transform:rotate(-26deg)}
 .kn.k2{top:13%;right:3%;transform:rotate(154deg)}
-.bambu{position:absolute;left:0;right:0;bottom:0;height:110px;background:url(bambu.webp) left bottom/auto 110px repeat-x;opacity:.95;pointer-events:none}
+.bambu{position:absolute;left:0;right:0;bottom:0;height:110px;background:url(img/decoracion/bambu.webp) left bottom/auto 110px repeat-x;opacity:.95;pointer-events:none}
 .hero .wrap{position:relative;z-index:1}
 @media (max-width:760px){.kn{display:none}.sk.s1{left:-10px}.sk.s3{right:-12px}.bambu{height:80px;background-size:auto 80px}}
 @keyframes gira{to{transform:rotate(360deg)}}
@@ -464,7 +464,7 @@ body.dm .bambu{display:none}
 body.dm .hero .ninja-mov{display:none}
 body.dm .hero .ninja-dm{display:block;position:relative;z-index:2;width:112%;max-width:none;height:auto;margin:-6% -6% 0;filter:drop-shadow(0 0 22px rgba(249,115,22,.45))}
 @media (prefers-reduced-motion:no-preference){body.dm .hero .ninja-dm{animation:flota 6s ease-in-out infinite}}
-body.dm .hero.hero-v2{background:linear-gradient(90deg,rgba(20,8,31,.35),rgba(20,8,31,.15) 55%,rgba(20,8,31,.45)),url(dm-fondo.webp) 70% 30%/cover no-repeat,#14081F}
+body.dm .hero.hero-v2{background:linear-gradient(90deg,rgba(20,8,31,.35),rgba(20,8,31,.15) 55%,rgba(20,8,31,.45)),url(img/temporadas/dia-de-muertos/dm-fondo.webp) 70% 30%/cover no-repeat,#14081F}
 body.dm .hero::before{opacity:.12}
 body.dm .hero-v2 .luna,body.dm .hero .nube{display:none}
 .picado svg,.picado img{width:clamp(44px,7vw,78px);height:auto;transform-origin:50% 0;pointer-events:auto;cursor:pointer;filter:drop-shadow(0 3px 4px rgba(0,0,0,.35))}
@@ -655,7 +655,7 @@ body.dm .ofrenda .vela{display:block;background:none;box-shadow:none;border-radi
 </svg>
 <nav class="nav" aria-label="Principal">
   <div class="wrap">
-    <a class="mini" href="#inicio"><img src="avatar.webp" alt="" width="34" height="34" data-dm-swap>Shinobi Dev</a>
+    <a class="mini" href="#inicio"><img src="img/marca/avatar.webp" alt="" width="34" height="34" data-dm-swap>Shinobi Dev</a>
     <ul>
       <li><a href="#servicios">Servicios</a></li>
       <li><a href="#misiones">Misiones</a></li>
@@ -663,7 +663,7 @@ body.dm .ofrenda .vela{display:block;background:none;box-shadow:none;border-radi
       <li><a href="#quien">Quién soy</a></li>
     </ul>
     <div class="nav-der">
-      <button class="dm-switch" type="button" aria-pressed="true" aria-label="Edición Día de Muertos: activar o desactivar" title="Edición Día de Muertos"><img class="sw-ic" src="dm-calaca2.webp" alt=""><span class="sw-tx">Día de Muertos</span><span class="pista"></span></button>
+      <button class="dm-switch" type="button" aria-pressed="true" aria-label="Edición Día de Muertos: activar o desactivar" title="Edición Día de Muertos"><img class="sw-ic" src="img/temporadas/dia-de-muertos/dm-calaca2.webp" alt=""><span class="sw-tx">Día de Muertos</span><span class="pista"></span></button>
       <a class="btn pri cta" href="#contacto">Cotiza</a>
     </div>
   </div>
@@ -671,10 +671,10 @@ body.dm .ofrenda .vela{display:block;background:none;box-shadow:none;border-radi
 
 <header class="hero hero-v2" id="inicio">
   <div class="estrellas" aria-hidden="true">
-    <img class="luna" src="luna.webp" alt="">
-    <img class="nube n1" src="nube.webp" alt=""><img class="nube n2" src="nube.webp" alt="">
-    <img class="sk s1" src="sk4.webp" alt=""><img class="sk s2" src="sk6.webp" alt=""><img class="sk s3" src="sk-azul.webp" alt=""><img class="sk s4" src="sk8.webp" alt="">
-    <img class="kn k1" src="kunai.webp" alt=""><img class="kn k2" src="kunai-tag.webp" alt="">
+    <img class="luna" src="img/decoracion/luna.webp" alt="">
+    <img class="nube n1" src="img/decoracion/nube.webp" alt=""><img class="nube n2" src="img/decoracion/nube.webp" alt="">
+    <img class="sk s1" src="img/ninja/sk4.webp" alt=""><img class="sk s2" src="img/ninja/sk6.webp" alt=""><img class="sk s3" src="img/ninja/sk-azul.webp" alt=""><img class="sk s4" src="img/ninja/sk8.webp" alt="">
+    <img class="kn k1" src="img/ninja/kunai.webp" alt=""><img class="kn k2" src="img/ninja/kunai-tag.webp" alt="">
   </div>
   <div class="bambu" aria-hidden="true"></div>
   <div class="picado dm-only" aria-hidden="true"><div class="tira" data-n="11"></div></div>
@@ -682,10 +682,10 @@ body.dm .ofrenda .vela{display:block;background:none;box-shadow:none;border-radi
   <button class="calaca c2 dm-only" type="button" aria-label="Calaverita: toca para leer otro verso" data-calaca></button>
   <div class="ofrenda dm-only" aria-label="Ofrenda: toca las velas para encenderlas"></div>
   <div class="wrap hero-grid">
-    <div class="fuego grande"><span class="fl f1"></span><span class="fl f2"></span><span class="fl f3"></span><span class="fl f4"></span><span class="fl f5"></span><div class="ninja-mov"><img class="ninja" src="ninja-base.webp?v=3" width="280" height="280" alt="Logo de Shinobi Dev: ninja encapuchado con aura azul"><img class="ninja-fl" src="ninja-flamas.webp?v=3" width="280" height="280" alt="" aria-hidden="true"></div><img class="ninja-dm" src="dm-ninja.webp" width="720" height="720" alt="Logo de Shinobi Dev en edición Día de Muertos: ninja con flores de cempasúchil y cara de calavera"></div>
+    <div class="fuego grande"><span class="fl f1"></span><span class="fl f2"></span><span class="fl f3"></span><span class="fl f4"></span><span class="fl f5"></span><div class="ninja-mov"><img class="ninja" src="img/ninja/ninja-base.webp?v=3" width="280" height="280" alt="Logo de Shinobi Dev: ninja encapuchado con aura azul"><img class="ninja-fl" src="img/ninja/ninja-flamas.webp?v=3" width="280" height="280" alt="" aria-hidden="true"></div><img class="ninja-dm" src="img/temporadas/dia-de-muertos/dm-ninja.webp" width="720" height="720" alt="Logo de Shinobi Dev en edición Día de Muertos: ninja con flores de cempasúchil y cara de calavera"></div>
     <svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="llamaFx" x="-15%" y="-15%" width="130%" height="130%"><feTurbulence type="fractalNoise" baseFrequency="0.012 0.05" numOctaves="2" seed="4" result="n"><animate attributeName="baseFrequency" dur="2.6s" values="0.012 0.05;0.016 0.075;0.011 0.06;0.012 0.05" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" in2="n" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></svg>
     <p class="aviso-dm dm-only" style="display:none"></p>
-    <h1><img class="logo" src="logotipo.svg" alt="Shinobi Dev"></h1>
+    <h1><img class="logo" src="img/marca/logotipo.svg" alt="Shinobi Dev"></h1>
     <p class="por">por Max Vargas</p>
     <p class="tag">Incrementa el nivel de tu negocio</p>
     <p class="typer" aria-hidden="true"><span class="pr">&gt;_</span> <span id="typ"></span><span class="car"></span></p>
@@ -701,21 +701,21 @@ body.dm .ofrenda .vela{display:block;background:none;box-shadow:none;border-radi
 <section id="servicios" class="wrap" aria-labelledby="t-serv">
   <p class="kicker">SERVICIOS</p>
   <h2 id="t-serv">Tecnología a la medida de tu negocio</h2>
-  <span class="kunai-lineas"><img class="divk" src="kunai.webp" alt="" aria-hidden="true"></span>
+  <span class="kunai-lineas"><img class="divk" src="img/ninja/kunai.webp" alt="" aria-hidden="true"></span>
   <p class="lead">Herramientas sencillas que tus clientes y tu equipo usan desde el celular, sin instalar nada.</p>
   <div class="grid3">
     <article class="serv">
-      <img class="ic-img" src="ic-menu.webp" alt="" aria-hidden="true" width="72" height="74">
+      <img class="ic-img" src="img/iconos/ic-menu.webp" alt="" aria-hidden="true" width="72" height="74">
       <h3>Menús con pedidos por WhatsApp</h3>
       <p>Tu menú en línea con carrito, horarios y productos agotados. El pedido te llega completo y ordenado a tu WhatsApp.</p>
     </article>
     <article class="serv">
-      <img class="ic-img" src="ic-caja.webp" alt="" aria-hidden="true" width="72" height="74">
+      <img class="ic-img" src="img/iconos/ic-caja.webp" alt="" aria-hidden="true" width="72" height="74">
       <h3>Apps para vender y cobrar</h3>
       <p>Caja para tu mostrador, ventas en ruta, tickets impresos, clientes de crédito y registro de ventas. Funcionan aunque falle el internet.</p>
     </article>
     <article class="serv">
-      <img class="ic-img" src="ic-laptop.webp" alt="" aria-hidden="true" width="72" height="74">
+      <img class="ic-img" src="img/iconos/ic-laptop.webp" alt="" aria-hidden="true" width="72" height="74">
       <h3>Soluciones a la medida</h3>
       <p>Automatiza lo que hoy haces a mano: reportes, control desde Google Sheets, catálogos con QR y lo que tu negocio necesite.</p>
     </article>
@@ -726,18 +726,18 @@ body.dm .ofrenda .vela{display:block;background:none;box-shadow:none;border-radi
 <section id="misiones" class="wrap" aria-labelledby="t-mis">
   <p class="kicker">MISIONES</p>
   <h2 id="t-mis">Proyectos realizados</h2>
-  <img class="deco-perg" src="perg-vertical.webp" alt="" aria-hidden="true">
-  <span class="kunai-lineas"><img class="divk" src="kunai.webp" alt="" aria-hidden="true"></span>
+  <img class="deco-perg" src="img/decoracion/perg-vertical.webp" alt="" aria-hidden="true">
+  <span class="kunai-lineas"><img class="divk" src="img/ninja/kunai.webp" alt="" aria-hidden="true"></span>
   <p class="lead">Cada negocio es una misión distinta. Abre los pergaminos para ver cómo resolví cada una.</p>
   <div class="misiones">
     <article class="perg" id="mis01">
       <button class="perg-cab" aria-expanded="false" aria-controls="papel01">
         <span class="rod" aria-hidden="true"></span>
-        <span class="cinta"><span class="num">MISIÓN 01</span><img class="logo-neg" src="logo-colorado.webp" alt="" aria-hidden="true"><b>Pollos Colorado</b><span class="badge b-uso">En uso</span><span class="abre" aria-hidden="true">Abrir</span></span>
-        <img class="sello" src="sello1.webp" alt="" aria-hidden="true">
+        <span class="cinta"><span class="num">MISIÓN 01</span><img class="logo-neg" src="img/misiones/pollos-colorado/logo-colorado.webp" alt="" aria-hidden="true"><b>Pollos Colorado</b><span class="badge b-uso">En uso</span><span class="abre" aria-hidden="true">Abrir</span></span>
+        <img class="sello" src="img/decoracion/sello1.webp" alt="" aria-hidden="true">
       </button>
       <div class="rollo"><div class="papel" id="papel01"><div class="papel-in"><div class="contenido">
-      <button class="phone real" type="button" style="--ar:.62;--bgshot:#120E0B" aria-label="Ver capturas de Pollos Colorado en grande"><span class="scr shots"><img src="col-shot0.webp?v=2" alt="Pollos Colorado: portada del menú con el horario de entregas y los productos agotados del día" class="on" loading="lazy"><img src="col-shot1.webp?v=2" alt="Pollos Colorado: tarjeta del pollo entero con precio y botón para agregar" loading="lazy"><img src="col-shot2.webp?v=2" alt="Pollos Colorado: ficha de un paquete para elegir cantidad, sabor y pieza" loading="lazy"><img src="col-shot3.webp?v=2" alt="Pollos Colorado: lista de sabores con nivel de picante" loading="lazy"><img src="col-shot5.webp?v=2" alt="Pollos Colorado: carrito con los productos del pedido, opciones elegidas y total" loading="lazy"><img src="col-shot4.webp?v=2" alt="Pollos Colorado: formulario del pedido para elegir entrega, hora y forma de pago" loading="lazy"><img src="col-shot6.webp?v=2" alt="Pollos Colorado: vista previa del mensaje que se enviará por WhatsApp" loading="lazy"><img src="col-shot7.webp?v=2" alt="Pollos Colorado: el pedido llega escrito y ordenado al WhatsApp del negocio" loading="lazy"></span><span class="dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></button>
+      <button class="phone real" type="button" style="--ar:.62;--bgshot:#120E0B" aria-label="Ver capturas de Pollos Colorado en grande"><span class="scr shots"><img src="img/misiones/pollos-colorado/col-shot0.webp?v=2" alt="Pollos Colorado: portada del menú con el horario de entregas y los productos agotados del día" class="on" loading="lazy"><img src="img/misiones/pollos-colorado/col-shot1.webp?v=2" alt="Pollos Colorado: tarjeta del pollo entero con precio y botón para agregar" loading="lazy"><img src="img/misiones/pollos-colorado/col-shot2.webp?v=2" alt="Pollos Colorado: ficha de un paquete para elegir cantidad, sabor y pieza" loading="lazy"><img src="img/misiones/pollos-colorado/col-shot3.webp?v=2" alt="Pollos Colorado: lista de sabores con nivel de picante" loading="lazy"><img src="img/misiones/pollos-colorado/col-shot5.webp?v=2" alt="Pollos Colorado: carrito con los productos del pedido, opciones elegidas y total" loading="lazy"><img src="img/misiones/pollos-colorado/col-shot4.webp?v=2" alt="Pollos Colorado: formulario del pedido para elegir entrega, hora y forma de pago" loading="lazy"><img src="img/misiones/pollos-colorado/col-shot6.webp?v=2" alt="Pollos Colorado: vista previa del mensaje que se enviará por WhatsApp" loading="lazy"><img src="img/misiones/pollos-colorado/col-shot7.webp?v=2" alt="Pollos Colorado: el pedido llega escrito y ordenado al WhatsApp del negocio" loading="lazy"></span><span class="dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></button>
       <div>
         <h3>Pollos Colorado</h3>
         <p class="giro">Pollería al carbón · Colima</p>
@@ -753,11 +753,11 @@ body.dm .ofrenda .vela{display:block;background:none;box-shadow:none;border-radi
     <article class="perg" id="mis03">
       <button class="perg-cab" aria-expanded="false" aria-controls="papel03">
         <span class="rod" aria-hidden="true"></span>
-        <span class="cinta"><span class="num">MISIÓN 02</span><img class="logo-neg" src="logo-beto.webp" alt="" aria-hidden="true"><b>Cremería Don Beto</b><span class="badge b-uso">En uso</span><span class="abre" aria-hidden="true">Abrir</span></span>
-        <img class="sello" src="sello3.webp" alt="" aria-hidden="true">
+        <span class="cinta"><span class="num">MISIÓN 02</span><img class="logo-neg" src="img/misiones/cremeria-don-beto/logo-beto.webp" alt="" aria-hidden="true"><b>Cremería Don Beto</b><span class="badge b-uso">En uso</span><span class="abre" aria-hidden="true">Abrir</span></span>
+        <img class="sello" src="img/decoracion/sello3.webp" alt="" aria-hidden="true">
       </button>
       <div class="rollo"><div class="papel" id="papel03"><div class="papel-in"><div class="contenido">
-      <button class="phone real" type="button" style="--ar:.65;--bgshot:#F3E7D0" aria-label="Ver capturas de Cremería Don Beto en grande"><span class="scr shots"><img src="beto-shot3.webp?v=2" alt="Cremería Don Beto: pantalla Ruta del día con lo vendido, tiendas visitadas y la siguiente tienda" class="on" loading="lazy"><img src="beto-shot1.webp?v=2" alt="Cremería Don Beto: nuevo pedido con productos favoritos" loading="lazy"><img src="beto-shot2.webp?v=2" alt="Cremería Don Beto: nuevo pedido por categorías de mercancía" loading="lazy"><img src="beto-shot4.webp?v=2" alt="Cremería Don Beto: catálogo de productos con precios, ganancia y switch de disponibilidad" loading="lazy"><img src="beto-shot5.webp?v=2" alt="Cremería Don Beto: reportes del día con efectivo, transferencias, crédito y ganancia estimada" loading="lazy"></span><span class="dots"><i></i><i></i><i></i><i></i><i></i></span></button>
+      <button class="phone real" type="button" style="--ar:.65;--bgshot:#F3E7D0" aria-label="Ver capturas de Cremería Don Beto en grande"><span class="scr shots"><img src="img/misiones/cremeria-don-beto/beto-shot3.webp?v=2" alt="Cremería Don Beto: pantalla Ruta del día con lo vendido, tiendas visitadas y la siguiente tienda" class="on" loading="lazy"><img src="img/misiones/cremeria-don-beto/beto-shot1.webp?v=2" alt="Cremería Don Beto: nuevo pedido con productos favoritos" loading="lazy"><img src="img/misiones/cremeria-don-beto/beto-shot2.webp?v=2" alt="Cremería Don Beto: nuevo pedido por categorías de mercancía" loading="lazy"><img src="img/misiones/cremeria-don-beto/beto-shot4.webp?v=2" alt="Cremería Don Beto: catálogo de productos con precios, ganancia y switch de disponibilidad" loading="lazy"><img src="img/misiones/cremeria-don-beto/beto-shot5.webp?v=2" alt="Cremería Don Beto: reportes del día con efectivo, transferencias, crédito y ganancia estimada" loading="lazy"></span><span class="dots"><i></i><i></i><i></i><i></i><i></i></span></button>
       <div>
         <h3>Cremería Don Beto</h3>
         <p class="giro">Venta de cremería en ruta</p>
@@ -766,18 +766,18 @@ body.dm .ofrenda .vela{display:block;background:none;box-shadow:none;border-radi
         <ul class="chips">
           <li>Ticket impreso</li><li>Precios de mayoreo</li><li>Clientes de crédito y saldos</li><li>Más vendidos</li><li>Funciona sin internet</li>
         </ul>
-        <button class="captura" type="button" aria-label="Ver reporte en grande"><img src="beto-reportes.webp" alt="Reporte de la app: lo más vendido del día" loading="lazy"><span>Reportes del día: lo más vendido y mejores clientes</span></button>
+        <button class="captura" type="button" aria-label="Ver reporte en grande"><img src="img/misiones/cremeria-don-beto/beto-reportes.webp" alt="Reporte de la app: lo más vendido del día" loading="lazy"><span>Reportes del día: lo más vendido y mejores clientes</span></button>
       </div>
     </div></div></div><span class="rod rod-b" aria-hidden="true"></span></div>
     </article>
     <article class="perg" id="mis06">
       <button class="perg-cab" aria-expanded="false" aria-controls="papel06">
         <span class="rod" aria-hidden="true"></span>
-        <span class="cinta"><span class="num">MISIÓN 03</span><img class="logo-neg" src="logo-conceptos.webp?v=1" alt="" aria-hidden="true"><b>Conceptos Gráficos</b><span class="badge b-desa">En desarrollo</span><span class="abre" aria-hidden="true">Abrir</span></span>
-        <img class="sello" src="sello1.webp" alt="" aria-hidden="true">
+        <span class="cinta"><span class="num">MISIÓN 03</span><img class="logo-neg" src="img/misiones/conceptos-graficos/logo-conceptos.webp?v=1" alt="" aria-hidden="true"><b>Conceptos Gráficos</b><span class="badge b-desa">En desarrollo</span><span class="abre" aria-hidden="true">Abrir</span></span>
+        <img class="sello" src="img/decoracion/sello1.webp" alt="" aria-hidden="true">
       </button>
       <div class="rollo"><div class="papel" id="papel06"><div class="papel-in"><div class="contenido ancha">
-      <button class="phone real pantalla" type="button" style="--ar:1.6;--bgshot:#F7F4EA" aria-label="Ver capturas de Conceptos Gráficos en grande"><span class="scr shots"><img src="cg-1.webp?v=1" alt="Conceptos Gráficos: portada con el lema, botón de WhatsApp y productos que cambian solos" class="on" loading="lazy"><img src="cg-2.webp?v=1" alt="Conceptos Gráficos: catálogo por categorías con filtros" loading="lazy"><img src="cg-3.webp?v=1" alt="Conceptos Gráficos: simulador con grabado láser metálico en un termo" loading="lazy"><img src="cg-4.webp?v=1" alt="Conceptos Gráficos: simulador con una taza y tipografía manuscrita" loading="lazy"><img src="cg-5.webp?v=1" alt="Conceptos Gráficos: simulador con una playera personalizada" loading="lazy"><img src="cg-6.webp?v=1" alt="Conceptos Gráficos: galería de trabajos realizados" loading="lazy"><img src="cg-7.webp?v=1" alt="Conceptos Gráficos: reproductor flotante de videos de trabajos" loading="lazy"><img src="cg-8.webp?v=1" alt="Conceptos Gráficos: portada vista en celular" loading="lazy"></span><span class="dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></button>
+      <button class="phone real pantalla" type="button" style="--ar:1.6;--bgshot:#F7F4EA" aria-label="Ver capturas de Conceptos Gráficos en grande"><span class="scr shots"><img src="img/misiones/conceptos-graficos/cg-1.webp?v=1" alt="Conceptos Gráficos: portada con el lema, botón de WhatsApp y productos que cambian solos" class="on" loading="lazy"><img src="img/misiones/conceptos-graficos/cg-2.webp?v=1" alt="Conceptos Gráficos: catálogo por categorías con filtros" loading="lazy"><img src="img/misiones/conceptos-graficos/cg-3.webp?v=1" alt="Conceptos Gráficos: simulador con grabado láser metálico en un termo" loading="lazy"><img src="img/misiones/conceptos-graficos/cg-4.webp?v=1" alt="Conceptos Gráficos: simulador con una taza y tipografía manuscrita" loading="lazy"><img src="img/misiones/conceptos-graficos/cg-5.webp?v=1" alt="Conceptos Gráficos: simulador con una playera personalizada" loading="lazy"><img src="img/misiones/conceptos-graficos/cg-6.webp?v=1" alt="Conceptos Gráficos: galería de trabajos realizados" loading="lazy"><img src="img/misiones/conceptos-graficos/cg-7.webp?v=1" alt="Conceptos Gráficos: reproductor flotante de videos de trabajos" loading="lazy"><img src="img/misiones/conceptos-graficos/cg-8.webp?v=1" alt="Conceptos Gráficos: portada vista en celular" loading="lazy"></span><span class="dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></button>
       <div>
         <h3>Imprenta Conceptos Gráficos</h3>
         <p class="giro">Imprenta y personalizados · Colima</p>
@@ -809,10 +809,10 @@ body.dm .ofrenda .vela{display:block;background:none;box-shadow:none;border-radi
       <button class="perg-cab" aria-expanded="false" aria-controls="papel04">
         <span class="rod" aria-hidden="true"></span>
         <span class="cinta"><span class="num">MISIÓN 04</span><span class="logo-ini" style="background:#1858BE" aria-hidden="true">MF</span><b>MarkaForense</b><span class="badge b-desa">En desarrollo</span><span class="abre" aria-hidden="true">Abrir</span></span>
-        <img class="sello" src="sello1.webp" alt="" aria-hidden="true">
+        <img class="sello" src="img/decoracion/sello1.webp" alt="" aria-hidden="true">
       </button>
       <div class="rollo"><div class="papel" id="papel04"><div class="papel-in"><div class="contenido ancha">
-      <button class="phone real pantalla" type="button" style="--ar:1.7;--bgshot:#EEF1F5" aria-label="Ver capturas de MarkaForense en grande"><span class="scr shots"><img src="mf-1.webp?v=1" alt="MarkaForense, pantalla Marcar firma: firma de ejemplo con marcas numeradas, recuadros, flechas, líneas de color y mediciones de inclinación y distancia en milímetros" class="on" loading="lazy"><img src="mf-2.webp?v=1" alt="MarkaForense, pantalla Comparar firmas: la firma cuestionada y tres firmas de comparación lado a lado con las mismas marcas numeradas" loading="lazy"><img src="mf-3.webp?v=1" alt="MarkaForense, pantalla Anexo y dictamen: datos del expediente, botones para descargar el anexo en PDF y el dictamen en Word, y vista previa del anexo fotográfico" loading="lazy"><img src="mf-4.webp?v=1" alt="MarkaForense, versión personalizada para un perito: logotipo con su inicial, color propio y nombre de ejemplo en el encabezado" loading="lazy"></span><span class="dots"><i></i><i></i><i></i><i></i></span></button>
+      <button class="phone real pantalla" type="button" style="--ar:1.7;--bgshot:#EEF1F5" aria-label="Ver capturas de MarkaForense en grande"><span class="scr shots"><img src="img/misiones/markaforense/mf-1.webp?v=1" alt="MarkaForense, pantalla Marcar firma: firma de ejemplo con marcas numeradas, recuadros, flechas, líneas de color y mediciones de inclinación y distancia en milímetros" class="on" loading="lazy"><img src="img/misiones/markaforense/mf-2.webp?v=1" alt="MarkaForense, pantalla Comparar firmas: la firma cuestionada y tres firmas de comparación lado a lado con las mismas marcas numeradas" loading="lazy"><img src="img/misiones/markaforense/mf-3.webp?v=1" alt="MarkaForense, pantalla Anexo y dictamen: datos del expediente, botones para descargar el anexo en PDF y el dictamen en Word, y vista previa del anexo fotográfico" loading="lazy"><img src="img/misiones/markaforense/mf-4.webp?v=1" alt="MarkaForense, versión personalizada para un perito: logotipo con su inicial, color propio y nombre de ejemplo en el encabezado" loading="lazy"></span><span class="dots"><i></i><i></i><i></i><i></i></span></button>
       <div>
         <h3>MarkaForense</h3>
         <p class="giro">Aplicación web a la medida (instalable) · Herramienta profesional</p>
@@ -841,11 +841,11 @@ body.dm .ofrenda .vela{display:block;background:none;box-shadow:none;border-radi
     <article class="perg" id="mis07">
       <button class="perg-cab" aria-expanded="false" aria-controls="papel07">
         <span class="rod" aria-hidden="true"></span>
-        <span class="cinta"><span class="num">MISIÓN 05</span><img class="logo-neg" src="logo-sdshop.webp?v=1" alt="" aria-hidden="true"><b>SD Shop POS</b><span class="badge b-desa">En desarrollo</span><span class="abre" aria-hidden="true">Abrir</span></span>
-        <img class="sello" src="sello2.webp" alt="" aria-hidden="true">
+        <span class="cinta"><span class="num">MISIÓN 05</span><img class="logo-neg" src="img/misiones/sd-shop-pos/logo-sdshop.webp?v=1" alt="" aria-hidden="true"><b>SD Shop POS</b><span class="badge b-desa">En desarrollo</span><span class="abre" aria-hidden="true">Abrir</span></span>
+        <img class="sello" src="img/decoracion/sello2.webp" alt="" aria-hidden="true">
       </button>
       <div class="rollo"><div class="papel" id="papel07"><div class="papel-in"><div class="contenido ancha">
-      <button class="phone real pantalla" type="button" style="--ar:1.7;--bgshot:#08090D" aria-label="Ver capturas de SD Shop POS en grande"><span class="scr shots"><img src="sds-1.webp?v=1" alt="SD Shop POS: caja con productos, carrito y botón de cobro" class="on" loading="lazy"><img src="sds-2.webp?v=1" alt="SD Shop POS: inventario con existencias por talla, precios y margen" loading="lazy"><img src="sds-3.webp?v=1" alt="SD Shop POS: corte del día con apertura de caja y cortes anteriores" loading="lazy"><img src="sds-4.webp?v=1" alt="SD Shop POS: reportes con venta neta, ganancia y ventas por día" loading="lazy"><img src="sds-5.webp?v=1" alt="SD Shop POS: menú virtual de productos por categoría con el estilo de la marca" loading="lazy"><img src="sds-6.webp?v=1" alt="SD Shop POS: la caja vista en celular" loading="lazy"></span><span class="dots"><i></i><i></i><i></i><i></i><i></i><i></i></span></button>
+      <button class="phone real pantalla" type="button" style="--ar:1.7;--bgshot:#08090D" aria-label="Ver capturas de SD Shop POS en grande"><span class="scr shots"><img src="img/misiones/sd-shop-pos/sds-1.webp?v=1" alt="SD Shop POS: caja con productos, carrito y botón de cobro" class="on" loading="lazy"><img src="img/misiones/sd-shop-pos/sds-2.webp?v=1" alt="SD Shop POS: inventario con existencias por talla, precios y margen" loading="lazy"><img src="img/misiones/sd-shop-pos/sds-3.webp?v=1" alt="SD Shop POS: corte del día con apertura de caja y cortes anteriores" loading="lazy"><img src="img/misiones/sd-shop-pos/sds-4.webp?v=1" alt="SD Shop POS: reportes con venta neta, ganancia y ventas por día" loading="lazy"><img src="img/misiones/sd-shop-pos/sds-5.webp?v=1" alt="SD Shop POS: menú virtual de productos por categoría con el estilo de la marca" loading="lazy"><img src="img/misiones/sd-shop-pos/sds-6.webp?v=1" alt="SD Shop POS: la caja vista en celular" loading="lazy"></span><span class="dots"><i></i><i></i><i></i><i></i><i></i><i></i></span></button>
       <div>
         <h3>SD Shop POS</h3>
         <p class="giro">Punto de venta e inventario para boutique de ropa y tenis · Villa Izcalli Caxitlán, Colima</p>
@@ -879,10 +879,10 @@ body.dm .ofrenda .vela{display:block;background:none;box-shadow:none;border-radi
       <button class="perg-cab" aria-expanded="false" aria-controls="papel02">
         <span class="rod" aria-hidden="true"></span>
         <span class="cinta"><span class="num">MISIÓN 06</span><span class="logo-ini" style="background:#D7261E" aria-hidden="true">A1</span><b>Arreola 1</b><span class="badge b-desa">En desarrollo</span><span class="abre" aria-hidden="true">Abrir</span></span>
-        <img class="sello" src="sello2.webp" alt="" aria-hidden="true">
+        <img class="sello" src="img/decoracion/sello2.webp" alt="" aria-hidden="true">
       </button>
       <div class="rollo"><div class="papel" id="papel02"><div class="papel-in"><div class="contenido ancha">
-      <button class="phone real pantalla" type="button" style="--ar:1.19;--bgshot:#FFF7E8" aria-label="Ver capturas de Arreola 1 en grande"><span class="scr shots"><img src="arr-1.webp?v=2" alt="Arreola 1: portada del menú con el combo destacado, botones de pedido y horario" class="on" loading="lazy"><img src="arr-2.webp?v=2" alt="Arreola 1: sección de combos con precios, lo que incluye cada uno y botón para agregar" loading="lazy"></span><span class="dots"><i></i><i></i></span></button>
+      <button class="phone real pantalla" type="button" style="--ar:1.19;--bgshot:#FFF7E8" aria-label="Ver capturas de Arreola 1 en grande"><span class="scr shots"><img src="img/misiones/arreola-1/arr-1.webp?v=2" alt="Arreola 1: portada del menú con el combo destacado, botones de pedido y horario" class="on" loading="lazy"><img src="img/misiones/arreola-1/arr-2.webp?v=2" alt="Arreola 1: sección de combos con precios, lo que incluye cada uno y botón para agregar" loading="lazy"></span><span class="dots"><i></i><i></i></span></button>
       <div>
         <h3>Pollos y Carnes Asadas Arreola 1</h3>
         <p class="giro">Pollos y carnes asadas · Colima</p>
@@ -897,11 +897,11 @@ body.dm .ofrenda .vela{display:block;background:none;box-shadow:none;border-radi
     <article class="perg" id="mis05">
       <button class="perg-cab" aria-expanded="false" aria-controls="papel05">
         <span class="rod" aria-hidden="true"></span>
-        <span class="cinta"><span class="num">MISIÓN 07</span><img class="logo-neg" src="logo-carmelita.webp?v=1" alt="" aria-hidden="true"><b>Tacos Carmelita</b><span class="badge b-demo">Demo</span><span class="abre" aria-hidden="true">Abrir</span></span>
-        <img class="sello" src="sello3.webp" alt="" aria-hidden="true">
+        <span class="cinta"><span class="num">MISIÓN 07</span><img class="logo-neg" src="img/misiones/tacos-carmelita/logo-carmelita.webp?v=1" alt="" aria-hidden="true"><b>Tacos Carmelita</b><span class="badge b-demo">Demo</span><span class="abre" aria-hidden="true">Abrir</span></span>
+        <img class="sello" src="img/decoracion/sello3.webp" alt="" aria-hidden="true">
       </button>
       <div class="rollo"><div class="papel" id="papel05"><div class="papel-in"><div class="contenido">
-      <button class="phone real" type="button" style="--ar:.745;--bgshot:#F7F3EE;width:270px" aria-label="Ver capturas de Tacos Carmelita en grande"><span class="scr shots"><img src="carm-1.webp?v=1" alt="Tacos Carmelita: nueva orden para elegir el tipo de pedido y las mesas libres u ocupadas" class="on" loading="lazy"><img src="carm-2.webp?v=1" alt="Tacos Carmelita: órdenes abiertas con indicador de color por estado" loading="lazy"><img src="carm-3.webp?v=1" alt="Tacos Carmelita: vista de cocina con comandas por imprimir y en preparación" loading="lazy"><img src="carm-4.webp?v=1" alt="Tacos Carmelita: cobro con cálculo de cambio y billetes rápidos" loading="lazy"><img src="carm-5.webp?v=1" alt="Tacos Carmelita: reportes de ventas, ventas por hora y por método de pago" loading="lazy"><img src="carm-6.webp?v=1" alt="Tacos Carmelita: catálogo editable con precios, agotados y visibilidad" loading="lazy"><img src="carm-7.webp?v=1" alt="Tacos Carmelita: la misma pantalla de nueva orden en modo oscuro" loading="lazy"><img src="carm-8.webp?v=1" alt="Tacos Carmelita: creación del PIN y del código de papel para recuperar el acceso" loading="lazy"></span><span class="dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></button>
+      <button class="phone real" type="button" style="--ar:.745;--bgshot:#F7F3EE;width:270px" aria-label="Ver capturas de Tacos Carmelita en grande"><span class="scr shots"><img src="img/misiones/tacos-carmelita/carm-1.webp?v=1" alt="Tacos Carmelita: nueva orden para elegir el tipo de pedido y las mesas libres u ocupadas" class="on" loading="lazy"><img src="img/misiones/tacos-carmelita/carm-2.webp?v=1" alt="Tacos Carmelita: órdenes abiertas con indicador de color por estado" loading="lazy"><img src="img/misiones/tacos-carmelita/carm-3.webp?v=1" alt="Tacos Carmelita: vista de cocina con comandas por imprimir y en preparación" loading="lazy"><img src="img/misiones/tacos-carmelita/carm-4.webp?v=1" alt="Tacos Carmelita: cobro con cálculo de cambio y billetes rápidos" loading="lazy"><img src="img/misiones/tacos-carmelita/carm-5.webp?v=1" alt="Tacos Carmelita: reportes de ventas, ventas por hora y por método de pago" loading="lazy"><img src="img/misiones/tacos-carmelita/carm-6.webp?v=1" alt="Tacos Carmelita: catálogo editable con precios, agotados y visibilidad" loading="lazy"><img src="img/misiones/tacos-carmelita/carm-7.webp?v=1" alt="Tacos Carmelita: la misma pantalla de nueva orden en modo oscuro" loading="lazy"><img src="img/misiones/tacos-carmelita/carm-8.webp?v=1" alt="Tacos Carmelita: creación del PIN y del código de papel para recuperar el acceso" loading="lazy"></span><span class="dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></button>
       <div>
         <h3>Tortillas a mano y Tacos Carmelita</h3>
         <p class="giro">Taquería y tortillería · Colima</p>
@@ -953,12 +953,12 @@ body.dm .ofrenda .vela{display:block;background:none;box-shadow:none;border-radi
 <section id="como" class="wrap" aria-labelledby="t-como">
   <p class="kicker">CÓMO TRABAJO</p>
   <h2 id="t-como">Simple, de principio a fin</h2>
-  <img class="deco-medio" src="perg-medio.webp" alt="" aria-hidden="true">
-  <span class="kunai-lineas"><img class="divk" src="kunai.webp" alt="" aria-hidden="true"></span>
+  <img class="deco-medio" src="img/decoracion/perg-medio.webp" alt="" aria-hidden="true">
+  <span class="kunai-lineas"><img class="divk" src="img/ninja/kunai.webp" alt="" aria-hidden="true"></span>
   <div class="pasos">
-    <div class="paso"><img class="psk" src="sk4.webp" alt="" aria-hidden="true"><img class="pic" src="ic-chat.webp" alt="" aria-hidden="true"><h3>Platicamos tu negocio</h3><p>Me cuentas cómo trabajas hoy y qué te quita tiempo. Sin tecnicismos.</p></div>
-    <div class="paso"><img class="psk" src="sk4.webp" alt="" aria-hidden="true"><img class="pic" src="ic-prototipo.webp" alt="" aria-hidden="true"><h3>Te enseño un prototipo</h3><p>Ves cómo quedaría en tu celular antes de decidir, y lo ajustamos juntos.</p></div>
-    <div class="paso"><img class="psk" src="sk4.webp" alt="" aria-hidden="true"><img class="pic" src="ic-chart.webp" alt="" aria-hidden="true"><h3>Lo publicamos y te capacito</h3><p>Lo dejo funcionando, te enseño a usarlo y te acompaño después.</p></div>
+    <div class="paso"><img class="psk" src="img/ninja/sk4.webp" alt="" aria-hidden="true"><img class="pic" src="img/iconos/ic-chat.webp" alt="" aria-hidden="true"><h3>Platicamos tu negocio</h3><p>Me cuentas cómo trabajas hoy y qué te quita tiempo. Sin tecnicismos.</p></div>
+    <div class="paso"><img class="psk" src="img/ninja/sk4.webp" alt="" aria-hidden="true"><img class="pic" src="img/iconos/ic-prototipo.webp" alt="" aria-hidden="true"><h3>Te enseño un prototipo</h3><p>Ves cómo quedaría en tu celular antes de decidir, y lo ajustamos juntos.</p></div>
+    <div class="paso"><img class="psk" src="img/ninja/sk4.webp" alt="" aria-hidden="true"><img class="pic" src="img/iconos/ic-chart.webp" alt="" aria-hidden="true"><h3>Lo publicamos y te capacito</h3><p>Lo dejo funcionando, te enseño a usarlo y te acompaño después.</p></div>
   </div>
 </section>
 
@@ -966,9 +966,9 @@ body.dm .ofrenda .vela{display:block;background:none;box-shadow:none;border-radi
 <section id="quien" class="wrap" aria-labelledby="t-quien">
   <p class="kicker">QUIÉN SOY</p>
   <h2 id="t-quien">El ninja detrás del código</h2>
-  <span class="kunai-lineas"><img class="divk" src="kunai.webp" alt="" aria-hidden="true"></span>
+  <span class="kunai-lineas"><img class="divk" src="img/ninja/kunai.webp" alt="" aria-hidden="true"></span>
   <div class="quien">
-    <div class="fuego chico"><span class="fl f1"></span><span class="fl f2"></span><span class="fl f3"></span><span class="fl f4"></span><span class="fl f5"></span><img class="av-q" src="avatar.webp" width="200" height="200" alt="Avatar de Shinobi Dev" data-dm-swap></div>
+    <div class="fuego chico"><span class="fl f1"></span><span class="fl f2"></span><span class="fl f3"></span><span class="fl f4"></span><span class="fl f5"></span><img class="av-q" src="img/marca/avatar.webp" width="200" height="200" alt="Avatar de Shinobi Dev" data-dm-swap></div>
     <div>
       <p class="cred">Ingeniero en Informática · Cédula profesional</p>
       <p>Soy <b>Max Vargas</b>, <b>Ingeniero en Informática</b> con cédula profesional y desarrollador web.</p>
@@ -980,7 +980,7 @@ body.dm .ofrenda .vela{display:block;background:none;box-shadow:none;border-radi
 </main>
 
 <section class="contacto" id="contacto" aria-labelledby="t-con">
-  <img class="luna-c" src="luna2.webp" alt="" aria-hidden="true">
+  <img class="luna-c" src="img/decoracion/luna2.webp" alt="" aria-hidden="true">
   <div class="wrap">
     <div>
       <p class="kicker">CONTACTO</p>
@@ -992,7 +992,7 @@ body.dm .ofrenda .vela{display:block;background:none;box-shadow:none;border-radi
         <a class="btn sec js-mail" href="mailto:shinobi.devmx@gmail.com?subject=Cotiza%20sin%20compromiso&amp;body=Hola%20Max%2C%20vi%20tu%20p%C3%A1gina%20de%20Shinobi%20Dev%20y%20quiero%20cotizar%20sin%20compromiso%20un%20proyecto%20para%20mi%20negocio.">shinobi.devmx@gmail.com</a>
       </div>
     </div>
-    <div class="qr"><img class="qcol" src="perg-colgante.webp" alt="" aria-hidden="true"><img class="qcode" src="qr.webp?v=3" width="110" height="110" alt="Código QR de Shinobi Dev"><span>Escanea y compárteme</span></div>
+    <div class="qr"><img class="qcol" src="img/decoracion/perg-colgante.webp" alt="" aria-hidden="true"><img class="qcode" src="img/marca/qr.webp?v=3" width="110" height="110" alt="Código QR de Shinobi Dev"><span>Escanea y compárteme</span></div>
   </div>
 </section>
 
@@ -1066,7 +1066,7 @@ function abrirTerm(){ultimo=document.activeElement;term.hidden=false;document.do
 function cerrarTerm(){term.hidden=true;document.documentElement.classList.remove('bloq');term.style.top='';term.style.height='';if(ultimo)ultimo.focus({preventScroll:true})}
 function proyectil(tipo,y,delay,dir){
   const k=tipo==='kunai';const im=new Image();im.className='vuela';im.alt='';
-  im.src=k?'kunai.webp':['sk4.webp','sk6.webp','sk8.webp','sk-azul.webp'][Math.floor(Math.random()*4)];
+  im.src=k?'img/ninja/kunai.webp':['img/ninja/sk4.webp','img/ninja/sk6.webp','img/ninja/sk8.webp','img/ninja/sk-azul.webp'][Math.floor(Math.random()*4)];
   const W=k?170:70;im.style.width=W+'px';document.body.appendChild(im);
   const w=window.innerWidth,h=window.innerHeight,x0=dir>0?-W-20:w+20,x1=dir>0?w+20:-W-20,y0=h*y,y1=y0-h*.12*dir;
   const r0=k?(dir>0?-6:186):0,r1=k?(dir>0?6:174):1440*dir;
@@ -1117,7 +1117,7 @@ const io=new IntersectionObserver(e=>{if(e[0].isIntersecting){q.classList.add('v
 // ===== Easter egg: los stickers se asoman de vez en cuando =====
 (function(){
   if(reducido)return;
-  const capa=document.getElementById('asomos');const fotosN=['stk1.webp?v=3','stk2.webp?v=3','stk3.webp?v=3','stk4.webp?v=3','stk5.webp?v=3','stk6.webp?v=3','stk7.webp?v=3'],fotosDM=['dm-stk1.webp','dm-stk2.webp','dm-stk3.webp','dm-stk4.webp','dm-stk5.webp','dm-stk6.webp'];let fotos=fotosN;
+  const capa=document.getElementById('asomos');const fotosN=['img/stickers/stk1.webp?v=3','img/stickers/stk2.webp?v=3','img/stickers/stk3.webp?v=3','img/stickers/stk4.webp?v=3','img/stickers/stk5.webp?v=3','img/stickers/stk6.webp?v=3','img/stickers/stk7.webp?v=3'],fotosDM=['img/temporadas/dia-de-muertos/dm-stk1.webp','img/temporadas/dia-de-muertos/dm-stk2.webp','img/temporadas/dia-de-muertos/dm-stk3.webp','img/temporadas/dia-de-muertos/dm-stk4.webp','img/temporadas/dia-de-muertos/dm-stk5.webp','img/temporadas/dia-de-muertos/dm-stk6.webp'];let fotos=fotosN;
   let vistos=0,ocupado=false,ultimo=-1;
   function asomar(){
     const sy=window.scrollY||document.documentElement.scrollTop||document.body.scrollTop||0;
@@ -1173,10 +1173,10 @@ function limpiaFx(){fx.innerHTML='';fx.hidden=true}
 function bombaHumo(destino){
   fx.hidden=false;fx.style.setProperty('--fxd','3.3s');fx.style.setProperty('--nd','2.6s');fx.innerHTML='<div class="velo"></div>';
   const cx=window.innerWidth/2,cy=window.innerHeight*.42;
-  const b=new Image();b.src='bomba.webp';b.className='bombafx';fx.appendChild(b);
+  const b=new Image();b.src='img/ninja/bomba.webp';b.className='bombafx';fx.appendChild(b);
   b.animate([{transform:`translate(${cx-40}px,-120px) rotate(-40deg)`},{transform:`translate(${cx-40}px,${cy-40}px) rotate(20deg)`}],{duration:450,easing:'cubic-bezier(.5,0,.9,.5)',fill:'forwards'}).onfinish=()=>{
     b.animate([{transform:`translate(${cx-40}px,${cy-40}px) scale(1)`,opacity:1},{transform:`translate(${cx-40}px,${cy-40}px) scale(1.6)`,opacity:0}],{duration:200,fill:'forwards'});
-    for(let n=0;n<14;n++){const h=new Image();h.src='humo.webp';h.className='humofx';const sz=180+Math.random()*220;h.style.width=sz+'px';
+    for(let n=0;n<14;n++){const h=new Image();h.src='img/ninja/humo.webp';h.className='humofx';const sz=180+Math.random()*220;h.style.width=sz+'px';
       const x=cx-sz/2+(Math.random()-.5)*260,y=cy-sz/2+(Math.random()-.5)*170,r=Math.random()*60-30,fl=Math.random()<.5?-1:1;
       h.style.left=x+'px';h.style.top=y+'px';fx.appendChild(h);
       h.animate([{transform:`scale(.15) rotate(${r}deg) scaleX(${fl})`,opacity:0},{transform:`scale(1) rotate(${r+15}deg) scaleX(${fl})`,opacity:.95,offset:.3},{transform:`scale(1.25) rotate(${r+25}deg) scaleX(${fl})`,opacity:.9,offset:.75},{transform:`scale(1.45) rotate(${r+35}deg) scaleX(${fl})`,opacity:0}],{duration:2400,delay:n*90,easing:'ease-out',fill:'both'})}
@@ -1187,7 +1187,7 @@ function bombaHumo(destino){
 }
 function mensajero(destino){
   fx.hidden=false;fx.style.setProperty('--fxd','1.5s');fx.innerHTML='<div class="velo"></div>';
-  const k=new Image();k.src='kunai-msg.webp';k.className='kmsg';fx.appendChild(k);
+  const k=new Image();k.src='img/ninja/kunai-msg.webp';k.className='kmsg';fx.appendChild(k);
   const m=document.createElement('div');m.className='msg';m.textContent='Enviando mensajero ninja…';fx.appendChild(m);
   const w=window.innerWidth,h=window.innerHeight;
   k.animate([{transform:`translate(-300px,${h*.4}px) rotate(-12deg)`},{transform:`translate(${w/2-130}px,${h*.4}px) rotate(0deg)`,offset:.55},{transform:`translate(${w/2-120}px,${h*.4-6}px) rotate(3deg)`}],{duration:800,easing:'cubic-bezier(.2,.8,.3,1)',fill:'forwards'});
@@ -1213,11 +1213,11 @@ const recorte={
  corazon:'M40 46c-12-8-16-14-16-19c0-5 4-8 8-8c4 0 6 2 8 5c2-3 4-5 8-5c4 0 8 3 8 8c0 5-4 11-16 19z',
  estrella:'M40 15l4 11h12l-10 7l4 12l-10-7l-10 7l4-12l-10-7h12z'};
 const formas=Object.keys(recorte);
-function bandera(i){return `<img src="${A('dm-picado'+(i%6+1)+'.webp')}" alt="" style="animation-delay:${-(i*.37)%3.6}s">`}
+function bandera(i){return `<img src="${A('img/temporadas/dia-de-muertos/dm-picado'+(i%6+1)+'.webp')}" alt="" style="animation-delay:${-(i*.37)%3.6}s">`}
 document.querySelectorAll('.picado .tira').forEach(t=>{const n=+t.dataset.n||9;let h='';for(let i=0;i<n;i++)h+=bandera(i+(n===9?3:0));t.innerHTML=h;
   t.querySelectorAll('img').forEach(s=>s.addEventListener('click',()=>{s.classList.remove('sopla');void s.offsetWidth;s.classList.add('sopla');lluvia(10,s.getBoundingClientRect())}));});
 // ---- calaveras (dibujo original)
-let ic=0;const calImg=()=>`<img src="${A('dm-calaca'+((ic++%6)+1)+'.webp')}" alt="">`;
+let ic=0;const calImg=()=>`<img src="${A('img/temporadas/dia-de-muertos/dm-calaca'+((ic++%6)+1)+'.webp')}" alt="">`;
 document.querySelectorAll('[data-calaca]').forEach((b,k)=>{ic=k?3:0;b.innerHTML=calImg()});ic=1;
 // ---- flor de cempasúchil
 function flor(){let g='';const capas=[[26,'#EA580C',16],[20,'#F97316',14],[14,'#F59E0B',12],[8,'#FBBF24',10]];
@@ -1225,8 +1225,8 @@ function flor(){let g='';const capas=[[26,'#EA580C',16],[20,'#F97316',14],[14,'#
   return `<svg class="flor" viewBox="0 0 64 84" aria-hidden="true"><path d="M32 52v32" stroke="#15803D" stroke-width="4"/><path d="M32 70c-8-6-14-4-16 0c6 2 12 2 16 0z" fill="#16A34A"/>${g}<circle cx="32" cy="32" r="4" fill="#B45309"/></svg>`;}
 const of=document.querySelector('.ofrenda');
 if(of){const seq=['petalos','flor1','v1','pan','flor2','v2','ramo','v3','calavera','flor3','v1','jarrito','flor4','v2','petalos'];let h='';
-  seq.forEach(x=>{if(x[0]==='v'){const n=x[1];h+=`<button class="vela" type="button" aria-pressed="false" aria-label="Encender vela"><img src="${A('dm-vela'+n+'.webp')}" alt=""><img class="fuego-v" src="${A('dm-llama'+n+'.webp')}" alt=""><span class="llama"></span></button>`}
-    else if(x.startsWith('flor'))h+=`<img class="flor" src="${A('dm-'+x+'.webp')}" alt="">`;else h+=`<img class="obj ${x}" src="${A('dm-'+x+'.webp')}" alt="">`});
+  seq.forEach(x=>{if(x[0]==='v'){const n=x[1];h+=`<button class="vela" type="button" aria-pressed="false" aria-label="Encender vela"><img src="${A('img/temporadas/dia-de-muertos/dm-vela'+n+'.webp')}" alt=""><img class="fuego-v" src="${A('img/temporadas/dia-de-muertos/dm-llama'+n+'.webp')}" alt=""><span class="llama"></span></button>`}
+    else if(x.startsWith('flor'))h+=`<img class="flor" src="${A('img/temporadas/dia-de-muertos/dm-'+x+'.webp')}" alt="">`;else h+=`<img class="obj ${x}" src="${A('img/temporadas/dia-de-muertos/dm-'+x+'.webp')}" alt="">`});
   of.innerHTML=h+'<span class="ofrenda-cuenta" aria-live="polite"></span>';
   const velas=[...of.querySelectorAll('.vela')],cta=of.querySelector('.ofrenda-cuenta');
   const pinta=()=>{const n=velas.filter(v=>v.classList.contains('on')).length;cta.textContent=n===velas.length?'¡Ofrenda completa! 🕯':`velas ${n}/${velas.length}`;if(n===velas.length)lluvia(40)};
@@ -1277,9 +1277,9 @@ addEventListener('keydown',e=>{if(e.key==='Escape'&&!md.hidden)cierra()});
 const av=document.querySelector('.aviso-dm');if(av){av.textContent='🌼 Edición Día de Muertos';av.style.display=''}
 // ---- interruptor
 const swaps=[...document.querySelectorAll('[data-dm-swap]')];swaps.forEach(im=>im.dataset.orig=im.getAttribute('src'));
-function avatares(){const on=document.body.classList.contains('dm');swaps.forEach(im=>{im.src=on?A('dm-ninja.webp'):im.dataset.orig;im.classList.toggle('dm-av',on)})}
+function avatares(){const on=document.body.classList.contains('dm');swaps.forEach(im=>{im.src=on?A('img/temporadas/dia-de-muertos/dm-ninja.webp'):im.dataset.orig;im.classList.toggle('dm-av',on)})}
 avatares();
-document.querySelectorAll('[data-proy] .cn-img').forEach(s=>{const b=s.closest('[data-proy]');s.innerHTML=`<img src="${A('dm-calaca'+b.dataset.img+'.webp')}" alt="">`});
+document.querySelectorAll('[data-proy] .cn-img').forEach(s=>{const b=s.closest('[data-proy]');s.innerHTML=`<img src="${A('img/temporadas/dia-de-muertos/dm-calaca'+b.dataset.img+'.webp')}" alt="">`});
 document.querySelectorAll('.cn,.calaca-colg').forEach(b=>b.addEventListener('click',e=>{e.stopPropagation();lluvia(10,b.getBoundingClientRect());abre(b,b.dataset.proy)}));
 const sw=document.querySelector('.dm-switch');
 sw.addEventListener('click',()=>{const on=document.body.classList.toggle('dm');sw.setAttribute('aria-pressed',on);avatares();if(on)lluvia(30)});
